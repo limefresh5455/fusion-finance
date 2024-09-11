@@ -1,0 +1,18 @@
+.marieImage,
+.samanthaImage {
+  width: 100%;
+  height: auto;
+  float: right;
+  margin: 0 20px 20px 0;
+  max-width: 576px;
+  height: auto;
+}
+.gemmaImage,
+.catherineImage {
+  width: 100%;
+  height: auto;
+  float: right;
+  margin: 0 20px 20px 0;
+  max-width: 576px;
+  height: auto;
+}
