@@ -1,33 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./imageSlider.css";
 
 const images = [
-  // {
-  //   src: "/Fusion_pics/Fusion-Finance-Web-Ready-43.jpg",
-  //   title: "Image 1 Title",
-  //   description:
-  //     "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-  // },
-  // {
-  //   src: "/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg",
-  //   title: "Image 2 Title",
-  //   description:
-  //     "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-  // },
-  // {
-  //   src: "/Fusion_pics/Fusion-Finance-Web-Ready-27.jpg",
-  //   title: "Image 3 Title",
-  //   description:
-  //     "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-  // },
-  // {
-  //   src: "/Fusion_pics/Fusion-Finance-Web-Ready-23.jpg",
-  //   title: "Image 4 Title",
-  //   description:
-  //     "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-  // },
   {
     src: "/Fusion_pics/not-at-work (1).jpeg",
     title: "Image 4 Title",
@@ -81,7 +57,20 @@ const images = [
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const totalImages = images.length;
+  const autoPlayInterval = 5000;
 
+  // Function to move to the next slide
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
+  }, [totalImages]);
+
+  // Function to move to the previous slide
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
+  };
+
+  // Adjust the view for mobile devices
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
@@ -95,43 +84,34 @@ const ImageSlider = () => {
     };
   }, []);
 
-  const totalImages = images.length;
-  const autoPlayInterval = 5000;
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
-  };
-
-  const getVisibleImages = () => {
-    let visibleImages = [];
-    const imagesToShow = isMobile ? 1 : 4;
-
-    for (let i = 0; i < imagesToShow; i++) {
-      visibleImages.push(images[(currentIndex + i) % totalImages]);
-    }
-
-    return visibleImages;
-  };
-
+  // Automatically change slides after a set interval
   useEffect(() => {
     const interval = setInterval(nextSlide, autoPlayInterval);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide, autoPlayInterval]);
+
+  // Get the visible images based on the screen size
+  const getVisibleImages = () => {
+    const imagesToShow = isMobile ? 1 : 4;
+    let visibleImages = [];
+    for (let i = 0; i < imagesToShow; i++) {
+      visibleImages.push(images[(currentIndex + i) % totalImages]);
+    }
+    return visibleImages;
+  };
 
   return (
     <div className="slider-container">
-      <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-5 underline">When we are not at work</h2>
+      <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-5 underline">
+        When we are not at work
+      </h2>
       <button className="slider-button left" onClick={prevSlide}>
         &#10094;
       </button>
       <div className="slider">
         {getVisibleImages().map((image, index) => (
           <div className="slide" key={index}>
-            <div className="">
+            <div>
               <Image
                 src={image.src}
                 alt={`Slide ${index}`}

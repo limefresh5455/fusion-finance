@@ -80,8 +80,8 @@ export default function News() {
             </h2>
             <div className="blogDescription cormorant-infant text-xl">
               <p className="mt-4 text-gray-700">
-                We're thrilled to announce that we were shortlisted for the prestigious Broker Expert Award at Ireland's Broker Awards!
-                Being recognised alongside other outstanding industry leaders from across the insurance and financial services sectors is a tremendous honour. This nomination is a testament to the hard work, dedication, and expertise of our entire team. We're deeply proud of the value we provide to our clients, helping them navigate the complex world of finance and achieve their financial goals.
+                We&apos;re thrilled to announce that we were shortlisted for the prestigious Broker Expert Award at Ireland&apos;s Broker Awards!
+                Being recognised alongside other outstanding industry leaders from across the insurance and financial services sectors is a tremendous honour. This nomination is a testament to the hard work, dedication, and expertise of our entire team. We&apos;re deeply proud of the value we provide to our clients, helping them navigate the complex world of finance and achieve their financial goals.
                 <button
                   onClick={handleReadMoreClick4}
                   className="text-[#1a584f]"
@@ -116,7 +116,7 @@ export default function News() {
           </div>
           <div className="p-4 bg-[#1a584f] text-white">
             <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-white">
-              Championing Women's Health: Our Journey for Comprehensive Cancer
+              Championing Women&apos;s Health: Our Journey for Comprehensive Cancer
               Coverage
             </h2>
             <div className="blogDescription cormorant-infant text-xl text-white">
@@ -131,7 +131,7 @@ export default function News() {
                 are earmarked for women battling cancer, compared to 60% for
                 men? Despite these eye-opening figures, a significant number of
                 women are left exposed, lacking the vital protection needed in
-                the face of life's uncertainties.
+                the face of life&apos;s uncertainties.
                 <button
                   onClick={handleReadMoreClick}
                   className="text-white"
@@ -144,35 +144,35 @@ export default function News() {
                 <div className="readMore">
                   <p className="mt-4">
                     Armed with determination and a sprinkle of humor, we are
-                    committed to challenging this inequality head-on. "Ladies,
-                    let's be real - we're more likely to face off against the
-                    big 'C' than men, and we're not about to let this slide,"
+                    committed to challenging this inequality head-on. &quot;Ladies,
+                    let&apos;s be real - we&apos;re more likely to face off against the
+                    big &apos;C&apos; than men, and we&apos;re not about to let this slide,&quot;
                   </p>
                   <p className="mt-4">
                     Take a moment to survey your surroundings. Envision the
-                    'what ifs': What would happen to your family if illness
-                    struck? The answers may be unsettling, but it's a dialogue
+                    &apos;what ifs&apos;: What would happen to your family if illness
+                    struck? The answers may be unsettling, but it&apos;s a dialogue
                     that demands attention.
                   </p>
                   <p className="mt-4">
                     Our message is resolute: prioritize your health and
-                    safeguard your future. Don't delay in securing the
+                    safeguard your future. Don&apos;t delay in securing the
                     protection you and your loved ones deserve.
                   </p>
                   <p className="mt-4">
-                    "A bit of prevention today can spare you a world of trouble
-                    tomorrow."
+                    &quot;A bit of prevention today can spare you a world of trouble
+                    tomorrow.&quot;
                   </p>
                   <p className="mt-4">
                     Stand with us in championing equitable access to cancer
                     coverage for women.
                   </p>
                   <p className="mt-4">
-                    Together, let's effect change and empower women to confront
-                    cancer's challenges with resilience and assurance.
+                    Together, let&apos;s effect change and empower women to confront
+                    cancer&apos;s challenges with resilience and assurance.
                   </p>
                   <p className="mt-4">
-                    Share our story, spread the word, and let's strive for a
+                    Share our story, spread the word, and let&apos;s strive for a
                     future where no woman battles cancer without the armor of
                     security and support.
                   </p>

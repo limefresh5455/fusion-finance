@@ -16,7 +16,7 @@ export default function Home() {
           </div>
         </div >
 
-        <section
+        {/* <section
           id="our-values"
           className="relative font-sans section-padding bg-[#d6cccc] bg-cover bg-center"
           style={{
@@ -85,7 +85,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main >
 
       <main>
@@ -306,55 +306,72 @@ export default function Home() {
         </div>
 
         {/* Footer Section */}
+        <div className="bg-[#1a584f] pb-5 pt-5">
+          <h1 className="text-white container text-[#1a584f] text-center text-4xl font-bold font-sans underline">
+            Why work with us?
+          </h1>
 
-        <div className="bg-[#1a584f]  pb-5 pt-5">
-          <div className="container grid grid-cols-1 sm:grid-cols-3">
-            <div className="flex flex-col justify-center items-left p-4">
-              <Image
-                src="/Fusion_icon_services.png"
-                width={70}
-                height={50}
-                alt="services"
-              />
-              <div className="text-white text-3xl font-bold font-sans mt-2">
-                Financial Services
-              </div>
-              <div className="text-white cormorant-infant text-2xl font-bold">
-                For Everyone
-              </div>
+          <div className="text-center flex flex-col lg:flex-row justify-center align-center">
+
+            <div className="flex justify-center items-center p-4">
+              <h2 className="text-white container text-[#1a584f] text-center text-3xl font-bold font-sans underline mt-4">
+                At a glance
+              </h2>
             </div>
 
-            <div className="flex flex-col justify-center items-left p-4">
-              <Image
-                src="/Fusion_icon_knowledge.png"
-                width={70}
-                height={50}
-                alt="knowledge"
-              />
-              <div className="text-white text-3xl font-bold font-sans mt-2">
-                With A Wealth Of Agnostic
+            <div className="container flex flex-col sm:flex-row justify-evenly items-center flex-wrap ">
+              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] border rounded flex flex-col justify-center items-left p-4">
+                <Image
+                  src="/Fusion_icon_services.png"
+                  width={70}
+                  height={50}
+                  alt="services"
+                  className="mx-auto"
+                />
+                <div className="text-white text-3xl font-bold font-sans mt-2">
+                  Financial Services
+                </div>
+                <div className="text-white cormorant-infant text-2xl font-bold">
+                  For Everyone
+                </div>
               </div>
-              <div className="text-white text-2xl font-bold cormorant-infant">
-                Industry Knowledge
-              </div>
-            </div>
 
-            <div className="flex flex-col justify-center items-left p-4">
-              <Image
-                src="/Fusion_icon_advisor.png"
-                width={100}
-                height={50}
-                alt="advisor"
-              />
-              <div className="text-white text-3xl font-bold font-sans mt-2">
-                Here To Be Your
+              <div className="mt-3 mx-2 text-center rounded min-w-[240px] max-w-[250px] min-h-[220px] border flex flex-col justify-center items-left p-4">
+                <Image
+                  src="/Fusion_icon_knowledge.png"
+                  width={70}
+                  height={50}
+                  alt="knowledge"
+                  className="mx-auto"
+                />
+                <div className="text-white text-3xl font-bold font-sans mt-2">
+                  With A Wealth Of Agnostic
+                </div>
+                <div className="text-white text-2xl font-bold cormorant-infant">
+                  Industry Knowledge
+                </div>
               </div>
-              <div className="text-white text-2xl font-bold cormorant-infant">
-                Trusted Advisor
+
+              <div className="mt-3 mx-2 rounded text-center border min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
+                <Image
+                  src="/Fusion_icon_advisor.png"
+                  width={100}
+                  height={50}
+                  alt="advisor"
+                  className="mx-auto"
+                />
+                <div className="text-white text-3xl font-bold font-sans mt-2">
+                  Here To Be Your
+                </div>
+                <div className="text-white text-2xl font-bold cormorant-infant">
+                  Trusted Advisor
+                </div>
               </div>
             </div>
           </div>
+
         </div>
+
       </main>
     </div >
   );

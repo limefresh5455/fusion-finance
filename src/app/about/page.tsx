@@ -233,7 +233,7 @@ export default function About() {
               <div className="container text-left text-black space-y-4">
                 <h4 className="cormorant-infant text-xl">
                   Fusion Finance develop relationships that make a positive
-                  difference to our customers' lives, providing financial
+                  difference to our customers&apos; lives, providing financial
                   options and solutions that deliver premium value to our
                   clients. We uphold the highest standards of integrity in all
                   our actions.
@@ -244,7 +244,7 @@ export default function About() {
                   financial solutions tailored to individual needs. With over 25
                   years of experience and a commitment to integrity, we have
                   served over 2000 satisfied customers. Our goal is to develop
-                  lasting relationships that positively impact our clients'
+                  lasting relationships that positively impact our clients&apos;
                   lives.
                 </p>
                 <hr className="border-gray-500" />
@@ -366,19 +366,19 @@ export default function About() {
                     fun?
                   </p>
                   <p className="mb-4 text-black text-xl">
-                    So, whether you're navigating the world of savings,
+                    So, whether you&apos;re navigating the world of savings,
                     investments, or retirement planning, please know I will be
-                    your trusted ally. With Fusion by your side, you're not just
-                    getting financial advice – you're getting a friend who will
+                    your trusted ally. With Fusion by your side, you&apos;re not just
+                    getting financial advice – you&apos;re getting a friend who will
                     guide you through the ups and downs of financial life with a
                     smile on her face and a joke up her sleeve! I am currently
-                    doing my master's in finance which I am loving as the more
+                    doing my master&apos;s in finance which I am loving as the more
                     knowledgeable I have the more I can help my clients!
                   </p>
                   <p className="font-bold text-black text-xl">
                     I welcome you to please join me on this exciting adventure
                     towards financial security, where numbers meet laughter, and
-                    clients become lifelong friends. Let's make your financial
+                    clients become lifelong friends. Let&apos;s make your financial
                     journey not just easier but a joy to embark upon.
                   </p>
                 </div>
