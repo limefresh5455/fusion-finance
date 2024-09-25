@@ -44,6 +44,11 @@
   text-align: center;
   padding: 10px;
 }
+
+.underline {
+  text-decoration: underline !important;
+}
+
 @media (max-width: 767px) {
   .slider {
     display: block;

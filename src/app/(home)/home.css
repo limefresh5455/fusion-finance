@@ -90,13 +90,13 @@
 #button:hover {
   background-color: white;
 } */
-.video-container {
+/* .video-container {
   position: relative;
   height: 100vh;
   overflow: hidden;
-}
+} */
 
-.video {
+/* .video {
   position: fixed;
   top: 0;
   height: 100vh;
@@ -104,6 +104,36 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: -1;
+} */
+
+.postionRelative {
+  position: relative;
+  top: 65%;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .postionRelative {
+    top: 55%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .postionRelative {
+    top: 50%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .postionRelative {
+    top: 45%;
+  }
+}
+
+@media (max-width: 639px) {
+  .postionRelative {
+    top: 0%;
+    margin: 0px;
+  }
 }
 
 .contentToMove {
@@ -114,12 +144,16 @@
   padding-top: 5rem;
 }
 
+.underline {
+  text-decoration: underline !important;
+}
+
 @media screen and (max-width: 767px) {
-  .video-container {
+  /* .video-container {
     position: relative;
     height: 31vh;
     overflow: hidden;
-  }
+  } */
 
   .video {
     position: sticky;

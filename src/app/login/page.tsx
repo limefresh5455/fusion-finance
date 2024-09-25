@@ -21,7 +21,7 @@ export default function Login() {
                 </div>
                 <div className="w-full h-fit flex justify-center bg-[#fff] pb-4 lg:pb-8">
                   <iframe
-                    style={{ width: "100%", height: "300px", border: "none" }}
+                    style={{ width: '100%', height: '100%', border: 'none' }}
                     src="https://www.bis-platform.com/ob/p_web_portal_new.php?style_id=5875"
                     title="BIS Platform"
                   />

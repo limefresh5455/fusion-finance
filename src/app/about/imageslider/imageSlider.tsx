@@ -124,7 +124,7 @@ const ImageSlider = () => {
 
   return (
     <div className="slider-container">
-      <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-5">When we are not at work</h2>
+      <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-5 underline">When we are not at work</h2>
       <button className="slider-button left" onClick={prevSlide}>
         &#10094;
       </button>

@@ -7,59 +7,41 @@ interface Item {
   desc: string;
 }
 
-export default function Carousel({ items }: { items: Item[] }) {
-  const duration: number = 4000;
-  const itemsRef = useRef<HTMLDivElement>(null);
-  const frame = useRef<number>(0);
-  const firstFrameTime = useRef(performance.now());
+const items: Item[] = [
+  {
+    videoUrl: "/Fusion_pics/FF-Update-Team-Web-Ready.jpg",
+    desc: "Banner Video",
+  },
+  {
+    videoUrl: "/Fusion_pics/Fusion-Finance-about-banner.jpg",
+    desc: "Banner Video",
+  },
+  {
+    videoUrl: "/Fusion_pics/Fusion_Finance_Video_cropped.mp4",
+    desc: "Banner Video",
+  },
+];
+
+export default function Carousel() {
+  const imageDuration: number = 5000; // 2 seconds for images
+  const videoDuration: number = 38000; // 38 seconds for video
   const [active, setActive] = useState<number>(0);
-  const [progress, setProgress] = useState<number>(0);
-
-  const animate = (now: number) => {
-    let timeFraction = (now - firstFrameTime.current) / duration;
-    if (timeFraction <= 1) {
-      setProgress(timeFraction * 100);
-      frame.current = requestAnimationFrame(animate);
-    } else {
-      timeFraction = 1;
-      setProgress(0);
-      setActive((active + 1) % items.length);
-    }
-  };
 
   useEffect(() => {
-    const animate = (now: number) => {
-      let timeFraction = (now - firstFrameTime.current) / duration;
-      if (timeFraction <= 1) {
-        setProgress(timeFraction * 100);
-        frame.current = requestAnimationFrame(animate);
-      } else {
-        timeFraction = 1;
-        setProgress(0);
-        setActive((active + 1) % items.length);
-      }
-    };
+    const timer = setTimeout(
+      () => {
+        setActive((prevActive) => (prevActive + 1) % items.length); // Cycle through items
+      },
+      active < 2 ? imageDuration : videoDuration
+    ); // Use different duration based on active index
 
-    firstFrameTime.current = performance.now();
-    frame.current = requestAnimationFrame(animate);
-    return () => {
-      cancelAnimationFrame(frame.current);
-    };
-  }, [active, items.length, duration]);
-
-  const heightFix = () => {
-    if (itemsRef.current && itemsRef.current.parentElement)
-      itemsRef.current.parentElement.style.height = `${itemsRef.current.clientHeight}px`;
-  };
-
-  useEffect(() => {
-    heightFix();
-  }, []);
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, [active]);
 
   return (
-    <div className="w-full lg:h-screen text-center flex">
+    <div className="w-full text-center flex overflow-hidden">
       <div className="transition-all duration-150 delay-300 ease-in-out flex lg:h-full w-full">
-        <div className="relative flex flex-col lg:h-full w-full" ref={itemsRef}>
+        <div className="relative flex flex-col lg:h-full w-full">
           {items.map((item, index) => (
             <Transition
               key={index}
@@ -70,17 +52,25 @@ export default function Carousel({ items }: { items: Item[] }) {
               leave="transition ease-in-out duration-300 absolute"
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
-              beforeEnter={heightFix}
             >
-              <div className="w-full h-full">
-                <video
-                  src={item.videoUrl}
-                  className="w-full h-auto object-cover"
-                  autoPlay
-                  loop
-                  muted
-                />
-              </div>
+              {index < 2 ? (
+                <div className="w-full h-full overflow-hidden">
+                  <img
+                    src={item.videoUrl} // Display image for the first two items
+                    className="h-screen w-full max-w-full object-cover object-top overflow-hidden"
+                    alt={item.desc}
+                  />
+                </div>
+              ) : (
+                <div className="w-full h-full overflow-hidden">
+                  <video
+                    src={item.videoUrl} // Display video for the last item
+                    className="w-full h-[100vh] object-cover overflow-hidden"
+                    autoPlay
+                    muted
+                  />
+                </div>
+              )}
             </Transition>
           ))}
         </div>

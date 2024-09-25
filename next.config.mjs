@@ -20,4 +20,4 @@ const nextConfig = {
   },
 };
 
-export default withNextVideo(nextConfig, { folder: "Carousel" });
+export default withNextVideo(nextConfig, { folder: 'Carousel' });

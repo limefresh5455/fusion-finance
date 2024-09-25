@@ -75,20 +75,13 @@ export default function News() {
                 Blog, Financial Planning, Illness Cover, Income Protection, News
               </span>
             </p> */}
-            <h2 className="mt-2 text-3xl font-bold text-gray-900">
+            <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
               Awards Nominated for Brokers Ireland
             </h2>
             <div className="blogDescription cormorant-infant text-xl">
               <p className="mt-4 text-gray-700">
-                We are thrilled to announce that we were shortlisted for the
-                prestigious Broker Expert Award at Irelands Broker Awards! Being
-                recognised alongside other outstanding industry leaders from
-                across the insurance and financial services sectors is a
-                tremendous honour. This nomination is a testament to the hard
-                work, dedication, and expertise of our entire team. We are
-                deeply proud of the value we provide to our clients, helping
-                them navigate the complex world of finance and achieve their
-                financial goals.
+                We're thrilled to announce that we were shortlisted for the prestigious Broker Expert Award at Ireland's Broker Awards!
+                Being recognised alongside other outstanding industry leaders from across the insurance and financial services sectors is a tremendous honour. This nomination is a testament to the hard work, dedication, and expertise of our entire team. We're deeply proud of the value we provide to our clients, helping them navigate the complex world of finance and achieve their financial goals.
                 <button
                   onClick={handleReadMoreClick4}
                   className="text-[#1a584f]"
@@ -100,15 +93,9 @@ export default function News() {
                 <div className="readMore">
                   <p className="mt-4 text-gray-700">
                     Our Commitment to Excellence <br />
-                    This nomination further fuels our commitment to delivering
-                    the highest level of service and exceeding expectations. We
-                    believe that strong client relationships, transparent
-                    communication, and a deep understanding of the ever-evolving
-                    financial landscape are the cornerstones of success. We
-                    extend our sincere gratitude to our clients, partners, and
-                    colleagues for their continued support and trust. Your
-                    confidence in us is what drives us to continually improve
-                    and strive for excellence.
+                    This nomination further fuels our commitment to delivering the highest level of service and exceeding expectations. We believe that strong client relationships, transparent communication, and a deep understanding of the ever-evolving financial landscape are the cornerstones of success.
+
+                    We extend our sincere gratitude to our clients, partners, and colleagues for their continued support and trust. Your confidence in us is what drives us to continually improve and strive for excellence.
                   </p>
                 </div>
               )}
@@ -128,8 +115,8 @@ export default function News() {
             ></div>
           </div>
           <div className="p-4 bg-[#1a584f] text-white">
-            <h2 className="mt-2 text-3xl font-bold text-white">
-              Championing Womens Health: Our Journey for Comprehensive Cancer
+            <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-white">
+              Championing Women's Health: Our Journey for Comprehensive Cancer
               Coverage
             </h2>
             <div className="blogDescription cormorant-infant text-xl text-white">
@@ -144,8 +131,11 @@ export default function News() {
                 are earmarked for women battling cancer, compared to 60% for
                 men? Despite these eye-opening figures, a significant number of
                 women are left exposed, lacking the vital protection needed in
-                the face of lifes uncertainties.
-                <button onClick={handleReadMoreClick} className="text-white">
+                the face of life's uncertainties.
+                <button
+                  onClick={handleReadMoreClick}
+                  className="text-white"
+                >
                   ....Read more
                 </button>
               </p>
@@ -154,35 +144,35 @@ export default function News() {
                 <div className="readMore">
                   <p className="mt-4">
                     Armed with determination and a sprinkle of humor, we are
-                    committed to challenging this inequality head-on. Ladies,
-                    lets be real - we are more likely to face off against the
-                    big C than men, and we are not about to let this slide,
+                    committed to challenging this inequality head-on. "Ladies,
+                    let's be real - we're more likely to face off against the
+                    big 'C' than men, and we're not about to let this slide,"
                   </p>
                   <p className="mt-4">
-                    Take a moment to survey your surroundings. Envision the what
-                    ifs: What would happen to your family if illness struck? The
-                    answers may be unsettling, but its a dialogue that demands
-                    attention.
+                    Take a moment to survey your surroundings. Envision the
+                    'what ifs': What would happen to your family if illness
+                    struck? The answers may be unsettling, but it's a dialogue
+                    that demands attention.
                   </p>
                   <p className="mt-4">
                     Our message is resolute: prioritize your health and
-                    safeguard your future. Dont delay in securing the protection
-                    you and your loved ones deserve.
+                    safeguard your future. Don't delay in securing the
+                    protection you and your loved ones deserve.
                   </p>
                   <p className="mt-4">
-                    A bit of prevention today can spare you a world of trouble
-                    tomorrow.
+                    "A bit of prevention today can spare you a world of trouble
+                    tomorrow."
                   </p>
                   <p className="mt-4">
                     Stand with us in championing equitable access to cancer
                     coverage for women.
                   </p>
                   <p className="mt-4">
-                    Together, lets effect change and empower women to confront
-                    cancers challenges with resilience and assurance.
+                    Together, let's effect change and empower women to confront
+                    cancer's challenges with resilience and assurance.
                   </p>
                   <p className="mt-4">
-                    Share our story, spread the word, and lets strive for a
+                    Share our story, spread the word, and let's strive for a
                     future where no woman battles cancer without the armor of
                     security and support.
                   </p>
@@ -207,13 +197,13 @@ export default function News() {
             <p className="text-lg text-black cormorant-infant">
               By: Fusion Finance
             </p>
-            <p className="text-black cormorant-infantc text-lg">
+            {/* <p className="text-black cormorant-infantc text-lg">
               Category:
               <span className="ml-1 text-[#1a584f]">
                 Blog, Financial Planning, Illness Cover, Income Protection, News
               </span>
-            </p>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900">
+            </p> */}
+            <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
               Don’t try and grow your wealth looking in the rear view mirror
             </h2>
             <div className="blogDescription cormorant-infant text-xl">
@@ -310,11 +300,11 @@ export default function News() {
             <p className="text-lg text-black cormorant-infant">
               By: Allison Alexander
             </p>
-            <p className="text-lg text-black cormorant-infant">
+            {/* <p className="text-lg text-black cormorant-infant">
               Category:
               <span className="ml-1 text-[#1a584f]">Uncategorized</span>
-            </p>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900">
+            </p> */}
+            <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
               Do you enjoy paying the bank to hold your savings?
             </h2>
             <div className="blogDescription cormorant-infant text-xl">

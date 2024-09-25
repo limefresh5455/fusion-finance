@@ -43,20 +43,19 @@ const QuoteForm = () => {
       if (selectedDate < minDate || selectedDate > today) {
         alert("Please select a date of birth between 1900 and today.");
       } else {
-        // console.log("Form data is valid. Sending request...");
+        console.log("Form data is valid. Sending request...");
         try {
           const quotes = await fetchQuote(formData);
           console.log("API response:", quotes);
           setResult(quotes);
         } catch (error) {
           console.error("Error fetching quote:", error);
-          alert(
-            "An error occurred while fetching the quote. Please try again."
-          );
+          alert("An error occurred while fetching the quote. Please try again.");
         }
       }
     }
   };
+
 
   return result ? (
     result.Errors ? (
@@ -73,9 +72,12 @@ const QuoteForm = () => {
     )
   ) : (
     <main className="flex flex-col items-center bg-[#e5e7eb]">
-      <form id="form" className="font-sans text-lg sm:text-2xl">
+      <form
+        id="form"
+        className="font-sans text-lg sm:text-2xl"
+      >
         <div className="py-8 bg-[#d6cccc]">
-          <h2 className="text-gray-900 text-center text-4xl font-bold font-sans">
+          <h2 style={{ textDecoration: "underline" }} className="text-gray-900 text-center text-4xl font-bold font-sans">
             Personal Information
           </h2>
         </div>
@@ -285,7 +287,7 @@ const QuoteForm = () => {
         </div>
 
         <div className="bg-[#1a584f] pt-5">
-          <h2 className="text-white text-4xl text-center font-bold font-sans bg-[#1a584f]">
+          <h2 style={{ textDecoration: "underline" }}  className="text-white text-4xl text-center font-bold font-sans bg-[#1a584f]">
             Policy Details
           </h2>
         </div>
@@ -559,6 +561,17 @@ const QuoteForm = () => {
                   Get Quote
                 </button>
               </div>
+
+              {/* {formData.term != null && (
+                <div className="flex justify-center pb-10">
+                  <button
+                    className="block bg-[#d6cccc] text-black uppercase py-2 px-6 rounded-full text-lg"
+                    onClick={handleSubmit}
+                  >
+                    Get Quote
+                  </button>
+                </div>
+              )} */}
             </div>
           </div>
 

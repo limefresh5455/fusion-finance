@@ -44,6 +44,7 @@ export default function About() {
             </div>
           </div>
         </div>
+
         <section
           id="xs-sec-ecdacc26"
           className="font-sans relative section-padding"
@@ -52,146 +53,166 @@ export default function About() {
           <div className="relative container mx-auto px-4 py-12">
             <div className="text-center mb-12 relative">
               <h2
-                className="text-3xl font-bold text-white section-title-dash inline-block relative"
+                className="underline text-3xl font-bold text-white section-title-dash inline-block relative"
                 data-title="Why Choose Us"
               >
                 Why Choose Us
-                <span className="block border-b-4 border-white mt-2 mx-auto w-1/2"></span>
+                {/* <span className="block border-b-4 border-white mt-2 mx-auto w-1/2"></span> */}
               </h2>
             </div>
+
             <div className="container flex flex-wrap -mx-4">
               <div className="w-full md:w-1/2 px-4">
-                <div className="mb-8">
-                  <div className="flex items-start mb-4">
-                    <span className="feature-icon">
-                      <Image
-                        src="/Experience.png"
-                        layout="responsive"
-                        width={64}
-                        height={64}
-                        alt="partner3"
-                        className="rounded-lg"
-                      />
-                    </span>
-                    <div className="feature-content pl-3">
-                      <h3 className="text-xl font-semibold text-white">
-                        Over 25 Years Experience
-                      </h3>
-                      <p className="text-white cormorant-infant text-lg">
-                        Delivering expert financial advice
-                      </p>
+                <div className="ml-24 mb-8 flex justify-center items-start flex-col">
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <span className="feature-icon">
+                        <Image
+                          src="/Experience.png"
+                          layout="responsive"
+                          width={64}
+                          height={64}
+                          alt="partner3"
+                          className="rounded-lg"
+                        />
+                      </span>
+                      <div className="feature-content pl-3">
+                        <h3 className="text-xl font-semibold text-white">
+                          Over 25 Years Experience
+                        </h3>
+                        <p className="text-white cormorant-infant text-lg">
+                          Delivering expert financial advice
+                        </p>
+                      </div>
+
+                    </div>
+                    <div className="h-8"></div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <span className="feature-icon">
+                        <Image
+                          src="/Insured.png"
+                          layout="responsive"
+                          width={64}
+                          height={64}
+                          alt="partner3"
+                          className="rounded-lg"
+                        />
+                      </span>
+                      <div className="feature-content pl-3">
+                        <h3 className="text-xl font-semibold text-white">
+                          Fully Regulated and Insured
+                        </h3>
+                        <p className="text-white  cormorant-infant text-lg">
+                          Central Bank regulated, Consumer Protection Code, <br />
+                          and Professional Insurers Brokers Association
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-8"></div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <span className="feature-icon">
+                        <Image
+                          src="/Customer.png"
+                          layout="responsive"
+                          width={64}
+                          height={64}
+                          alt="partner3"
+                          className="rounded-lg"
+                        />
+                      </span>
+                      <div className="feature-content pl-3">
+                        <h3 className="text-xl font-semibold text-white">
+                          Over 2000 Customers
+                        </h3>
+                        <p className="text-white  cormorant-infant text-lg">
+                          Here to be your trusted advisor
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="h-8"></div>
-                  <div className="flex items-start mb-4">
-                    <span className="feature-icon">
-                      <Image
-                        src="/Insured.png"
-                        layout="responsive"
-                        width={64}
-                        height={64}
-                        alt="partner3"
-                        className="rounded-lg"
-                      />
-                    </span>
-                    <div className="feature-content pl-3">
-                      <h3 className="text-xl font-semibold text-white">
-                        Fully Regulated and Insured
-                      </h3>
-                      <p className="text-white  cormorant-infant text-lg">
-                        Central Bank regulated, Consumer Protection Code, <br />
-                        and Professional Insurers Brokers Association
-                      </p>
-                    </div>
-                  </div>
-                  <div className="h-8"></div>
-                  <div className="flex items-start mb-4">
-                    <span className="feature-icon">
-                      <Image
-                        src="/Customer.png"
-                        layout="responsive"
-                        width={64}
-                        height={64}
-                        alt="partner3"
-                        className="rounded-lg"
-                      />
-                    </span>
-                    <div className="feature-content pl-3">
-                      <h3 className="text-xl font-semibold text-white">
-                        Over 2000 Customers
-                      </h3>
-                      <p className="text-white  cormorant-infant text-lg">
-                        Here to be your trusted advisor
-                      </p>
-                    </div>
-                  </div>
+
                 </div>
               </div>
               <div className="w-full md:w-1/2 px-4">
-                <div className="mb-8">
-                  <div className="flex items-start mb-4">
-                    <span className="feature-icon">
-                      <Image
-                        src="/Team.png"
-                        layout="responsive"
-                        width={64}
-                        height={64}
-                        alt="partner3"
-                        className="rounded-lg"
-                      />
-                    </span>
-                    <div className="feature-content pl-3">
-                      <h3 className="text-xl font-semibold text-white">
-                        Nationwide Team
-                      </h3>
-                      <p className="text-white  cormorant-infant text-lg">
-                        Highly qualified financial planners to your door
-                      </p>
+                <div className="ml-20 mb-8 flex justify-center align-start flex-col">
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <span className="feature-icon">
+                        <Image
+                          src="/Team.png"
+                          layout="responsive"
+                          width={64}
+                          height={64}
+                          alt="partner3"
+                          className="rounded-lg"
+                        />
+                      </span>
+                      <div className="feature-content pl-3">
+                        <h3 className="text-xl font-semibold text-white">
+                          Nationwide Team
+                        </h3>
+                        <p className="text-white  cormorant-infant text-lg">
+                          Highly qualified financial planners to your door
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-8"></div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <span className="feature-icon">
+                        <Image
+                          src="/Experties.png"
+                          layout="responsive"
+                          width={64}
+                          height={64}
+                          alt="partner3"
+                          className="rounded-lg"
+                        />
+                      </span>
+                      <div className="feature-content pl-3">
+                        <h3 className="text-xl font-semibold text-white">
+                          CFP Expertise
+                        </h3>
+                        <p className="text-white  cormorant-infant text-lg">
+                          Our Certified Financial Planners have attained <br />
+                          the highest industry standard
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-8"></div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <span className="feature-icon">
+                        <Image
+                          src="/customer-service.png"
+                          layout="responsive"
+                          width={64}
+                          height={64}
+                          alt="partner3"
+                          className="rounded-lg"
+                        />
+                      </span>
+                      <div className="feature-content pl-3">
+                        <h3 className="text-xl font-semibold text-white">
+                          Exceptional Customer Service
+                        </h3>
+                        <p className="text-white  cormorant-infant text-lg">
+                          Always here to support your needs
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="h-8"></div>
-                  <div className="flex items-start mb-4">
-                    <span className="feature-icon">
-                      <Image
-                        src="/Experties.png"
-                        layout="responsive"
-                        width={64}
-                        height={64}
-                        alt="partner3"
-                        className="rounded-lg"
-                      />
-                    </span>
-                    <div className="feature-content pl-3">
-                      <h3 className="text-xl font-semibold text-white">
-                        CFP Expertise
-                      </h3>
-                      <p className="text-white  cormorant-infant text-lg">
-                        Our Certified Financial Planners have attained <br />
-                        the highest industry standard
-                      </p>
-                    </div>
-                  </div>
-                  <div className="h-8"></div>
-                  <div className="flex items-start mb-4">
-                    <span className="feature-icon">
-                      <Image
-                        src="/CustomerService.png"
-                        layout="responsive"
-                        width={64}
-                        height={64}
-                        alt="partner3"
-                        className="rounded-lg"
-                      />
-                    </span>
-                    <div className="feature-content pl-3">
-                      <h3 className="text-xl font-semibold text-white">
-                        Exceptional Customer Service
-                      </h3>
-                      <p className="text-white  cormorant-infant text-lg">
-                        Always here to support your needs
-                      </p>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -206,15 +227,16 @@ export default function About() {
           <div className="absolute inset-0 bg-[#d6cccc] opacity-70"></div>
           <div className="relative container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-black mb-4">
+              <h2 className="underline text-3xl font-bold text-black mb-4">
                 Mission & Our Values
               </h2>
               <div className="container text-left text-black space-y-4">
                 <h4 className="cormorant-infant text-xl">
                   Fusion Finance develop relationships that make a positive
-                  difference to our customers lives, providing financial options
-                  and solutions that deliver premium value to our clients. We
-                  uphold the highest standards of integrity in all our actions.
+                  difference to our customers' lives, providing financial
+                  options and solutions that deliver premium value to our
+                  clients. We uphold the highest standards of integrity in all
+                  our actions.
                 </h4>
                 <p className="cormorant-infant text-xl">
                   <strong>About Fusion Finance:</strong> Fusion Finance is
@@ -222,33 +244,74 @@ export default function About() {
                   financial solutions tailored to individual needs. With over 25
                   years of experience and a commitment to integrity, we have
                   served over 2000 satisfied customers. Our goal is to develop
-                  lasting relationships that positively impact our clients
+                  lasting relationships that positively impact our clients'
                   lives.
                 </p>
                 <hr className="border-gray-500" />
-                <p className="cormorant-infant text-xl">
-                  <strong>Informed:</strong> Certified Financial Planner
-                  designation is currently the highest overall educational
-                  qualification that can be obtained in the sector and this has
-                  been achieved by our consultants.
-                </p>
-                <p className="cormorant-infant text-xl">
-                  <strong>Focussed:</strong> We believe we are successful in
-                  running our business due to determination, hard work,
-                  resilience and willingness to adapt in an ever changing
-                  environment.
-                </p>
-                <p className="cormorant-infant text-xl">
-                  <strong>Open:</strong> We enjoy the dynamism of the industry,
-                  its ability to evolve and develop continuously while
-                  performing in a transparent, honest & professional manner.
-                </p>
+
+                <div className="flex justify-evenly items-center flex-wrap">
+                  <div className="min-h-[330px] mt-5 border transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-4 rounded-ss-2xl rounded-ee-2xl">
+                    <p className="text-white min-h-[330px] cormorant-infant text-xl bg-[#1a584f] inline-block p-5 rounded-ss-2xl rounded-ee-2xl">
+                      <span className="bg-white inline-block p-2 rounded-ss-2xl rounded-ee-2xl">
+                        <Image
+                          src="/info.png"
+                          width={50}
+                          height={50}
+                          alt="services"
+                        />
+                      </span>
+                      <br />
+                      <strong>Informed:</strong><br />
+                      Certified Financial Planner
+                      designation is currently the highest overall educational
+                      qualification that can be obtained in the sector and this
+                      has been achieved by our consultants.
+                    </p>
+                  </div>
+
+                  <div className="min-h-[330px] mt-5 border transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-4 rounded-ss-2xl rounded-ee-2xl">
+                    <p className="text-white min-h-[330px] cormorant-infant text-xl bg-[#1a584f] inline-block p-2 rounded-ss-2xl rounded-ee-2xl">
+                      <span className="bg-white inline-block p-2 rounded-ss-2xl rounded-ee-2xl">
+                        <Image
+                          src="/focus.png"
+                          width={50}
+                          height={50}
+                          alt="services"
+                          className=""
+                        />
+                      </span>
+                      <br />
+                      <strong>Focussed:</strong> <br />We believe we are successful in
+                      running our business due to determination, hard work,
+                      resilience and willingness to adapt in an ever changing
+                      environment.
+                    </p>
+                  </div>
+
+                  <div className="min-h-[330px] mt-5 border transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-4 rounded-ss-2xl rounded-ee-2xl">
+                    <p className="text-white min-h-[330px] cormorant-infant text-xl bg-[#1a584f] inline-block p-2 rounded-ss-2xl rounded-ee-2xl">
+                      <span className="bg-white inline-block p-2 rounded-ss-2xl rounded-ee-2xl">
+                        <Image
+                          src="/open.png"
+                          width={50}
+                          height={50}
+                          alt="services"
+                        />
+                      </span>
+                      <br />
+                      <strong>Open:</strong> <br /> We enjoy the dynamism of the
+                      industry, its ability to evolve and develop continuously
+                      while performing in a transparent, honest & professional
+                      manner.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-4">
+        <h2 className="underline font-sans pt-10 text-center text-3xl font-bold text-black mb-4">
           Who We Are
         </h2>
 
@@ -303,20 +366,19 @@ export default function About() {
                     fun?
                   </p>
                   <p className="mb-4 text-black text-xl">
-                    So, whether you are navigating the world of savings,
+                    So, whether you're navigating the world of savings,
                     investments, or retirement planning, please know I will be
-                    your trusted ally. With Fusion by your side, you are not
-                    just getting financial advice – you are getting a friend who
-                    will guide you through the ups and downs of financial life
-                    with a smile on her face and a joke up her sleeve! I am
-                    currently doing my masters in finance which I am loving as
-                    the more knowledgeable I have the more I can help my
-                    clients!
+                    your trusted ally. With Fusion by your side, you're not just
+                    getting financial advice – you're getting a friend who will
+                    guide you through the ups and downs of financial life with a
+                    smile on her face and a joke up her sleeve! I am currently
+                    doing my master's in finance which I am loving as the more
+                    knowledgeable I have the more I can help my clients!
                   </p>
                   <p className="font-bold text-black text-xl">
                     I welcome you to please join me on this exciting adventure
                     towards financial security, where numbers meet laughter, and
-                    clients become lifelong friends. Lets make your financial
+                    clients become lifelong friends. Let's make your financial
                     journey not just easier but a joy to embark upon.
                   </p>
                 </div>

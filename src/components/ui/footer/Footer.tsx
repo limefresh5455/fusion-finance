@@ -85,11 +85,11 @@ export default function Footer() {
       <div className="bg-gray-200 py-12">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div className="text-center mb-10">
-            <h1 className="text-2xl font-sans mb-2 text-gray-600">
+            <h1 className="underline text-2xl font-sans mb-2 text-gray-600">
               Regulatory Information
             </h1>
             <div className="flex flex-col items-center">
-              <p className="cormorant-infant text-lg">
+              <p className="font-sans text-lg">
                 Marie Davey and Gemma Maguire t/a Fusion Finance are regulated
                 by the Central Bank of Ireland.
               </p>
@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Contact Section */}
           <div className="text-center">
-            <h1 className="text-2xl font-sans mb-4 text-gray-600">
+            <h1 className="underline text-2xl font-sans mb-4 text-gray-600">
               Contact Us
             </h1>
             <div className="flex flex-col items-center">
@@ -120,7 +120,7 @@ export default function Footer() {
 
           {/* Useful Info Section */}
           <div className="text-center">
-            <h1 className="text-2xl font-sans mb-4 text-gray-600">
+            <h1 className="underline text-2xl font-sans mb-4 text-gray-600">
               Useful Info
             </h1>
             <div className="flex flex-col items-center">

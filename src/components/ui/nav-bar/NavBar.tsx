@@ -28,7 +28,7 @@ export default function NavBar() {
 
   return (
     <nav className="w-full">
-      <div className="bg-[#d3d3d3] grid grid-cols-1 lg:grid-cols-3 p-4 lg:gap-3 px-4">
+      <div className="bg-gray-100 grid grid-cols-1 lg:grid-cols-3 p-4 lg:gap-3 px-4">
         <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-center">
           <div className="text-center lg:text-left">
             <div className="text-lg font-bold font-sans">086 101 3481</div>
@@ -115,7 +115,7 @@ export default function NavBar() {
         </div>
       </div>
 
-      <div className="bg-[#d3d3d3] min-h-24 flex flex-wrap items-center justify-between p-2">
+      <div className="bg-gray-100 min-h-24 flex flex-wrap items-center justify-between p-2">
         <div className="flex items-center lg:hidden">
           <button
             className="inline-flex items-center p-2 rounded-lg text-black"
@@ -223,14 +223,14 @@ export default function NavBar() {
           </div>
           <Link
             href="/login"
-            className="font-sans text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-xl"
+            className="font-sans text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
             onClick={handleLinkClick}
           >
             Login
           </Link>
           <Link
             href="/contact"
-            className="font-sans text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-xl"
+            className="font-sans text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
             onClick={handleLinkClick}
           >
             Contact

@@ -18,6 +18,7 @@ const fetchQuote = async (formData: FormData) => {
 
     const result = await response.text();
 
+    console.log("result11", process.env);
     if (!response.ok) {
       throw new Error("Failed to fetch quote");
     }
