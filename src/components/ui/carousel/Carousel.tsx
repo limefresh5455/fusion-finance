@@ -9,7 +9,7 @@ interface Item {
 
 const items: Item[] = [
   {
-    videoUrl: "/Fusion_pics/FF-Update-Team-Web-Ready.jpg",
+    videoUrl: "/Fusion_pics/Fusion Finance Team Update Web-Ready.jpg",
     desc: "Banner Video",
   },
   {
@@ -23,7 +23,7 @@ const items: Item[] = [
 ];
 
 export default function Carousel() {
-  const imageDuration: number = 5000; // 2 seconds for images
+  const imageDuration: number = 3000; // 2 seconds for images
   const videoDuration: number = 38000; // 38 seconds for video
   const [active, setActive] = useState<number>(0);
 
@@ -54,18 +54,27 @@ export default function Carousel() {
               leaveTo="opacity-0 scale-95"
             >
               {index < 2 ? (
-                <div className="w-full h-full overflow-hidden">
+                <div style={{ height: "64vh", objectPosition: "center" }} className="w-full h-full overflow-hidden">
                   <img
                     src={item.videoUrl} // Display image for the first two items
-                    className="h-screen w-full max-w-full object-cover object-top overflow-hidden"
+                    style={{
+                      height: "auto",
+                      width: "100%",
+                      display: "inline-block",
+                    }}
                     alt={item.desc}
                   />
                 </div>
               ) : (
                 <div className="w-full h-full overflow-hidden">
                   <video
+                    style={{
+                      height: "100%",
+                      width: "50%",
+                      display: "inline-block",
+                    }}
                     src={item.videoUrl} // Display video for the last item
-                    className="w-full h-[100vh] object-cover overflow-hidden"
+                    className=""
                     autoPlay
                     muted
                   />

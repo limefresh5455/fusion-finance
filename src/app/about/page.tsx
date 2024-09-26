@@ -4,8 +4,8 @@ import bannerImage from "../../../public/Fusion_pics/FF-Update-Team-Web-Ready.jp
 import marieDaveyImage from "../../../public/Fusion_pics/Marie-Web-Ready-7.jpg";
 import gemmaMaguireImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-1.jpg";
 import missionImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
-import samanthaImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg";
-import catherineImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg";
+import samanthaImage from "../../../public/Fusion_pics/Fusion Finance Web-Ready-29.jpg";
+import catherineImage from "../../../public/Fusion_pics/Fusion Finance Catherine Web-Ready-2.jpg";
 import ImageSlider from "../about/imageslider/imageSlider";
 import "../custom-font.css";
 import "./about.css";
@@ -316,7 +316,7 @@ export default function About() {
         </h2>
 
         <section className="container font-sans flex flex-col-reverse md:flex-row items-start my-10">
-          <div className=" w-full mx-4 px-4 cormorant-infant">
+          <div className="w-full mx-4 px-4 cormorant-infant">
             <Image
               src={marieDaveyImage.src}
               layout="responsive"
@@ -388,7 +388,7 @@ export default function About() {
         </section>
         <hr />
         <section className="container font-sans flex flex-col-reverse md:flex-row items-start my-10">
-          <div className="w-full mx-4 px-4 cormorant-infant">
+          <div className="w-full pr-4 cormorant-infant">
             <Image
               src={gemmaMaguireImage.src}
               layout="responsive"
@@ -408,19 +408,15 @@ export default function About() {
             {/* <p className="text-xl font-semibold mb-4 text-black">
               
             </p> */}
-            <p className="mb-4 text-black text-xl">
-              After completing the graduate Diploma in Financial Planning
-              through University College Dublin, this enabled me to become a
-              Certified Financial Planner. In this ever-changing industry I
-              previously completed Wealth Management, Retirement Planning and
-              Financial Services Diplomas.
-            </p>
+
             <p className="mb-4 text-black text-xl">
               Since joining the financial services industry in 1999, I have
               gained extensive experience in all areas of Financial Planning
               Pension and Wealth Planning along with providing Family and
               Illness Protection solutions for my clients.
             </p>
+
+
             <button
               onClick={handleReadMoreClick2}
               className="text-[#1a584f] text-xl"
@@ -433,10 +429,7 @@ export default function About() {
                   During a consultation meeting we will discuss and identify
                   your goals, establish your priorities and aspirations. We can
                   then assess the options available and put steps in place to
-                  make these a reality.
-                </p>
-                <p className="mb-4 text-black text-xl">
-                  This is to provide a foundation for a more secure financial
+                  make these a reality. This is to provide a foundation for a more secure financial
                   future for you and give you the peace of mind that your
                   priorities will be achieved.
                 </p>
@@ -501,6 +494,51 @@ export default function About() {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
             </p> */}
+          </div>
+        </section>
+        <section className="container font-sans flex flex-col-reverse md:flex-row items-start my-10">
+          <div className="w-full pr-4 cormorant-infant">
+            <Image
+              src={catherineImage.src}
+              layout="responsive"
+              width={150}
+              height={150}
+              alt="partner3"
+              className="rounded-lg gemmaImage pl-5"
+            />
+            <h2 className="text-2xl font-bold text-black">Catherine&apos;s </h2>
+            <p className="text-xl font-semibold text-black">
+              CFP, RPA, QFA, SIA
+            </p>
+            <p className="text-xl font-semibold mb-4 text-black">
+              Certified Financial Planner
+              <br /> <span>Partner Fusion Finance</span>
+            </p>
+
+            <p className="mb-4 text-black text-xl">
+              Catherine Mulcahy has a diverse background in travel and tourism, as well as experience as a personal assistant in a medical practice.  She brings a unique skill set to her Sales Manager Fusion Finance role. Catherines&apos; experience in the travel industry has honed her organisational and customer service skills, allowing her to manage complex itineraries and provide exceptional support to clients.
+            </p>
+
+
+            <button
+              onClick={handleReadMoreClick2}
+              className="text-[#1a584f] text-xl"
+            >
+              ....Read more
+            </button>
+            {showReadMore2 && (
+              <div className="readMore">
+                <p className="mb-4 text-black text-xl">
+                  In the medical field, she developed a keen attention to detail and the ability to handle sensitive information with discretion. She is excited to join the Fusion Finance team, where she aims to leverage her expertise to contribute to a seamless and efficient workflow, ensuring that our clients receive the highest level of service.
+                </p>
+                <p className="mb-4 text-black text-xl">
+                  Catherine is a wife to Peter and a mother to two young children, an adventurous boy and a teddy-obsessed girl.  Working with Fusion Finance has taught her that there is nothing more important than financial security for her family, particularly with her children&apos;s future in mind.  If only the world was flawless as seen through the eyes of children but unfortunately in today&apos;s world the future is very much uncertain.  We need to be proactive in securing a safe future for those we love.
+                </p>
+                <p className="mb-4 text-black text-xl">
+                  “Your Smile is your Logo; your Personality is your business Card”
+                </p>
+              </div>
+            )}
           </div>
         </section>
         <hr />

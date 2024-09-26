@@ -111,6 +111,18 @@
   top: 65%;
 }
 
+.fontSizeInherit {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@media (max-width: 400px) {
+  .customFontSize {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1279px) {
   .postionRelative {
     top: 55%;

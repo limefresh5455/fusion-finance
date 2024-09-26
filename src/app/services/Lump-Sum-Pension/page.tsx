@@ -1,4 +1,5 @@
 import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg";
+import "../services.css"
 
 export default function FutureFunds() {
   return (
@@ -30,10 +31,10 @@ export default function FutureFunds() {
 
       <div className="min-h-screen bg-gray-100">
         <div className="container mx-auto py-12 px-4">
-          <div className="">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-around mb-8">
+          <div className="mt-10">
+            <div className="p-6 border rounded-md border-black shadow-xl flex flex-col lg:flex-row items-center lg:items-start lg:justify-around mb-8">
               <div className="mb-8 lg:w-3/5 lg:me-20">
-                <h2 className="text-3xl font-bold mb-2 font-sans">
+                <h2 className="underline text-3xl font-bold mb-2 font-sans">
                   Lump Sum Pensions
                 </h2>
                 <p className="text-gray-700 cormorant-infant text-xl text-justify">
@@ -52,11 +53,11 @@ export default function FutureFunds() {
                 </p>
               </div>
               <div className="lg:w-2/5 flex flex-col items-center">
-                <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
+                <h1 className="underline cormorant-infant text-xl font-bold mb-2 text-center mb-4">
                   Discover the Benefits of Lump Sum Pensions. Watch our
                   informative video to learn more.
                 </h1>
-                <div style={{ width: "400px", height: "300px" }}>
+                <div className="customClass">
                   <iframe
                     width="100%"
                     height="100%"
@@ -71,9 +72,9 @@ export default function FutureFunds() {
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-around">
+            <div className="mt-20 p-6 border rounded-md border-black shadow-xl flex flex-col lg:flex-row items-center lg:items-start lg:justify-around">
               <div className="mb-4 lg:w-3/5 lg:ms-20 lg:order-2">
-                <h1 className="text-3xl font-bold mb-2 font-sans">
+                <h1 className="underline text-3xl font-bold mb-2 font-sans">
                   Children Education Planning
                 </h1>
                 <p className="text-gray-700 cormorant-infant text-xl text-justify">
@@ -89,11 +90,11 @@ export default function FutureFunds() {
                 </p>
               </div>
               <div className="lg:w-2/5 flex flex-col items-center lg:order-1">
-                <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
+                <h1 className="underline cormorant-infant text-xl font-bold mb-2 text-center mb-4">
                   Explore the Significance of Childrens Education Planning.
                   Learn more by watching our concise video.
                 </h1>
-                <div style={{ width: "400px", height: "300px" }}>
+                <div className="customClass">
                   <iframe
                     width="100%"
                     height="100%"

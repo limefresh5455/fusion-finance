@@ -6,49 +6,49 @@ import "./imageSlider.css";
 const images = [
   {
     src: "/Fusion_pics/not-at-work (1).jpeg",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (2).jpeg",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (3).jpeg",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (4).jpeg",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (5).jpeg",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (6).jpeg",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (7).png",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
     src: "/Fusion_pics/not-at-work (8).png",
-    title: "Image 4 Title",
+    title: "Image Title",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
@@ -56,7 +56,7 @@ const images = [
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth);
   const totalImages = images.length;
   const autoPlayInterval = 5000;
 
@@ -73,7 +73,7 @@ const ImageSlider = () => {
   // Adjust the view for mobile devices
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
+      setIsMobile(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
@@ -92,7 +92,10 @@ const ImageSlider = () => {
 
   // Get the visible images based on the screen size
   const getVisibleImages = () => {
-    const imagesToShow = isMobile ? 1 : 4;
+    const imagesToShow =
+      isMobile > 1023 ? 3 :
+        (isMobile >= 768 ? 2 : 1);
+
     let visibleImages = [];
     for (let i = 0; i < imagesToShow; i++) {
       visibleImages.push(images[(currentIndex + i) % totalImages]);
@@ -111,13 +114,13 @@ const ImageSlider = () => {
       <div className="slider">
         {getVisibleImages().map((image, index) => (
           <div className="slide" key={index}>
-            <div>
+            <div className="fixImageSize">
               <Image
                 src={image.src}
                 alt={`Slide ${index}`}
-                width={500}
-                height={500}
-                className="rounded-lg p-2"
+                width={400}
+                height={400}
+                className="rounded-lg p-2 img"
               />
             </div>
             <div className="imageDetails container">

@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import Carousel from "../../components/ui/carousel/Carousel";
 import Testimonial from "../../components/ui/testimonial/TestimonialSlider";
@@ -111,7 +116,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="min-h-[250px] mt-5 border mx-5 transition-transform duration-300 hover:scale-105 shadow-xl max-w-xs flex flex-col justify-center items-start p-4 rounded-ss-2xl rounded-ee-2xl">
+            <div className="min-h-[250px] mt-5 border sm:mx-5 transition-transform duration-300 hover:scale-105 shadow-xl max-w-xs flex flex-col justify-center items-start p-4 rounded-ss-2xl rounded-ee-2xl">
               <div className="bg-[#1a584f] inline-block p-2 rounded-ss-2xl rounded-ee-2xl mb-auto">
                 <Image
                   src="/experiencee.png"
@@ -158,6 +163,17 @@ export default function Home() {
               with expert QFAs. Please complete this and one of our team will be
               back to you shortly.
             </p>
+
+            <div className="flex justify-center items-center">
+              <button className="mt-10 mx-auto">
+                <Link
+                  href="/contact"
+                  className="font-sans text-black bg-[#5ae9d4] py-2 px-4 rounded-full text-xl"
+                >
+                  Contact us
+                </Link>
+              </button>
+            </div>
           </div>
 
           <div className="w-3/4 container py-10 pb-0 text-center md:text-left px-5">
@@ -168,10 +184,10 @@ export default function Home() {
           <div className="container font-sans flex flex-col lg:flex-row">
             <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="flex flex-col font-sans mt-8">
-                  <h1>MORTGAGE PROTECTION</h1>
-                  <h1>LIFE INSURANCE</h1>
-                  <h1>FAMILY PROTECTION</h1>
+                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
+                  <h1 className="customFontSize sm:text-3xl">MORTGAGE PROTECTION</h1>
+                  <h1 className="customFontSize sm:text-3xl">LIFE INSURANCE</h1>
+                  <h1 className="customFontSize sm:text-3xl">FAMILY PROTECTION</h1>
                 </div>
               </div>
               <Link
@@ -197,10 +213,10 @@ export default function Home() {
 
             <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="flex flex-col mt-8 font-sans">
-                  <h1>INCOME PROTECTION</h1>
-                  <h1>AND SERIOUS ILLNESS</h1>
-                  <h1>PROTECTION</h1>
+                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
+                  <h1 className="customFontSize sm:text-3xl">INCOME PROTECTION</h1>
+                  <h1 className="customFontSize sm:text-3xl">AND SERIOUS ILLNESS</h1>
+                  <h1 className="customFontSize sm:text-3xl">PROTECTION</h1>
                 </div>
               </div>
               <Link
@@ -228,10 +244,10 @@ export default function Home() {
           <div className="container flex flex-col lg:flex-row">
             <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="flex flex-col mt-8 font-sans">
-                  <h1>LUMP SUM PENSIONS</h1>
-                  <h1>AND CHILDREN EDUCATION</h1>
-                  <h1>PLANNING</h1>
+                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
+                  <h1 className="customFontSize sm:text-3xl">LUMP SUM PENSIONS</h1>
+                  <h1 className="customFontSize sm:text-3xl">AND CHILDREN EDUCATION</h1>
+                  <h1 className="customFontSize sm:text-3xl">PLANNING</h1>
                 </div>
               </div>
               <Link
@@ -257,10 +273,10 @@ export default function Home() {
 
             <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="flex flex-col mt-8 font-sans">
-                  <h1>RETIREMENT PLANNING</h1>
-                  <h1>PENSIONS AND</h1>
-                  <h1>LAST MINUTE PENSIONS</h1>
+                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
+                  <h1 className="customFontSize sm:text-3xl">RETIREMENT PLANNING</h1>
+                  <h1 className="customFontSize sm:text-3xl">PENSIONS AND</h1>
+                  <h1 className="customFontSize sm:text-3xl">LAST MINUTE PENSIONS</h1>
                 </div>
               </div>
               <Link
@@ -306,21 +322,10 @@ export default function Home() {
         </div>
 
         {/* Footer Section */}
-        <div className="bg-[#1a584f] pb-5 pt-5">
-          <h1 className="text-white container text-[#1a584f] text-center text-4xl font-bold font-sans underline">
-            Why work with us?
-          </h1>
-
+        {/* <div className="bg-[#1a584f] pb-5 pt-5">
           <div className="text-center flex flex-col lg:flex-row justify-center align-center">
-
-            <div className="flex justify-center items-center p-4">
-              <h2 className="text-white container text-[#1a584f] text-center text-3xl font-bold font-sans underline mt-4">
-                At a glance
-              </h2>
-            </div>
-
             <div className="container flex flex-col sm:flex-row justify-evenly items-center flex-wrap ">
-              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] border rounded flex flex-col justify-center items-left p-4">
+              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
                 <Image
                   src="/Fusion_icon_services.png"
                   width={70}
@@ -336,7 +341,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-3 mx-2 text-center rounded min-w-[240px] max-w-[250px] min-h-[220px] border flex flex-col justify-center items-left p-4">
+              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
                 <Image
                   src="/Fusion_icon_knowledge.png"
                   width={70}
@@ -352,7 +357,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-3 mx-2 rounded text-center border min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
+              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
                 <Image
                   src="/Fusion_icon_advisor.png"
                   width={100}
@@ -369,7 +374,72 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div> */}
 
+        <div className="bg-[#1a584f] pb-5 pt-5">
+          <div className="text-center flex flex-col lg:flex-row justify-center align-center">
+            <div className="container flex flex-col sm:flex-row justify-evenly items-center flex-wrap ">
+              <div className="pt-5 mx-2 text-center min-w-[220px] max-w-[620px] min-h-[100px] flex justify-start flex-col sm:flex-row lg:justify-center flex-wrap p-4">
+                <div className="my-3 sm:mx-2">
+                  <Image
+                    src="/Fusion_icon_services.png"
+                    width={70}
+                    height={50}
+                    alt="services"
+                    className="mx-auto"
+                  />
+                </div>
+                <div>
+                  <div className="text-white text-2xl font-bold font-sans mt-2">
+                    Financial Services
+                  </div>
+                  <div className="text-white cormorant-infant text-3xl font-bold">
+                    For Everyone
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-5 mx-2 text-center min-w-[220px] max-w-[620px] min-h-[100px] flex justify-start flex-col sm:flex-row lg:justify-center flex-wrap p-4">
+                <div className="sm:mx-2 my-3 flex justify-center">
+                  <Image
+                    src="/Fusion_icon_knowledge.png"
+                    width={70}
+                    height={50}
+                    alt="knowledge"
+                    className="mx-auto"
+                  />
+                </div>
+                <div>
+                  <div className="text-white text-2xl font-bold font-sans mt-2">
+                    With A Wealth Of Agnostic
+                  </div>
+                  <div className="text-white text-3xl font-bold cormorant-infant">
+                    Industry Knowledge
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-5 mx-2 text-center min-w-[220px] max-w-[620px] min-h-[100px] flex justify-start flex-col sm:flex-row lg:justify-center flex-wrap p-4">
+                <div className="my-3 sm:mx-2 flex justify-center">
+                  <Image
+                    src="/Fusion_icon_advisor.png"
+                    width={100}
+                    height={50}
+                    alt="advisor"
+                    className="mx-auto"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <div className="text-white text-2xl font-bold font-sans mt-2">
+                    Here To Be Your
+                  </div>
+                  <div className="text-white text-3xl font-bold cormorant-infant">
+                    Trusted Advisor
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </main>

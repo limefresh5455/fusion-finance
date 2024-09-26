@@ -20,7 +20,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   border: none;
   padding: 10px;
@@ -33,11 +33,11 @@
 }
 
 .slider-button.left {
-  left: 0;
+  left: 48px;
 }
 
 .slider-button.right {
-  right: 0;
+  right: 54px;
 }
 
 .imageDetails {
@@ -49,6 +49,40 @@
   text-decoration: underline !important;
 }
 
+.img {
+  width: 100% !important;
+  height: 400px !important;
+  object-fit: cover;
+  /* or 'contain' based on your preference */
+}
+
+.fixImageSize {
+  width: 400px !important;
+  height: 400px !important;
+  overflow: hidden;
+  padding: 40px;
+  /* Optional, to hide overflow if needed */
+}
+
+
+/* @media (max-width: 1440px) {
+  .slider-button.right {
+    right: 54px;
+  }
+} */
+
+@media (min-width: 767px) and (max-width: 1279px) {
+  .slider-button.right {
+    right: 0;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .slider-button.right {
+    right: 0px;
+  }
+}
+
 @media (max-width: 767px) {
   .slider {
     display: block;
@@ -56,5 +90,13 @@
 
   .slide {
     width: 100%;
+  }
+
+  .fixImageSize {
+    padding-left: 0;
+  }
+
+  .slider-button.left {
+    left: 7px;
   }
 }

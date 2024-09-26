@@ -92,6 +92,7 @@ export default function Contact() {
                   className="rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 max-h-[500px]"
                 />
               </div>
+
               <div className="w-full lg:w-1/2 mt-8 lg:mt-0 flex items-center">
                 <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
                   <h2 className="underline text-2xl font-bold mb-4 text-center text-[#1a584f]">

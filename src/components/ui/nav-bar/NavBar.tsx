@@ -44,12 +44,20 @@ export default function NavBar() {
           </div>
         </div>
         <div className="flex justify-center items-center my-6">
-          <Image
-            src="/logo variants/fusion deepgreen.svg"
-            width={200}
-            height={200}
-            alt="logo"
-          />
+          <Link
+            href="/"
+            className={`${isActive("/") ? "text-[#1a584f]" : "text-black"
+              } font-sans m-4 text-2xl`}
+            onClick={handleLinkClick}
+          >
+            <Image
+              src="/logo variants/fusion deepgreen.svg"
+              width={200}
+              height={200}
+              alt="logo"
+            />
+          </Link>
+
         </div>
         <div className="flex justify-center lg:justify-end items-center space-x-2 lg:space-x-4">
           <a
