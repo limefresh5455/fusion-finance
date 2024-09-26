@@ -56,7 +56,7 @@ const images = [
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(0);
   const totalImages = images.length;
   const autoPlayInterval = 5000;
 
