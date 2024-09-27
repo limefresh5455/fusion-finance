@@ -25,3 +25,17 @@
 .underline {
   text-decoration: underline !important;
 }
+
+
+@media (min-width: 1024px) {
+  .bannerClass {
+    padding: 0 !important;
+    background-size: contain !important
+  }
+}
+
+@media (min-width: 1280px) {
+  .bannerClass {
+    background-size: contain !important
+  }
+}

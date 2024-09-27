@@ -161,14 +161,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  /* .video-container {
-    position: relative;
-    height: 31vh;
-    overflow: hidden;
-  } */
-
-  .video {
-    position: sticky;
-    top: 10vh;
+  .video-container {
+    min-height: 300px;
   }
+
+  
 }

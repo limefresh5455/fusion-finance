@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
+import "./carousel.css"
 
 interface Item {
   videoUrl: string;
@@ -61,6 +62,7 @@ export default function Carousel() {
                       height: "auto",
                       width: "100%",
                       display: "inline-block",
+                      objectFit: "contain"
                     }}
                     alt={item.desc}
                   />
@@ -74,7 +76,7 @@ export default function Carousel() {
                       display: "inline-block",
                     }}
                     src={item.videoUrl} // Display video for the last item
-                    className=""
+                    className="padd"
                     autoPlay
                     muted
                   />

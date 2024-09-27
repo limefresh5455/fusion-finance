@@ -16,9 +16,7 @@ export default function Home() {
     <div className="min-h-screen">
       <main className="paddng">
         <div className="video-container" >
-          <div className="video">
-            <Carousel />
-          </div>
+          <Carousel />
         </div >
 
         {/* <section
@@ -94,7 +92,7 @@ export default function Home() {
       </main >
 
       <main>
-        <div className="pb-5 pt-5">
+        <div className="pb-5 pt-5 md:pt-14 md:pb-10">
           <h1 className="container text-[#1a584f] text-center text-4xl font-bold font-sans underline">
             Why work with us?
           </h1>

@@ -7,22 +7,22 @@ export default function FutureFunds() {
       <div className="w-full text-center items-center justify-center">
         <div
           id="banner-area"
-          className="banner-area"
+          className="banner-area bannerClass"
           style={{
             backgroundImage: `url(${bannerImage.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 30%",
+            // backgroundSize: "cover",
+            backgroundPosition: "center",
+            width: "100%",
+            height: "100%",
+            backgroundSize: "100%",
             backgroundRepeat: "no-repeat",
-            minHeight: "500px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            padding: "19% 0"
           }}
         >
           <div className="container mx-auto px-4">
             <div className="row flex flex-wrap">
               <div className="col-xs-12 w-full">
-                <div className="banner-heading pt-24 w-full text-white flex flex-col justify-center items-center content-center min-h-[500px]"></div>
+                <div className="banner-heading w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[420px]"></div>
               </div>
             </div>
           </div>

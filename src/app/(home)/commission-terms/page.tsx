@@ -1,5 +1,8 @@
 import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg";
 import "../../custom-font.css";
+import "./commission.css"
+
+
 export default function CommissionTerms() {
   return (
     <>
@@ -7,22 +10,27 @@ export default function CommissionTerms() {
         <div className="w-full text-center items-center justify-center">
           <div
             id="banner-area"
-            className="banner-area"
+            className="banner-area bannerImageClass"
             style={{
               background: `url(${bannerImage.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "top center",
+              // backgroundSize: "cover",
+              // backgroundPosition: "top center",
+              // backgroundRepeat: "no-repeat",
+              // minHeight: "500px",
+              // display: "flex",
+              // justifyContent: "center",
+              // alignItems: "center",
+              width: "100%",
+              height: "100%",
+              backgroundSize: "100%",
               backgroundRepeat: "no-repeat",
-              minHeight: "500px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              padding: "19% 0"
             }}
           >
             <div className="container mx-auto px-4">
               <div className="row flex flex-wrap">
                 <div className="col-xs-12 w-full">
-                  <div className="banner-heading pt-24 w-full text-white flex flex-col justify-center items-center content-center min-h-[500px]"></div>
+                  <div className="banner-heading pt-0 w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[500px]"></div>
                 </div>
               </div>
             </div>
@@ -296,3 +304,4 @@ export default function CommissionTerms() {
     </>
   );
 }
+

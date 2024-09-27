@@ -1,39 +1,5 @@
-@media (min-width: 1920px) {
-  /* Adjust breakpoint as needed */
-  #image-size {
-    height: "full"; /* Can be kept as rem for large screens if needed */
-    width: "full"; /* Set width to 'full' for large screens */
-  }
-}
-
-@media (min-width: 1200px) {
-  /* Adjust breakpoint as needed */
-  #image-size {
-    height: "full"; /* Use em or rem for better responsiveness */
-    width: "full"; /* Set width to 'full' for medium screens */
-  }
-}
-
-@media (min-width: 768px) {
-  /* Adjust breakpoint as needed */
-  #image-size {
-    height: "full"; /* Adjust height as needed for smaller screens */
-    width: "screen"; /* Set width to 'full' for small screens */
-  }
-}
-
-@media (min-width: 2560px) {
-  /* Added media query for wider screens */
-  #image-size {
-    height: "full"; /* Adjust height as needed for larger screens */
-    width: "full"; /* Set width to 'full' for very large screens */
-  }
-}
-
-@media (min-width: 2880px) {
-  /* Added media query for 5k screens */
-  #image-size {
-    height: "full"; /* Adjust height as needed for 5k screens */
-    width: "full"; /* Set width to 'full' for 5k screens */
+@media (max-width: 767px) {
+  .padd {
+    padding-top: 80px;
   }
 }

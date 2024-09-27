@@ -70,7 +70,7 @@ export default function Services() {
         <div className="font-sans flex flex-col lg:flex-row">
           <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
-              <div className="flex flex-col font-sans mt-8">
+              <div className="flex flex-col font-sans mt-3 sm:mt-6">
                 <h1>MORTGAGE PROTECTION</h1>
                 <h1>LIFE INSURANCE</h1>
                 <h1>FAMILY PROTECTION</h1>
@@ -99,7 +99,7 @@ export default function Services() {
 
           <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
-              <div className="flex flex-col mt-8 font-sans">
+              <div className="flex flex-col mt-6 font-sans">
                 <h1>INCOME PROTECTION</h1>
                 <h1>AND SERIOUS ILLNESS</h1>
                 <h1>PROTECTION</h1>
@@ -130,7 +130,7 @@ export default function Services() {
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
-              <div className="flex flex-col mt-8 font-sans">
+              <div className="flex flex-col mt-6 font-sans">
                 <h1>LUMP SUM PENSIONS</h1>
                 <h1>AND CHILDREN EDUCATION</h1>
                 <h1>PLANNING</h1>
@@ -159,7 +159,7 @@ export default function Services() {
 
           <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
-              <div className="flex flex-col mt-8 font-sans">
+              <div className="flex flex-col mt-6 font-sans">
                 <h1>RETIREMENT PLANNING</h1>
                 <h1>PENSIONS AND</h1>
                 <h1>LAST MINUTE PENSIONS</h1>

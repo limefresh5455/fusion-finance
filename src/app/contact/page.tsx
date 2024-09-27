@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-37.jpg";
 import contactImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-35.jpg";
+import "./contact.css"
 
 export default function Contact() {
   const [fullName, setFullName] = useState("");
@@ -64,19 +65,22 @@ export default function Contact() {
       <main>
         <div
           id="banner-area"
-          className="banner-area"
+          className="banner-area bannerClass"
           style={{
             background: `url(${bannerImage.src})`,
-            backgroundSize: "cover",
+            // backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "brightness(0.7)",
-            color: "#fff",
+            width: "100%",
+            height: "100%",
+            backgroundSize: "100%",
+            backgroundRepeat: "no-repeat",
+            padding: "19% 0"
           }}
         >
           <div className="font-sans container mx-auto px-4">
             <div className="row flex flex-wrap">
               <div className="col-xs-12 w-full">
-                <div className="banner-heading pt-24 w-full flex flex-col justify-center items-center content-center min-h-[500px]"></div>
+                <div className="banner-heading w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[420px]"></div>
               </div>
             </div>
           </div>

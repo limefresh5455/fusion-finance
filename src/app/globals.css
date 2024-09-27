@@ -64,16 +64,17 @@
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
   }
+
   @font-face {
     font-family: "Brandon Grotesque";
     src: url("../../public/fonts/Brandon_bld.otf") format("opentype");
     /* Add more font formats if needed */
     /* Specify the path to the font files relative to the root directory */
   }
+
   @font-face {
     font-family: "Shadows Into Light";
-    src: url("../../public/fonts/ShadowsIntoLight-Regular.ttf")
-      format("truetype");
+    src: url("../../public/fonts/ShadowsIntoLight-Regular.ttf") format("truetype");
     /* Add more font formats if needed */
     /* Specify the path to the font files relative to the root directory */
   }
@@ -83,6 +84,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground min-h-full;
   }

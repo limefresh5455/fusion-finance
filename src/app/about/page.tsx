@@ -28,17 +28,22 @@ export default function About() {
         <div className="w-full text-center font-sans items-center justify-center">
           <div
             id="banner-area"
-            className="banner-area"
+            className="banner-area bannerClass"
             style={{
               background: `url(${bannerImage.src})`,
-              backgroundSize: "cover",
+              // backgroundSize: "cover",
               backgroundPosition: "center",
+              width: "100%",
+              height: "100%",
+              backgroundSize: "100%",
+              backgroundRepeat: "no-repeat",
+              padding: "19% 0"
             }}
           >
             <div className="container mx-auto px-4">
               <div className="row flex flex-wrap">
                 <div className="col-xs-12 w-full">
-                  <div className="banner-heading pt-24 w-full text-white flex flex-col justify-center items-center content-center min-h-[500px]"></div>
+                  <div className="banner-heading w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[420px]"></div>
                 </div>
               </div>
             </div>
@@ -450,7 +455,7 @@ export default function About() {
           </div>
         </section>
         <hr />
-        <div className="container mb-10">
+        <div className="bg-gray-100 container mb-10">
           <ImageSlider />
         </div>
         <hr />
@@ -465,11 +470,8 @@ export default function About() {
               className="rounded-lg samanthaImage pl-5"
             />
             <h2 className="text-2xl font-bold text-black">Samantha</h2>
-            <p className="text-xl font-semibold text-black">
-              CFP, RPA, QFA, SIA
-            </p>
             <p className="text-xl font-semibold mb-4 text-black">
-              Partner Fusion Finance
+              Sales Manager
             </p>
             <p className="mb-4 text-black text-xl">
               Samantha joined Fusion Finance early in 2017. She is a fantastic
@@ -507,12 +509,8 @@ export default function About() {
               className="rounded-lg gemmaImage pl-5"
             />
             <h2 className="text-2xl font-bold text-black">Catherine&apos;s </h2>
-            <p className="text-xl font-semibold text-black">
-              CFP, RPA, QFA, SIA
-            </p>
             <p className="text-xl font-semibold mb-4 text-black">
-              Certified Financial Planner
-              <br /> <span>Partner Fusion Finance</span>
+              Sales Manager
             </p>
 
             <p className="mb-4 text-black text-xl">

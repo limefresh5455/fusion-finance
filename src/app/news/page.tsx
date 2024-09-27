@@ -7,6 +7,8 @@ import blogImage1 from "../../../public/Fusion_pics/Award-Brokers-Ireland.jpg";
 import blogImage2 from "../../../public/Fusion_pics/Cancer.png";
 import blogImage3 from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-45.jpg";
 import blogImage4 from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg";
+import blogImage5 from "../../../public/Fusion_pics/Ironman703.png";
+import "./news.css"
 
 export default function News() {
   const [showReadMore, setShowReadMore] = useState(false);
@@ -26,33 +28,82 @@ export default function News() {
     setShowReadMore4(!showReadMore4);
   };
 
+  const [showReadMore5, setShowReadMore5] = useState(false);
+  const handleReadMoreClick5 = () => {
+    setShowReadMore5(!showReadMore5);
+  };
+
   return (
     <>
       <main className="font-sans flex min-h-screen flex-col items-center">
+
         <div className="w-full text-center items-center justify-center">
           <div
             id="banner-area"
-            className="banner-area"
+            className="banner-area bannerClass"
             style={{
               background: `url(${bannerImage.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center 40%",
+              // backgroundSize: "cover",
+              backgroundPosition: "center",
+              width: "100%",
+              height: "100%",
+              backgroundSize: "100%",
               backgroundRepeat: "no-repeat",
-              minHeight: "500px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              padding: "19% 0"
             }}
           >
             <div className="container mx-auto px-4">
               <div className="row flex flex-wrap">
                 <div className="col-xs-12 w-full">
-                  <div className="banner-heading pt-24 w-full text-white flex flex-col justify-center items-center content-center min-h-[500px]"></div>
+                  <div className="banner-heading w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[420px]"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="w-full max-w-6xl mx-auto my-5 p-4 bg-white rounded-lg shadow-md">
+          <div className="relative">
+            <div
+              className="w-full h-64 bg-cover bg-center rounded-t-lg"
+              style={{
+                backgroundImage: `url(${blogImage5.src})`,
+                backgroundPosition: "center",
+                minHeight: "600px",
+              }}
+            ></div>
+          </div>
+
+          <div className="p-4 bg-[#d3d3d3]">
+            <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
+              Ironman 70.3 Italy Emilia-Romagna Finisher!
+            </h2>
+            <div className="blogDescription cormorant-infant text-xl">
+              <p className="mt-4 text-gray-700">
+                We&apos;re thrilled to announce that Gemma has successfully completed the Ironman 70.3 Italy Emilia-Romagna! This incredible feat of endurance, featuring a swim in the Adriatic Sea, a bike ride through the scenic Emilia-Romagna countryside, and a run in the charming town of Cervia
+                Congratulations, such a great accomplishment.
+
+                {/* <button
+                  onClick={handleReadMoreClick5}
+                  className="text-[#1a584f]"
+                >
+                  ....Read more
+                </button> */}
+              </p>
+              {showReadMore5 && (
+                <div className="readMore">
+                  <p className="mt-4 text-gray-700">
+                    Our Commitment to Excellence <br />
+                    This nomination further fuels our commitment to delivering the highest level of service and exceeding expectations. We believe that strong client relationships, transparent communication, and a deep understanding of the ever-evolving financial landscape are the cornerstones of success.
+
+                    We extend our sincere gratitude to our clients, partners, and colleagues for their continued support and trust. Your confidence in us is what drives us to continually improve and strive for excellence.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <hr />
 
         <div className="w-full max-w-6xl mx-auto my-5 p-4 bg-white rounded-lg shadow-md">
           <div className="relative">
@@ -65,16 +116,8 @@ export default function News() {
               }}
             ></div>
           </div>
+
           <div className="p-4 bg-[#d3d3d3]">
-            {/* <p className="text-lg text-black cormorant-infant">
-              By: Fusion Finance
-            </p> */}
-            {/* <p className="text-black cormorant-infantc text-lg">
-              Category:
-              <span className="ml-1 text-[#1a584f]">
-                Blog, Financial Planning, Illness Cover, Income Protection, News
-              </span>
-            </p> */}
             <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
               Awards Nominated for Brokers Ireland
             </h2>
@@ -102,7 +145,9 @@ export default function News() {
             </div>
           </div>
         </div>
+
         <hr />
+
         <div className="w-full max-w-6xl mx-auto my-0 p-4 bg-white rounded-lg shadow-md">
           <div className="relative">
             <div
