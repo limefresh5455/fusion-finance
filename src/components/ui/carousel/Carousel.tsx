@@ -25,8 +25,7 @@ const items: Item[] = [
 
 export default function Carousel() {
   const imageDuration: number = 5000; // 2 seconds for images
-  // const videoDuration: number = 97000; // 38 seconds for video
-  const videoDuration: number = 3000; // 38 seconds for video
+  const videoDuration: number = 97000; // 38 seconds for video
   const [active, setActive] = useState<number>(0);
 
   useEffect(() => {
