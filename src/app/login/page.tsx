@@ -19,7 +19,7 @@ export default function Login() {
 
             <div className="loginForm mx-auto">
               <iframe
-className="iframe"
+                className="iframe"
                 src="https://www.bis-platform.com/ob/p_web_portal_new.php?style_id=5875"
                 title="BIS Platform"
               />

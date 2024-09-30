@@ -10,6 +10,10 @@ interface Item {
 
 const items: Item[] = [
   {
+    videoUrl: "/Fusion_pics/Fusion_Finance_Video.mp4",
+    desc: "Banner Video",
+  },
+  {
     videoUrl: "/Fusion_pics/Fusion Finance Team Update Web-Ready.jpg",
     desc: "Banner Video",
   },
@@ -17,15 +21,12 @@ const items: Item[] = [
     videoUrl: "/Fusion_pics/Fusion-Finance-about-banner.jpg",
     desc: "Banner Video",
   },
-  {
-    videoUrl: "/Fusion_pics/Fusion_Finance_Video_cropped.mp4",
-    desc: "Banner Video",
-  },
 ];
 
 export default function Carousel() {
-  const imageDuration: number = 3000; // 2 seconds for images
-  const videoDuration: number = 38000; // 38 seconds for video
+  const imageDuration: number = 5000; // 2 seconds for images
+  // const videoDuration: number = 97000; // 38 seconds for video
+  const videoDuration: number = 3000; // 38 seconds for video
   const [active, setActive] = useState<number>(0);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function Carousel() {
       () => {
         setActive((prevActive) => (prevActive + 1) % items.length); // Cycle through items
       },
-      active < 2 ? imageDuration : videoDuration
+      active === 0 ? videoDuration : imageDuration
     ); // Use different duration based on active index
 
     return () => clearTimeout(timer); // Cleanup on unmount
@@ -54,7 +55,7 @@ export default function Carousel() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              {index < 2 ? (
+              {index !== 0 ? (
                 <div style={{ height: "64vh", objectPosition: "center" }} className="w-full h-full overflow-hidden">
                   <img
                     src={item.videoUrl} // Display image for the first two items
