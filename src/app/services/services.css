@@ -45,6 +45,25 @@
   width: 400px;
 }
 
+
+@media (max-width: 767px) {
+  .bannerClass {
+    height: auto !important;
+    background-position: center;
+    padding: 22% 0;
+  }
+
+  #button {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bannerClass {
+    padding: 30% 0;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .customClass {
     height: 200px;
@@ -52,13 +71,14 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  #button {
-    margin-top: 10rem;
+@media (max-width: 368px) {
+  .customFontSize {
+    font-size: 20px !important;
+    font-weight: 600 !important;
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .bannerClass {
     padding: 0 !important;
     background-size: contain !important
@@ -69,4 +89,4 @@
   .bannerClass {
     background-size: contain !important
   }
-}
+} */

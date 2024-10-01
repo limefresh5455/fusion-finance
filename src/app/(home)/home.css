@@ -116,9 +116,9 @@
   font-weight: inherit;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 368px) {
   .customFontSize {
-    font-size: 16px !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
   }
 }
@@ -164,6 +164,4 @@
   .video-container {
     min-height: 300px;
   }
-
-  
 }

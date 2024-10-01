@@ -68,12 +68,12 @@ export default function Services() {
         </div> */}
 
         <div className="font-sans flex flex-col lg:flex-row">
-          <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+          <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
               <div className="flex flex-col font-sans mt-3 sm:mt-6">
-                <h1>MORTGAGE PROTECTION</h1>
-                <h1>LIFE INSURANCE</h1>
-                <h1>FAMILY PROTECTION</h1>
+                <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
+                <h1 className="customFontSize">LIFE INSURANCE</h1>
+                <h1 className="customFontSize">FAMILY PROTECTION</h1>
               </div>
             </div>
             <Link
@@ -97,12 +97,12 @@ export default function Services() {
             />
           </div>
 
-          <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+          <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
               <div className="flex flex-col mt-6 font-sans">
-                <h1>INCOME PROTECTION</h1>
-                <h1>AND SERIOUS ILLNESS</h1>
-                <h1>PROTECTION</h1>
+                <h1 className="customFontSize">INCOME PROTECTION</h1>
+                <h1 className="customFontSize">AND SERIOUS ILLNESS</h1>
+                <h1 className="customFontSize">PROTECTION</h1>
               </div>
             </div>
             <Link
@@ -128,12 +128,12 @@ export default function Services() {
         </div>
 
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+          <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
               <div className="flex flex-col mt-6 font-sans">
-                <h1>LUMP SUM PENSIONS</h1>
-                <h1>AND CHILDREN EDUCATION</h1>
-                <h1>PLANNING</h1>
+                <h1 className="customFontSize">LUMP SUM PENSIONS</h1>
+                <h1 className="customFontSize">AND CHILDREN EDUCATION</h1>
+                <h1 className="customFontSize">PLANNING</h1>
               </div>
             </div>
             <Link
@@ -145,7 +145,7 @@ export default function Services() {
               {">"}
             </Link>
             <Image
-              src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
+              src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
               width={600}
               height={600}
               alt="service1"
@@ -157,12 +157,12 @@ export default function Services() {
             />
           </div>
 
-          <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+          <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
               <div className="flex flex-col mt-6 font-sans">
-                <h1>RETIREMENT PLANNING</h1>
-                <h1>PENSIONS AND</h1>
-                <h1>LAST MINUTE PENSIONS</h1>
+                <h1 className="customFontSize">RETIREMENT PLANNING</h1>
+                <h1 className="customFontSize">PENSIONS AND</h1>
+                <h1 className="customFontSize">LAST MINUTE PENSIONS</h1>
               </div>
             </div>
             <Link

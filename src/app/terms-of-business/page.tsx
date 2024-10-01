@@ -1,4 +1,4 @@
-import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-37.jpg";
+import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg";
 import "./terms.css"
 
 export default function TermsOfBusiness() {
@@ -8,16 +8,20 @@ export default function TermsOfBusiness() {
         <div className="w-full text-center items-center justify-center">
           <div
             id="banner-area"
-            className="banner-area bannerClass"
+            className="banner-area TermsOfBusinessbannerClass"
             style={{
               background: `url(${bannerImage.src})`,
               // backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "100%",
-              height: "100%",
+              // backgroundPosition: "center",
+              // height: "100%",
+              // backgroundSize: "100%",
+              // padding: "19% 0"
               backgroundSize: "100%",
+              width: "100%",
               backgroundRepeat: "no-repeat",
-              padding: "19% 0"
+              height: "60vh",
+              backgroundPosition: "center",
+              padding: "17% 0"
             }}
           >
             <div className="container mx-auto px-4">

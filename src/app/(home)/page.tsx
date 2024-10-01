@@ -7,6 +7,7 @@ import Image from "next/image";
 import Carousel from "../../components/ui/carousel/Carousel";
 import Testimonial from "../../components/ui/testimonial/TestimonialSlider";
 import missionImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
+import scheduleConsultationImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-37.jpg";
 import Link from "next/link";
 import "../services/services.css";
 import "../custom-font.css";
@@ -151,26 +152,38 @@ export default function Home() {
         </div>
 
         <div className="bg-[#fff]">
-          <div className="w-3/4 container py-10 pb-6 text-center md:text-left px-5">
-            <h1 className="underline lg:text-4xl text-2xl text-center font-bold font-sans">
-              Schedule your free consultation
-            </h1>
-            <p className="mt-4 cormorant-infant text-xl text-center">
-              We understand you may want to speak directly with us to get all
-              your questions answered. We offer free one-to-one consultations
-              with expert QFAs. Please complete this and one of our team will be
-              back to you shortly.
-            </p>
+          <div className="container py-10 pb-6 text-center md:text-left px-5">
+            <div className="flex flex-wrap md:flex-nowrap">
+              <div className="flex justify-center align-center mx-10 mb-10 ">
+                <img
+                  src={scheduleConsultationImage.src}
+                  alt="Login"
+                  className="max-w-full rounded-lg"
+                />
+              </div>
 
-            <div className="flex justify-center items-center">
-              <button className="mt-10 mx-auto">
-                <Link
-                  href="/contact"
-                  className="font-sans text-black bg-[#5ae9d4] py-2 px-4 rounded-full text-xl"
-                >
-                  Contact us
-                </Link>
-              </button>
+              <div>
+                <h1 className="underline lg:text-4xl text-2xl text-center font-bold font-sans">
+                  Schedule your free consultation
+                </h1>
+                <p className="mt-4 cormorant-infant text-xl text-center">
+                  We understand you may want to speak directly with us to get all
+                  your questions answered. We offer free one-to-one consultations
+                  with expert QFAs. Please complete this and one of our team will be
+                  back to you shortly.
+                </p>
+
+                <div className="flex justify-center items-center">
+                  <button className="mt-10 mx-auto">
+                    <Link
+                      href="/contact"
+                      className="font-sans text-black bg-[#5ae9d4] py-2 px-4 rounded-full text-xl"
+                    >
+                      Contact us
+                    </Link>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -179,13 +192,14 @@ export default function Home() {
               Our Services
             </h1>
           </div>
-          <div className="container font-sans flex flex-col lg:flex-row">
-            <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+
+          <div className="font-sans flex flex-col lg:flex-row">
+            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
-                  <h1 className="customFontSize sm:text-3xl">MORTGAGE PROTECTION</h1>
-                  <h1 className="customFontSize sm:text-3xl">LIFE INSURANCE</h1>
-                  <h1 className="customFontSize sm:text-3xl">FAMILY PROTECTION</h1>
+                <div className="flex flex-col font-sans mt-3 sm:mt-6">
+                  <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
+                  <h1 className="customFontSize">LIFE INSURANCE</h1>
+                  <h1 className="customFontSize">FAMILY PROTECTION</h1>
                 </div>
               </div>
               <Link
@@ -204,17 +218,17 @@ export default function Home() {
                 style={{
                   borderRadius: "5rem",
                   objectFit: "contain",
-                  margin: "2em",
+                  margin: "3em",
                 }}
               />
             </div>
 
-            <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
-                  <h1 className="customFontSize sm:text-3xl">INCOME PROTECTION</h1>
-                  <h1 className="customFontSize sm:text-3xl">AND SERIOUS ILLNESS</h1>
-                  <h1 className="customFontSize sm:text-3xl">PROTECTION</h1>
+                <div className="flex flex-col mt-6 font-sans">
+                  <h1 className="customFontSize">INCOME PROTECTION</h1>
+                  <h1 className="customFontSize">AND SERIOUS ILLNESS</h1>
+                  <h1 className="customFontSize">PROTECTION</h1>
                 </div>
               </div>
               <Link
@@ -229,23 +243,23 @@ export default function Home() {
                 src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
                 width={600}
                 height={600}
-                alt="service2"
+                alt="service1"
                 style={{
                   borderRadius: "5rem",
                   objectFit: "contain",
-                  margin: "2em",
+                  margin: "3em",
                 }}
               />
             </div>
           </div>
 
-          <div className="container flex flex-col lg:flex-row">
-            <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+          <div className="flex flex-col lg:flex-row">
+            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
-                  <h1 className="customFontSize sm:text-3xl">LUMP SUM PENSIONS</h1>
-                  <h1 className="customFontSize sm:text-3xl">AND CHILDREN EDUCATION</h1>
-                  <h1 className="customFontSize sm:text-3xl">PLANNING</h1>
+                <div className="flex flex-col mt-6 font-sans">
+                  <h1 className="customFontSize">LUMP SUM PENSIONS</h1>
+                  <h1 className="customFontSize">AND CHILDREN EDUCATION</h1>
+                  <h1 className="customFontSize">PLANNING</h1>
                 </div>
               </div>
               <Link
@@ -257,24 +271,24 @@ export default function Home() {
                 {">"}
               </Link>
               <Image
-                src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
+                src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
                 width={600}
                 height={600}
-                alt="service3"
+                alt="service1"
                 style={{
                   borderRadius: "5rem",
                   objectFit: "contain",
-                  margin: "2em",
+                  margin: "3em",
                 }}
               />
             </div>
 
-            <div className="flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
+            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
               <div id="textBox">
-                <div className="customMargin flex flex-col font-sans mt-5 sm:mt-8">
-                  <h1 className="customFontSize sm:text-3xl">RETIREMENT PLANNING</h1>
-                  <h1 className="customFontSize sm:text-3xl">PENSIONS AND</h1>
-                  <h1 className="customFontSize sm:text-3xl">LAST MINUTE PENSIONS</h1>
+                <div className="flex flex-col mt-6 font-sans">
+                  <h1 className="customFontSize">RETIREMENT PLANNING</h1>
+                  <h1 className="customFontSize">PENSIONS AND</h1>
+                  <h1 className="customFontSize">LAST MINUTE PENSIONS</h1>
                 </div>
               </div>
               <Link
@@ -289,11 +303,11 @@ export default function Home() {
                 src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
                 width={600}
                 height={600}
-                alt="service4"
+                alt="service1"
                 style={{
                   borderRadius: "5rem",
                   objectFit: "contain",
-                  margin: "2em",
+                  margin: "3em",
                 }}
               />
             </div>

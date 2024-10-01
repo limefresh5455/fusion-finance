@@ -11,12 +11,16 @@ export default function FutureFunds() {
           style={{
             backgroundImage: `url(${bannerImage.src})`,
             // backgroundSize: "cover",
-            backgroundPosition: "center",
-            width: "100%",
-            height: "100%",
+            // backgroundSize: "cover",
+            // backgroundPosition: "center",
+            // height: "100%",
+            // backgroundSize: "100%",
+            // padding: "19% 0"
             backgroundSize: "100%",
+            width: "100%",
             backgroundRepeat: "no-repeat",
-            padding: "19% 0"
+            height: "100vh",
+            backgroundPosition: "center"
           }}
         >
           <div className="container mx-auto px-4">
@@ -53,7 +57,7 @@ export default function FutureFunds() {
                 </p>
               </div>
               <div className="lg:w-2/5 flex flex-col items-center">
-                <h1 className="underline cormorant-infant text-xl font-bold mb-2 text-center mb-4">
+                <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
                   Discover the Benefits of Lump Sum Pensions. Watch our
                   informative video to learn more.
                 </h1>
@@ -90,7 +94,7 @@ export default function FutureFunds() {
                 </p>
               </div>
               <div className="lg:w-2/5 flex flex-col items-center lg:order-1">
-                <h1 className="underline cormorant-infant text-xl font-bold mb-2 text-center mb-4">
+                <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
                   Explore the Significance of Childrens Education Planning.
                   Learn more by watching our concise video.
                 </h1>

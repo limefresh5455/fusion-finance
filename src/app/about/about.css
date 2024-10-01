@@ -26,8 +26,25 @@
   text-decoration: underline !important;
 }
 
+@media (max-width: 767px) {
+  .bnnerClass {
+    height: auto !important;
+    background-position: center;
+    padding: 22% 0;
+  }
 
-@media (min-width: 1024px) {
+  #button {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bnnerClass {
+    padding: 30% 0;
+  }
+}
+
+/* @media (min-width: 1024px) {
   .bannerClass {
     padding: 0 !important;
     background-size: contain !important
@@ -38,4 +55,4 @@
   .bannerClass {
     background-size: contain !important
   }
-}
+} */

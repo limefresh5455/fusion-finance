@@ -63,7 +63,7 @@ export default function Contact() {
   return (
     <>
       <main>
-        <div
+        {/* <div
           id="banner-area"
           className="banner-area bannerClass"
           style={{
@@ -84,7 +84,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <section className="font-sans py-12 bg-[#1a584f]">
           <div className="container mx-auto px-4">

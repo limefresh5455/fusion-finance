@@ -40,16 +40,20 @@ export default function News() {
         <div className="w-full text-center items-center justify-center">
           <div
             id="banner-area"
-            className="banner-area bannerClass"
+            className="banner-area newsbannerClass"
             style={{
               background: `url(${bannerImage.src})`,
               // backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "100%",
-              height: "100%",
+              // backgroundPosition: "center",
+              // height: "100%",
+              // backgroundSize: "100%",
+              // padding: "19% 0"
               backgroundSize: "100%",
+              width: "100%",
               backgroundRepeat: "no-repeat",
-              padding: "19% 0"
+              height: "60vh",
+              backgroundPosition: "top",
+              padding: "17% 0"
             }}
           >
             <div className="container mx-auto px-4">

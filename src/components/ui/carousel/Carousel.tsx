@@ -76,9 +76,10 @@ export default function Carousel() {
                       display: "inline-block",
                     }}
                     src={item.videoUrl} // Display video for the last item
-                    className="padd"
+                    className="responsiveVideo"
                     autoPlay
                     muted
+                    controls
                   />
                 </div>
               )}

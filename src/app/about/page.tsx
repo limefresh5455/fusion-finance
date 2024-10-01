@@ -22,22 +22,30 @@ export default function About() {
     setShowReadMore2(!showReadMore2);
   };
 
+  const [showReadMore3, setShowReadMore3] = useState(false);
+  const handleReadMoreClick3 = () => {
+    setShowReadMore3(!showReadMore3);
+  };
   return (
     <>
       <main className="flex min-h-screen flex-col">
         <div className="w-full text-center font-sans items-center justify-center">
           <div
             id="banner-area"
-            className="banner-area bannerClass"
+            className="banner-area bnnerClass"
             style={{
               background: `url(${bannerImage.src})`,
               // backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "100%",
-              height: "100%",
+              // backgroundPosition: "center",
+              // height: "100%",
+              // backgroundSize: "100%",
+              // padding: "19% 0"
               backgroundSize: "100%",
+              width: "100%",
               backgroundRepeat: "no-repeat",
-              padding: "19% 0"
+              height: "63vh",
+              backgroundPosition: "top",
+              padding: "17% 0"
             }}
           >
             <div className="container mx-auto px-4">
@@ -455,9 +463,39 @@ export default function About() {
           </div>
         </section>
         <hr />
+
         <div className="bg-gray-100 container mb-10">
-          <ImageSlider />
+          <div>
+            <ImageSlider />
+          </div>
+
+          <div className="pb-5 cormorant-infant text-xl">
+            <p className="underline text-center mt-10 mb-5 font-black text-black text-3xl">
+              Let me regale you with the tale of my latest conquest
+            </p>
+            The transformation of a trembling lurcher into the magnificent Archie - a true legend in his own right! From a quivering abandoned dog to the ruler of our hearts, Archie now reigns supreme with a paw of iron and a heart of pure gold.
+            <button
+              onClick={handleReadMoreClick2}
+              className="text-[#1a584f] text-xl"
+            >
+              ..Read more
+            </button>
+            <br />
+            <br />
+            {showReadMore2 && (
+              <p>
+                I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.
+                <br />
+                <br />
+                My soul finds solace in the simple pleasures of life - from the warm embrace of family, the laughter shared with friends, and the thrill of cheering on my favourite soccer teams in Cahir Park.  When I&apos;m not busy pampering Archie, Bailey and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.
+                <br />
+                So, here&apos;s to being the champion of all things canine, the biggest cheerleader on the soccer field, and the steadfast supporter of friends and family. Archie may have been the one who needed rescuing, but in the end, it&apos;s us who have been truly blessed by his presence.
+                In my world, every day is an adventure filled with laughter, love, and the pitter-patter of paws. I may not have Martha Stewart&apos;s finesse, but I&apos;ve got enough slobber and wagging tails to fill a stadium!
+              </p>
+            )}
+          </div>
         </div>
+
         <hr />
         <section className="container font-sans flex flex-col-reverse md:flex-row items-start my-10">
           <div className="w-full mx-4 px-4 cormorant-infant">
