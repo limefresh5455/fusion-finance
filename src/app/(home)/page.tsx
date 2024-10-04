@@ -151,7 +151,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#fff]">
+        <div className="bg-[#1a584f] text-white">
           <div className="container py-10 pb-6 text-center md:text-left px-5">
             <div className="flex flex-wrap md:flex-nowrap">
               <div className="flex justify-center align-center mx-10 mb-10 ">
@@ -177,7 +177,7 @@ export default function Home() {
                   <button className="mt-10 mx-auto">
                     <Link
                       href="/contact"
-                      className="font-sans text-black bg-[#5ae9d4] py-2 px-4 rounded-full text-xl"
+                      className="hover:text-white font-sans text-black bg-[#5ae9d4] py-2 px-4 rounded-full text-xl"
                     >
                       Contact us
                     </Link>

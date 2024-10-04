@@ -6,68 +6,71 @@ import "./imageSlider.css";
 const images = [
   {
     src: "/Fusion_pics/not-at-work (1).jpeg",
-    title: "Image Title",
+    title: "Champion Canine",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "So, here's to being the champion of all things canine, the biggest cheerleader on the soccer field, and the steadfast supporter of friends and family. Archie may have been the one who needed rescuing, but in the end, it's us who have been truly blessed by his presence.",
   },
   {
     src: "/Fusion_pics/not-at-work (2).jpeg",
-    title: "Image Title",
+    title: "Family and purpose",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "My soul finds solace in the simple pleasures of life - from the warm embrace of family",
   },
   {
     src: "/Fusion_pics/not-at-work (3).jpeg",
-    title: "Image Title",
+    title: "Be who you are",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "In my world, every day is an adventure filled with laughter, love, and the pitter-patter of paws. I may not have Martha Stewart's finesse, but I've got enough slobber and wagging tails to fill a stadium!"
   },
   {
     src: "/Fusion_pics/not-at-work (4).jpeg",
-    title: "Image Title",
+    title: "Archie at his best",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "From a quivering abandoned dog to the ruler of our hearts, Archie now reigns supreme with a paw of iron and a heart of pure gold.",
   },
   {
     src: "/Fusion_pics/not-at-work (5).jpeg",
-    title: "Image Title",
+    title: "Friends at your side",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "When I'm not busy pampering Archie, Bailey and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.",
   },
   {
     src: "/Fusion_pics/not-at-work (6).jpeg",
-    title: "Image Title",
+    title: "Traithlon Discipline",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.",
   },
   {
     src: "/Fusion_pics/not-at-work (7).png",
-    title: "Image Title",
+    title: "Pride and Joy",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "Building these family moments for now, for each chapter of life.",
   },
   {
     src: "/Fusion_pics/not-at-work (8).png",
-    title: "Image Title",
+    title: "Simple Pleasures",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      "My soul finds solace in the simple pleasures of life - from the warm embrace of family, the laughter shared with friends, and the thrill of cheering on my favourite soccer teams in Cahir Park.",
   },
 ];
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(0);
+  const [isMobile, setIsMobile] = useState<number>(0);
+  const [showFullDescription, setShowFullDescription] = useState(false);
   const totalImages = images.length;
   const autoPlayInterval = 5000;
 
   // Function to move to the next slide
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
+    setShowFullDescription(false); // Reset description view on slide change
   }, [totalImages]);
 
   // Function to move to the previous slide
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
+    setShowFullDescription(false); // Reset description view on slide change
   };
 
   // Adjust the view for mobile devices
@@ -96,19 +99,21 @@ const ImageSlider = () => {
       isMobile > 1023 ? 3 :
         (isMobile >= 768 ? 2 : 1);
 
-    let visibleImages = [];
-    for (let i = 0; i < imagesToShow; i++) {
-      visibleImages.push(images[(currentIndex + i) % totalImages]);
-    }
-    return visibleImages;
+    return Array.from({ length: imagesToShow }, (_, i) => images[(currentIndex + i) % totalImages]);
   };
+
+  // Function to count words
+  const wordCount = (text: string) => text.split(' ').filter(Boolean).length;
+
+  // Get the current image
+  const currentImage = images[currentIndex];
 
   return (
     <div className="slider-container">
       <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-5 underline">
         When we are not at work
       </h2>
-      <button className="slider-button left" onClick={prevSlide}>
+      <button style={{ top: showFullDescription ? '31%' : '39%' }} className="slider-button left" onClick={prevSlide}>
         &#10094;
       </button>
       <div className="slider">
@@ -123,18 +128,27 @@ const ImageSlider = () => {
                 className="rounded-lg p-2 img"
               />
             </div>
-            <div className="imageDetails container">
+            <div className="imageDetails container max-w-[324px]">
               <div className="image-title text-xl font-sans text-center">
                 {image.title}
               </div>
-              <div className="cormorant-infant text-xl image-desc text-center">
-                {image.description}
+              <div className="cormorant-infant text-xl image-desc text-center min-h-[270px]">
+                {showFullDescription || wordCount(image.description) <= 50
+                  ? image.description
+                  : `${image.description.split(' ').slice(0, 50).join(' ')}...`}
+                {wordCount(image.description) > 50 && (
+                  <span
+                    className="text-blue-500 cursor-pointer"
+                    onClick={() => setShowFullDescription(prev => !prev)}>
+                    {showFullDescription ? ' Show Less' : ' Read More'}
+                  </span>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
-      <button className="slider-button right" onClick={nextSlide}>
+      <button style={{ top: showFullDescription ? '31%' : '39%' }} className="slider-button right" onClick={nextSlide}>
         &#10095;
       </button>
     </div>
@@ -142,6 +156,7 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+
 
 
 

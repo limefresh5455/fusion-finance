@@ -1,18 +1,17 @@
 import { useEffect } from "react";
-// import SendEmail from "@/app/api/send/route";
-import { CoverType } from "@/components/definitions/CoverType";
-import { Company } from "@/components/definitions/Company";
+import { CoverType } from "@/components/definitions/CoverType"; // Ensure this imports correctly
+import { Company } from "@/components/definitions/Company"; // Ensure this imports correctly
 
 const QuoteResults = (props: {
-  results: any;
+  results: any; // You may want to define this type more specifically
   customerName: string;
   email: string;
   phone: string;
 }) => {
   const type = props.results.Outputs.Quotes.Type;
-  // console.log(type);
-  // console.log(type.length);
+
   useEffect(() => {
+    // Uncomment and implement the email sending logic if needed
     // SendEmail({
     //   results: props.results,
     //   customerName: props.customerName,
@@ -22,52 +21,81 @@ const QuoteResults = (props: {
   }, [props.results, props.customerName, props.email, props.phone]);
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h1 className="text-lg font-bold justify-center m-4">Quote Results</h1>
+    <div className="">
+      <h1 className="text-xl font-bold text-center m-4">Quote Results</h1>
 
       {Array.isArray(type) ? (
         type.map((insuranceType: CoverType, index) => (
           <div key={index}>
-            <h3 className="font-bold justify-center m-4">
-              {insuranceType.Desc}
-            </h3>
-            {insuranceType.Company.map(
-              (company: Company, companyIndex: number) => (
-                <div key={companyIndex} className="m-4 border-solid border-2">
-                  <div className="m-2">Company: {company.Name}</div>
-                  <div className="m-2">Price Pledge: {company.PricePledge}</div>
-                  <div className="m-2">
-                    Conv Mortgage: {company.SConvMortgage}
+            <h3 className="font-bold text-center m-4">{insuranceType.Desc}</h3>
+
+            <div className="flex flex-wrap justify-center">
+              {insuranceType.Company
+                .filter((company: Company) => company.Name !== "Friends First") // Specify type here
+                .map((company: Company, companyIndex: number) => (
+                  <div
+                    key={companyIndex}
+                    className="m-4 p-4 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    style={{ minWidth: '240px' }}
+                  >
+                    <h2 className="text-lg font-semibold mb-2 text-left">Company: {company.Name}</h2>
+                    <div className="text-gray-700 mb-1 text-left">
+                      Price Pledge: <span className="font-bold">{company.PricePledge}</span>
+                    </div>
+                    <div className="text-gray-700 mb-1 text-left">
+                      Conv Mortgage: <span className="font-bold">{company.SConvMortgage}</span>
+                    </div>
+                    <div className="text-gray-700 mb-1 text-left">
+                      Convertible: <span className="font-bold">{company.SConvertible}</span>
+                    </div>
+                    <div className="text-gray-700 mb-1 text-left">
+                      Level: <span className="font-bold">{company.SLevel}</span>
+                    </div>
+                    <div className="text-gray-700 mb-1 text-left">
+                      Mortgage: <span className="font-bold">{company.SMortgage}</span>
+                    </div>
+                    <div className="text-gray-700 mb-1 text-left">
+                      Underwriting: <span className="font-bold">{company.Underwriting1}</span>
+                    </div>
                   </div>
-                  <div className="m-2">Convertible: {company.SConvertible}</div>
-                  <div className="m-2">Level: {company.SLevel}</div>
-                  <div className="m-2">Mortgage: {company.SMortgage}</div>
-                  <div className="m-2">
-                    Underwriting: {company.Underwriting1}
-                  </div>
-                </div>
-              )
-            )}
+                ))}
+            </div>
           </div>
         ))
       ) : (
         <>
-          <h3 className="font-bold justify-center m-4">{type.Desc}</h3>
-          {type.Company.map((company: Company, index: number) => (
-            <div key={index}>
-              <div className="m-4 border-solid border-2">
-                <div className="m-2">Company: {company.Name}</div>
-                <div className="m-2">Price Pledge: {company.PricePledge}</div>
-                <div className="m-2">
-                  Conv Mortgage: {company.SConvMortgage}
+          <h3 className="font-bold text-center m-4">{type.Desc}</h3>
+          <div className="flex flex-wrap justify-center">
+            {type.Company
+              .filter((company: Company) => company.Name !== "Friends First") // Specify type here
+              .map((company: Company, index: number) => (
+                <div
+                  key={index}
+                  className="m-4 p-4 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  style={{ minWidth: '250px' }}
+                >
+                  <h2 className="text-lg font-semibold mb-2 text-left">Company: {company.Name}</h2>
+                  <div className="text-gray-700 mb-1 text-left">
+                    Price Pledge: <span className="font-bold">{company.PricePledge}</span>
+                  </div>
+                  <div className="text-gray-700 mb-1 text-left">
+                    Conv Mortgage: <span className="font-bold">{company.SConvMortgage}</span>
+                  </div>
+                  <div className="text-gray-700 mb-1 text-left">
+                    Convertible: <span className="font-bold">{company.SConvertible}</span>
+                  </div>
+                  <div className="text-gray-700 mb-1 text-left">
+                    Level: <span className="font-bold">{company.SLevel}</span>
+                  </div>
+                  <div className="text-gray-700 mb-1 text-left">
+                    Mortgage: <span className="font-bold">{company.SMortgage}</span>
+                  </div>
+                  <div className="text-gray-700 mb-1 text-left">
+                    Underwriting: <span className="font-bold">{company.Underwriting1}</span>
+                  </div>
                 </div>
-                <div className="m-2">Convertible: {company.SConvertible}</div>
-                <div className="m-2">Level: {company.SLevel}</div>
-                <div className="m-2">Mortgage: {company.SMortgage}</div>
-                <div className="m-2">Underwriting: {company.Underwriting1}</div>
-              </div>
-            </div>
-          ))}
+              ))}
+          </div>
           <br />
         </>
       )}
