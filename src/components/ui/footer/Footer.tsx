@@ -24,8 +24,8 @@ export default function Footer() {
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
               <div className="w-full md:w-auto flex justify-center my-4 md:my-0">
                 <Image
-                  src="/logo variants/omnibroker.png"
-                  width={200}
+                  src="/logo variants/BIS-Platform-Logo.jpg"
+                  width={250}
                   height={75}
                   alt="partner1"
                   className="mx-2"

@@ -469,7 +469,7 @@ export default function About() {
             <ImageSlider />
           </div>
 
-          <div className="pb-5 cormorant-infant text-xl">
+          {/* <div className="pb-5 cormorant-infant text-xl">
             <p className="underline text-center mt-10 mb-5 font-black text-black text-3xl">
               Let me regale you with the tale of my latest conquest
             </p>
@@ -493,7 +493,7 @@ export default function About() {
                 In my world, every day is an adventure filled with laughter, love, and the pitter-patter of paws. I may not have Martha Stewart&apos;s finesse, but I&apos;ve got enough slobber and wagging tails to fill a stadium!
               </p>
             )}
-          </div>
+          </div> */}
         </div>
 
         <hr />
