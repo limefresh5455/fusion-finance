@@ -27,7 +27,7 @@ const QuoteResults = (props: {
       {Array.isArray(type) ? (
         type.map((insuranceType: CoverType, index) => (
           <div key={index}>
-            <h3 className="font-bold text-center m-4">{insuranceType.Desc}</h3>
+            <h3 className="font-bold text-center m-4">{insuranceType?.Desc}</h3>
 
             <div className="flex flex-wrap justify-center">
               {insuranceType.Company
@@ -64,7 +64,7 @@ const QuoteResults = (props: {
         ))
       ) : (
         <>
-          <h3 className="font-bold text-center m-4">{type.Desc}</h3>
+          <h3 className="font-bold text-center m-4">{type?.Desc}</h3>
           <div className="flex flex-wrap justify-center">
             {type.Company
               .filter((company: Company) => company.Name !== "Friends First") // Specify type here

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import fetchQuote from "@/components/hooks/fetchQuote";
 import QuoteResults from "../quote-results/QuoteResults";
 import { ResultsContext } from "@/components/context/cache";
@@ -22,37 +22,124 @@ const QuoteForm = () => {
   });
   const { result, setResult } = useContext(ResultsContext);
 
+  // Create refs for each input
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const dobRef = useRef<HTMLInputElement>(null);
+  const sexRef = useRef<HTMLInputElement>(null); // For gender radio buttons
+  const smokerRef = useRef<HTMLInputElement>(null); // For smoker radio buttons
+  const lifeCoverAmountRef = useRef<HTMLInputElement>(null);
+  const sicAmountRef = useRef<HTMLInputElement>(null);
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
     handleValidation();
   };
 
   const handleValidation = async () => {
-    const { name, email, dob } = formData;
+
+    const { name, email, dob, phone, lifeCoverAmount, seriousIllness, sex, sicAmount, smoker } = formData;
+    console.log("seriousIllness", seriousIllness);
+    console.log("sicAmount", sicAmount);
+
+    // Individual field validations
+    if (!name) {
+      alert("Name is required.");
+      nameRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      nameRef.current?.focus();
+      nameRef.current?.classList.add('highlight');
+      return;
+    }
 
     if (/\d/.test(name)) {
       alert("Name should not contain any numbers or special characters.");
-    } else if (
-      !email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)
-    ) {
+      nameRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      nameRef.current?.focus();
+      return;
+    }
+
+    if (!email) {
+      alert("Email is required.");
+      emailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      emailRef.current?.focus();
+      emailRef.current?.classList.add('highlight');
+      return;
+    }
+
+    if (!email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {
       alert("Please enter a valid email address.");
-    } else {
-      const selectedDate = new Date(dob);
-      const today = new Date();
-      const minDate = new Date(1900, 0, 1);
-      if (selectedDate < minDate || selectedDate > today) {
-        alert("Please select a date of birth between 1900 and today.");
-      } else {
-        console.log("Form data is valid. Sending request...");
-        try {
-          const quotes = await fetchQuote(formData);
-          console.log("API response:", quotes);
-          setResult(quotes);
-        } catch (error) {
-          console.error("Error fetching quote:", error);
-          alert("An error occurred while fetching the quote. Please try again.");
-        }
-      }
+      emailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      emailRef.current?.focus();
+      return;
+    }
+
+    if (!dob) {
+      alert("Date of Birth is required.");
+      dobRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      dobRef.current?.focus();
+      dobRef.current?.classList.add('highlight');
+      return;
+    }
+
+    const selectedDate = new Date(dob);
+    const today = new Date();
+    const minDate = new Date(1900, 0, 1);
+    if (selectedDate < minDate || selectedDate > today) {
+      alert("Please select a date of birth between 1900 and today.");
+      return;
+    }
+
+    if (!phone) {
+      alert("Phone number is required.");
+      phoneRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      phoneRef.current?.focus();
+      phoneRef.current?.classList.add('highlight');
+      return;
+    }
+
+    if (lifeCoverAmount === null) {
+      alert("Life Cover Amount is required.");
+      lifeCoverAmountRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      lifeCoverAmountRef.current?.focus();
+      lifeCoverAmountRef.current?.classList.add('highlight');
+      return;
+    }
+
+    if (seriousIllness === 'Y' && !seriousIllness) {
+      alert("Serious Illness selection is required.");
+      return;
+    }
+
+    if (!sex) {
+      alert("Gender is required.");
+      sexRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      sexRef.current?.focus();
+      sexRef.current?.classList.add('highlight');
+      return;
+    }
+
+    if (!smoker) {
+      alert("Smoker status is required.");
+      smokerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      smokerRef.current?.focus();
+      smokerRef.current?.classList.add('highlight');
+      return;
+    }
+
+    if (seriousIllness === 'Y' && !seriousIllness) {
+      alert("SIC Amount is required.");
+      return;
+    }
+
+    console.log("Form data is valid. Sending request...");
+    try {
+      const quotes = await fetchQuote(formData);
+      console.log("API response:", quotes);
+      setResult(quotes);
+    } catch (error) {
+      console.error("Error fetching quote:", error);
+      alert("An error occurred while fetching the quote. Please try again.");
     }
   };
 
@@ -95,6 +182,7 @@ const QuoteForm = () => {
                   <input
                     type="text"
                     name="name"
+                    ref={nameRef} // Attach ref
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -126,6 +214,7 @@ const QuoteForm = () => {
                   <input
                     name="email"
                     type="email"
+                    ref={emailRef} // Attach ref
                     value={formData.email}
                     onChange={(e) => {
                       setFormData({ ...formData, email: e.target.value });
@@ -133,9 +222,7 @@ const QuoteForm = () => {
                     required
                     placeholder="Enter Email"
                     onInvalid={(e) =>
-                      (e.target as HTMLInputElement).setCustomValidity(
-                        "Enter email here."
-                      )
+                      (e.target as HTMLInputElement).setCustomValidity("Enter email here.")
                     }
                     onInput={(e) =>
                       (e.target as HTMLInputElement).setCustomValidity("")
@@ -156,6 +243,7 @@ const QuoteForm = () => {
                 <div className="mt-1">
                   <input
                     name="phone"
+                    ref={phoneRef} // Attach ref
                     autoComplete="tel-national"
                     type="text"
                     placeholder="Enter Phone No."
@@ -196,6 +284,7 @@ const QuoteForm = () => {
                 <div className="mt-1">
                   <input
                     name="dob"
+                    ref={dobRef} // Attach ref
                     type="date"
                     value={formData.dob}
                     onChange={(e) => {
@@ -223,7 +312,7 @@ const QuoteForm = () => {
                 <legend className="block mb-2 text-lg font-medium text-gray-900">
                   Gender
                 </legend>
-                <div className="mt-1 flex">
+                <div className="mt-1 flex" ref={sexRef}>
                   <div className="relative flex items-center gap-x-3 pe-5">
                     <div className="flex h-6 items-center">
                       <input
@@ -287,7 +376,7 @@ const QuoteForm = () => {
         </div>
 
         <div className="bg-[#1a584f] pt-5">
-          <h2 style={{ textDecoration: "underline" }}  className="text-white text-4xl text-center font-bold font-sans bg-[#1a584f]">
+          <h2 style={{ textDecoration: "underline" }} className="text-white text-4xl text-center font-bold font-sans bg-[#1a584f]">
             Policy Details
           </h2>
         </div>
@@ -295,11 +384,11 @@ const QuoteForm = () => {
           {/* Form Section */}
           <div className="form-2 flex-1 md:order-2 form-1 mx-10 mt-10">
             <div className="mt-10 flex flex-col items-start space-y-10 w-full">
-              <fieldset className="sm:col-span-4 mb-8">
+              <fieldset className="sm:col-span-4 mb-8" >
                 <legend className="block mb-2 text-lg text-white font-medium text-gray-900">
                   Smoker
                 </legend>
-                <div className="mt-1 flex">
+                <div className="mt-1 flex" ref={smokerRef}>
                   <div className="relative flex gap-x-3 pe-5">
                     <div className="flex h-6 items-center">
                       <input
@@ -359,6 +448,7 @@ const QuoteForm = () => {
                   <div className="pt-8">€ &nbsp;</div>
                   <input
                     name="lifeCoverAmount"
+                    ref={lifeCoverAmountRef} // Attach ref
                     type="text"
                     value={formData.lifeCoverAmount ?? ""}
                     onChange={(e) => {
