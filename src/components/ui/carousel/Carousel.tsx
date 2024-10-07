@@ -14,7 +14,7 @@ const items: Item[] = [
     desc: "Banner Video",
   },
   {
-    videoUrl: "/Fusion_pics/Fusion Finance Team Update Web-Ready.jpg",
+    videoUrl: "/Fusion_pics/Fusion_Finance_Team_Update_Web-Ready.jpg",
     desc: "Banner Video",
   },
   {

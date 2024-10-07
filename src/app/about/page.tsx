@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import bannerImage from "../../../public/Fusion_pics/FF-Update-Team-Web-Ready.jpg";
+import bannerImage from "../../../public/Fusion_pics/Fusion_Finance_Team_Update_Web-Ready.jpg";
 import marieDaveyImage from "../../../public/Fusion_pics/Marie-Web-Ready-7.jpg";
 import gemmaMaguireImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-1.jpg";
 import missionImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
@@ -45,7 +45,7 @@ export default function About() {
               backgroundRepeat: "no-repeat",
               height: "63vh",
               backgroundPosition: "top",
-              padding: "17% 0"
+              padding: "16% 0"
             }}
           >
             <div className="container mx-auto px-4">
@@ -252,7 +252,8 @@ export default function About() {
                   our actions.
                 </h4>
                 <p className="cormorant-infant text-xl">
-                  <strong>About Fusion Finance:</strong> Fusion Finance is
+                  {/* <strong>About Fusion Finance:</strong>  */}
+                  Fusion Finance is
                   dedicated to providing exceptional customer service and
                   financial solutions tailored to individual needs. With over 25
                   years of experience and a commitment to integrity, we have
@@ -354,7 +355,7 @@ export default function About() {
                 humour to the financial realm.
               </p>
               <p className="mb-4 text-black text-xl">
-                Teamed up with her partner-in-crime, Gemma McGuire, we form a
+                Teamed up with her partner-in-crime, Gemma Maguire, we form a
                 dynamic duo that balances each other like yin and yang.
               </p>
               <button
@@ -464,38 +465,6 @@ export default function About() {
         </section>
         <hr />
 
-        <div className="bg-gray-100 container mb-10">
-          <div>
-            <ImageSlider />
-          </div>
-
-          {/* <div className="pb-5 cormorant-infant text-xl">
-            <p className="underline text-center mt-10 mb-5 font-black text-black text-3xl">
-              Let me regale you with the tale of my latest conquest
-            </p>
-            The transformation of a trembling lurcher into the magnificent Archie - a true legend in his own right! From a quivering abandoned dog to the ruler of our hearts, Archie now reigns supreme with a paw of iron and a heart of pure gold.
-            <button
-              onClick={handleReadMoreClick2}
-              className="text-[#1a584f] text-xl"
-            >
-              ..Read more
-            </button>
-            <br />
-            <br />
-            {showReadMore2 && (
-              <p>
-                I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.
-                <br />
-                <br />
-                My soul finds solace in the simple pleasures of life - from the warm embrace of family, the laughter shared with friends, and the thrill of cheering on my favourite soccer teams in Cahir Park.  When I&apos;m not busy pampering Archie, Bailey and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.
-                <br />
-                So, here&apos;s to being the champion of all things canine, the biggest cheerleader on the soccer field, and the steadfast supporter of friends and family. Archie may have been the one who needed rescuing, but in the end, it&apos;s us who have been truly blessed by his presence.
-                In my world, every day is an adventure filled with laughter, love, and the pitter-patter of paws. I may not have Martha Stewart&apos;s finesse, but I&apos;ve got enough slobber and wagging tails to fill a stadium!
-              </p>
-            )}
-          </div> */}
-        </div>
-
         <hr />
         <section className="container font-sans flex flex-col-reverse md:flex-row items-start my-10">
           <div className="w-full mx-4 px-4 cormorant-infant">
@@ -509,7 +478,7 @@ export default function About() {
             />
             <h2 className="text-2xl font-bold text-black">Samantha</h2>
             <p className="text-xl font-semibold mb-4 text-black">
-              Sales Manager
+              Sales Support
             </p>
             <p className="mb-4 text-black text-xl">
               Samantha joined Fusion Finance early in 2017. She is a fantastic
@@ -548,7 +517,7 @@ export default function About() {
             />
             <h2 className="text-2xl font-bold text-black">Catherine&apos;s </h2>
             <p className="text-xl font-semibold mb-4 text-black">
-              Sales Manager
+              Sales Support
             </p>
 
             <p className="mb-4 text-black text-xl">
@@ -578,6 +547,38 @@ export default function About() {
           </div>
         </section>
         <hr />
+
+        <div className="bg-gray-100 container mb-10">
+          <div>
+            <ImageSlider />
+          </div>
+
+          {/* <div className="pb-5 cormorant-infant text-xl">
+            <p className="underline text-center mt-10 mb-5 font-black text-black text-3xl">
+              Let me regale you with the tale of my latest conquest
+            </p>
+            The transformation of a trembling lurcher into the magnificent Archie - a true legend in his own right! From a quivering abandoned dog to the ruler of our hearts, Archie now reigns supreme with a paw of iron and a heart of pure gold.
+            <button
+              onClick={handleReadMoreClick2}
+              className="text-[#1a584f] text-xl"
+            >
+              ..Read more
+            </button>
+            <br />
+            <br />
+            {showReadMore2 && (
+              <p>
+                I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.
+                <br />
+                <br />
+                My soul finds solace in the simple pleasures of life - from the warm embrace of family, the laughter shared with friends, and the thrill of cheering on my favourite soccer teams in Cahir Park.  When I&apos;m not busy pampering Archie, Bailey and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.
+                <br />
+                So, here&apos;s to being the champion of all things canine, the biggest cheerleader on the soccer field, and the steadfast supporter of friends and family. Archie may have been the one who needed rescuing, but in the end, it&apos;s us who have been truly blessed by his presence.
+                In my world, every day is an adventure filled with laughter, love, and the pitter-patter of paws. I may not have Martha Stewart&apos;s finesse, but I&apos;ve got enough slobber and wagging tails to fill a stadium!
+              </p>
+            )}
+          </div> */}
+        </div>
         {/* <section className="container font-sans flex flex-col-reverse md:flex-row items-start my-10">
           <div className="w-full mx-4 px-4 cormorant-infant">
             <Image

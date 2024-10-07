@@ -164,11 +164,11 @@ export default function Home() {
 
               <div>
                 <h1 className="underline lg:text-4xl text-2xl text-center font-bold font-sans">
-                  Schedule your free consultation
+                  Schedule your consultation
                 </h1>
                 <p className="mt-4 cormorant-infant text-xl text-center">
                   We understand you may want to speak directly with us to get all
-                  your questions answered. We offer free one-to-one consultations
+                  your questions answered. We offer one-to-one consultations
                   with expert QFAs. Please complete this and one of our team will be
                   back to you shortly.
                 </p>

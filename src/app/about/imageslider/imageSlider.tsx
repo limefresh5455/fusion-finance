@@ -35,6 +35,12 @@ const images = [
       "When I'm not busy pampering Archie, Bailey and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.",
   },
   {
+    src: "/Fusion_pics/image (15).png",
+    title: "No Content yet",
+    description:
+      "No Content yet.",
+  },
+  {
     src: "/Fusion_pics/not-at-work (6).jpeg",
     title: "Traithlon Discipline",
     description:

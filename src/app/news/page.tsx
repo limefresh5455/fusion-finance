@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-
-import bannerImage from "../../../public/Fusion_pics/FF-Update-Team-Web-Ready.jpg";
+import bannerImage from "../../../public/Fusion_pics/Fusion_Finance_Team_Update_Web-Ready.jpg";
 import blogImage1 from "../../../public/Fusion_pics/Award-Brokers-Ireland.jpg";
 // import blogImage2 from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-49-1.jpg";
 import blogImage2 from "../../../public/Fusion_pics/Cancer.png";
@@ -53,7 +52,7 @@ export default function News() {
               backgroundRepeat: "no-repeat",
               height: "60vh",
               backgroundPosition: "top",
-              padding: "17% 0"
+              padding: "16% 0"
             }}
           >
             <div className="container mx-auto px-4">
