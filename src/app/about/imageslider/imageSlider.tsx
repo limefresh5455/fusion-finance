@@ -34,14 +34,14 @@ const images = [
     description:
       "When I'm not busy pampering Archie, Bailey and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.",
   },
+  // {
+  //   src: "/Fusion_pics/image (15).png",
+  //   title: "No Content yet",
+  //   description:
+  //     "No Content yet.",
+  // },
   {
     src: "/Fusion_pics/image (15).png",
-    title: "No Content yet",
-    description:
-      "No Content yet.",
-  },
-  {
-    src: "/Fusion_pics/not-at-work (6).jpeg",
     title: "Traithlon Discipline",
     description:
       "I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.",

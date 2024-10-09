@@ -123,6 +123,8 @@ export default function NavBar() {
         </div>
       </div>
 
+      <div className="border-8 border-[#5ae9d4] bg-[#5ae9d4]"></div>
+
       <div className="bg-gray-100 min-h-24 flex flex-wrap items-center justify-between p-2">
         <div className="flex items-center lg:hidden">
           <button

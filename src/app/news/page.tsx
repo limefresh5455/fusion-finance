@@ -32,6 +32,23 @@ export default function News() {
     setShowReadMore5(!showReadMore5);
   };
 
+
+  const images = [
+    { src: "/Fusion_pics/Ironman701.jpg" },
+    { src: "/Fusion_pics/Ironman702.jpg" },
+    { src: "/Fusion_pics/Ironman703.jpg" }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
     <>
       <main className="font-sans flex min-h-screen flex-col items-center">
@@ -65,17 +82,24 @@ export default function News() {
           </div>
         </div>
 
-        <div className="w-full max-w-6xl mx-auto my-5 p-4 bg-white rounded-lg shadow-md">
+        <div className="w-full max-w-6xl mx-auto my-5 p-4 bg-white rounded-lg shadow-md relative">
           <div className="relative">
             <div
-              className="w-full h-64 bg-cover bg-center rounded-t-lg"
+              className="w-full h-64 bg-cover bg-center rounded-t-lg minHeight"
               style={{
-                backgroundImage: `url(${blogImage5.src})`,
-                backgroundPosition: "center",
-                minHeight: "600px",
+                backgroundImage: `url(${images[currentIndex].src})`,
+                backgroundPosition: "left top",
+                // minHeight: "600px",
               }}
-            ></div>
+            />
           </div>
+
+          <button onClick={prevSlide} className="prevSlidePosition transform -translate-y-1/2 bg-gray-500 text-white slidePadding py-2 rounded-full">
+            &lt;
+          </button>
+          <button onClick={nextSlide} className="nextSlidePosition top-1/2 transform -translate-y-1/2 bg-gray-500 text-white slidePadding py-2 rounded-full">
+            &gt;
+          </button>
 
           <div className="p-4 bg-[#d3d3d3]">
             <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
@@ -83,26 +107,8 @@ export default function News() {
             </h2>
             <div className="blogDescription cormorant-infant text-xl">
               <p className="mt-4 text-gray-700">
-                We&apos;re thrilled to announce that Gemma has successfully completed the Ironman 70.3 Italy Emilia-Romagna! This incredible feat of endurance, featuring a swim in the Adriatic Sea, a bike ride through the scenic Emilia-Romagna countryside, and a run in the charming town of Cervia
-                Congratulations, such a great accomplishment.
-
-                {/* <button
-                  onClick={handleReadMoreClick5}
-                  className="text-[#1a584f]"
-                >
-                  ....Read more
-                </button> */}
+                We&apos;re thrilled to announce that Gemma has successfully completed the Ironman 70.3 Italy Emilia-Romagna! This incredible feat of endurance, featuring a swim in the Adriatic Sea, a bike ride through the scenic Emilia-Romagna countryside, and a run in the charming town of Cervia. Congratulations, such a great accomplishment.
               </p>
-              {showReadMore5 && (
-                <div className="readMore">
-                  <p className="mt-4 text-gray-700">
-                    Our Commitment to Excellence <br />
-                    This nomination further fuels our commitment to delivering the highest level of service and exceeding expectations. We believe that strong client relationships, transparent communication, and a deep understanding of the ever-evolving financial landscape are the cornerstones of success.
-
-                    We extend our sincere gratitude to our clients, partners, and colleagues for their continued support and trust. Your confidence in us is what drives us to continually improve and strive for excellence.
-                  </p>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -111,11 +117,11 @@ export default function News() {
         <div className="w-full max-w-6xl mx-auto my-5 p-4 bg-white rounded-lg shadow-md">
           <div className="relative">
             <div
-              className="w-full h-64 bg-cover bg-center rounded-t-lg"
+              className="w-full h-64 bg-cover bg-center rounded-t-lg minHeight"
               style={{
                 backgroundImage: `url(${blogImage1.src})`,
                 backgroundPosition: "center",
-                minHeight: "600px",
+                // minHeight: "600px",
               }}
             ></div>
           </div>
@@ -128,12 +134,14 @@ export default function News() {
               <p className="mt-4 text-gray-700">
                 We&apos;re thrilled to announce that we were shortlisted for the prestigious Broker Expert Award at Ireland&apos;s Broker Awards!
                 Being recognised alongside other outstanding industry leaders from across the insurance and financial services sectors is a tremendous honour. This nomination is a testament to the hard work, dedication, and expertise of our entire team. We&apos;re deeply proud of the value we provide to our clients, helping them navigate the complex world of finance and achieve their financial goals.
-                <button
-                  onClick={handleReadMoreClick4}
-                  className="text-[#1a584f]"
-                >
-                  ....Read more
-                </button>
+                {!showReadMore4 && (
+                  <button
+                    onClick={handleReadMoreClick4}
+                    className="text-[#1a584f]"
+                  >
+                    ....Read more
+                  </button>
+                )}
               </p>
               {showReadMore4 && (
                 <div className="readMore">
@@ -154,11 +162,11 @@ export default function News() {
         <div className="w-full max-w-6xl mx-auto my-0 p-4 bg-white rounded-lg shadow-md">
           <div className="relative">
             <div
-              className="w-full h-64 bg-cover bg-center rounded-t-lg"
+              className="w-full h-64 bg-cover bg-center rounded-t-lg minHeight"
               style={{
                 backgroundImage: `url(${blogImage2.src})`,
                 backgroundPosition: "top",
-                minHeight: "600px",
+                // minHeight: "600px",
               }}
             ></div>
           </div>
@@ -180,12 +188,14 @@ export default function News() {
                 men? Despite these eye-opening figures, a significant number of
                 women are left exposed, lacking the vital protection needed in
                 the face of life&apos;s uncertainties.
-                <button
-                  onClick={handleReadMoreClick}
-                  className="text-white"
-                >
-                  ....Read more
-                </button>
+                {!showReadMore && (
+                  <button
+                    onClick={handleReadMoreClick}
+                    className="text-white"
+                  >
+                    ....Read more
+                  </button>
+                )}
               </p>
 
               {showReadMore && (
@@ -233,11 +243,11 @@ export default function News() {
         <div className="w-full max-w-6xl mx-auto my-5 p-4 bg-white rounded-lg shadow-md">
           <div className="relative">
             <div
-              className="w-full h-64 bg-cover bg-center rounded-t-lg"
+              className="w-full h-64 bg-cover bg-center rounded-t-lg minHeight"
               style={{
                 backgroundImage: `url(${blogImage3.src})`,
                 backgroundPosition: "top",
-                minHeight: "600px",
+                // minHeight: "600px",
               }}
             ></div>
           </div>
@@ -263,12 +273,14 @@ export default function News() {
                 rhyme or reason as to why recent events are particularly
                 relevant in making decisions, but they are simply easier to
                 consider as they are fresh in our minds.
-                <button
-                  onClick={handleReadMoreClick3}
-                  className="text-[#1a584f]"
-                >
-                  ....Read more
-                </button>
+                {!showReadMore3 && (
+                  <button
+                    onClick={handleReadMoreClick3}
+                    className="text-[#1a584f]"
+                  >
+                    ....Read more
+                  </button>
+                )}
               </p>
               {showReadMore3 && (
                 <div className="readMore">
@@ -336,11 +348,11 @@ export default function News() {
         <div className="w-full max-w-6xl mx-auto my-0 p-4 bg-white rounded-lg shadow-md">
           <div className="relative">
             <div
-              className="w-full h-64 bg-cover bg-center rounded-t-lg"
+              className="w-full h-64 bg-cover bg-center rounded-t-lg minHeight"
               style={{
                 backgroundImage: `url(${blogImage4.src})`,
                 backgroundPosition: "center",
-                minHeight: "600px",
+                // minHeight: "600px",
               }}
             ></div>
           </div>
@@ -362,12 +374,14 @@ export default function News() {
                 and the value of this money is falling as inflation reappears in
                 the Irish economy. Money sitting in a bank account is making
                 people poorer. So why are deposits at record levels?
-                <button
-                  onClick={handleReadMoreClick2}
-                  className="text-[#1a584f]"
-                >
-                  ....Read more
-                </button>
+                {!showReadMore2 && (
+                  <button
+                    onClick={handleReadMoreClick2}
+                    className="text-[#1a584f]"
+                  >
+                    ....Read more
+                  </button>
+                )}
               </p>
               {showReadMore2 && (
                 <div className="readMore">

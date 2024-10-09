@@ -11,6 +11,50 @@
     }
 } */
 
+.relative {
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a584f;
+}
+
+.prevSlidePosition {
+    position: absolute;
+    top: 72%;
+    left: 45%;
+}
+
+.nextSlidePosition {
+    position: absolute;
+    top: 72%;
+    right: 45%;
+}
+
+.minHeight {
+    min-height: 600px;
+}
+
+.slidePadding {
+    padding: 10px 15px;
+}
+
+@media (max-width: 1024px) {
+    .prevSlidePosition {
+        top: 70%;
+        left: 40%;
+    }
+
+    .nextSlidePosition {
+        top: 70%;
+        right: 40%;
+    }
+}
+
 
 @media (max-width: 767px) {
     .newsbannerClass {
@@ -22,10 +66,60 @@
     #button {
         margin-top: 10rem;
     }
+
+    .minHeight {
+        min-height: auto;
+    }
+
+    .prevSlidePosition {
+        top: 45%;
+        left: 40%;
+    }
+
+    .nextSlidePosition {
+        top: 45%;
+        right: 40%;
+    }
 }
 
 @media (max-width: 600px) {
     .newsbannerClass {
         padding: 30% 0;
+    }
+
+    .prevSlidePosition {
+        top: 40%;
+        left: 40%;
+    }
+
+    .nextSlidePosition {
+        top: 40%;
+        right: 40%;
+    }
+}
+
+@media (max-width: 466px) {
+
+    .prevSlidePosition {
+        top: 35%;
+        left: 30%;
+    }
+
+    .nextSlidePosition {
+        top: 35%;
+        right: 30%;
+    }
+}
+
+@media (max-width: 376px) {
+
+    .prevSlidePosition {
+        top: 32%;
+        left: 30%;
+    }
+
+    .nextSlidePosition {
+        top: 32%;
+        right: 30%;
     }
 }

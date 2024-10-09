@@ -358,12 +358,16 @@ export default function About() {
                 Teamed up with her partner-in-crime, Gemma Maguire, we form a
                 dynamic duo that balances each other like yin and yang.
               </p>
-              <button
-                onClick={handleReadMoreClick1}
-                className="text-[#1a584f] text-xl"
-              >
-                ....Read more
-              </button>
+
+              {!showReadMore1 && (
+                <button
+                  onClick={handleReadMoreClick1}
+                  className="text-[#1a584f] text-xl"
+                >
+                  ....Read more
+                </button>
+              )}
+
               {showReadMore1 && (
                 <div>
                   <p className="mb-4 text-black text-xl">
@@ -430,13 +434,15 @@ export default function About() {
               Illness Protection solutions for my clients.
             </p>
 
+            {!showReadMore2 && (
+              <button
+                onClick={handleReadMoreClick2}
+                className="text-[#1a584f] text-xl"
+              >
+                ....Read more
+              </button>
+            )}
 
-            <button
-              onClick={handleReadMoreClick2}
-              className="text-[#1a584f] text-xl"
-            >
-              ....Read more
-            </button>
             {showReadMore2 && (
               <div className="readMore">
                 <p className="mb-4 text-black text-xl">
@@ -524,14 +530,15 @@ export default function About() {
               Catherine Mulcahy has a diverse background in travel and tourism, as well as experience as a personal assistant in a medical practice.  She brings a unique skill set to her Sales Manager Fusion Finance role. Catherines&apos; experience in the travel industry has honed her organisational and customer service skills, allowing her to manage complex itineraries and provide exceptional support to clients.
             </p>
 
-
-            <button
-              onClick={handleReadMoreClick2}
-              className="text-[#1a584f] text-xl"
-            >
-              ....Read more
-            </button>
-            {showReadMore2 && (
+            {!showReadMore3 && (
+              <button
+                onClick={handleReadMoreClick3}
+                className="text-[#1a584f] text-xl"
+              >
+                ....Read more
+              </button>
+            )}
+            {showReadMore3 && (
               <div className="readMore">
                 <p className="mb-4 text-black text-xl">
                   In the medical field, she developed a keen attention to detail and the ability to handle sensitive information with discretion. She is excited to join the Fusion Finance team, where she aims to leverage her expertise to contribute to a seamless and efficient workflow, ensuring that our clients receive the highest level of service.
