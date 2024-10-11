@@ -6,6 +6,8 @@ import gemmaMaguireImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Re
 import missionImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
 import samanthaImage from "../../../public/Fusion_pics/Fusion Finance Web-Ready-29.jpg";
 import catherineImage from "../../../public/Fusion_pics/Fusion Finance Catherine Web-Ready-2.jpg";
+import dogImage from "../../../public/Fusion_pics/not-at-work (4).jpeg";
+import gemmaAtTraithlon from "../../../public/Fusion_pics/image (15).png";
 import ImageSlider from "../about/imageslider/imageSlider";
 import "../custom-font.css";
 import "./about.css";
@@ -348,15 +350,7 @@ export default function About() {
                 Partner Fusion Finance
               </p>
               <p className="mb-4 text-black text-xl">
-                Welcome to the world of Marie Davey, your go-to financial
-                services guru with a heart as big as her love for dogs! As a
-                dedicated wife, loving mother, and passionate dog enthusiast,
-                Marie brings a unique blend of warmth, expertise, and a touch of
-                humour to the financial realm.
-              </p>
-              <p className="mb-4 text-black text-xl">
-                Teamed up with her partner-in-crime, Gemma Maguire, we form a
-                dynamic duo that balances each other like yin and yang.
+                My Journey within the Financial Services was very much accidental when I meet with New Ireland Assurance they convinced me that I would be a great fit as a tied agent with their company and from their my journey began, New Ireland Assurance was instrumental in guiding me through my exams  in my QFA and RPA as well as giving me the tools to navigate the world of finance which can be very scary and complex and at the time very male dominated, it was from there that I got to really understand the world of Finance and most importantly people.
               </p>
 
               {!showReadMore1 && (
@@ -371,33 +365,20 @@ export default function About() {
               {showReadMore1 && (
                 <div>
                   <p className="mb-4 text-black text-xl">
-                    Together, we tackle the complexities of financial planning
-                    with precision and a sprinkle of magic that makes the
-                    journey not just smooth but downright enjoyable.
+                    I understand the most important relationship I can have is with me and my client and I have had the most amazing journey getting to help and guide my Fusion Family through the harsh bumpy and complex financial road.
+                    <br /><br />
+                    The complex relationship between health and happiness really does have a lot to do with our general health and wellbeing and sometimes it is that relationship with money that makes the difference to our mental wellbeing.
                   </p>
                   <p className="mb-4 text-black text-xl">
-                    My love for my job shines through in my unwavering
-                    commitment to my clients. I am not just here to crunch
-                    numbers and discuss investments; I am here to make your
-                    financial goals a reality while ensuring you have a good
-                    laugh along the way. Who knew budgeting could be this much
-                    fun?
+                    I decided to leave New Ireland in 2010 and joined a firm in Dublin that worked for the public sector, and it was there that I got introduced to the Public sector and built up a great relationship within that sector, in May 2012 I decided to take a huge leap of faith with my colleague Gemma Mcguire and Fusion Finance became a reality.
+                    <br /><br />
+                    We have a combined customer baes of over 2000 clients and this is growing year on year we are blessed to have Samatha and Catherine working tirelessly to ensure our clients are always priority, we have worked very hard to keep on top of all the complex changes that continue to be part of the financial landscape.  We were nominated last year by Brookers Ireland as one of the Top 3 brokers in Ireland when it comes to prioritising protection around our clients.
                   </p>
                   <p className="mb-4 text-black text-xl">
-                    So, whether you&apos;re navigating the world of savings,
-                    investments, or retirement planning, please know I will be
-                    your trusted ally. With Fusion by your side, you&apos;re not just
-                    getting financial advice – you&apos;re getting a friend who will
-                    guide you through the ups and downs of financial life with a
-                    smile on her face and a joke up her sleeve! I am currently
-                    doing my master&apos;s in finance which I am loving as the more
-                    knowledgeable I have the more I can help my clients!
+                    I am on the Journey to completing my CFP which is the highest designation in the financial service and recognised around the world, it&apos;s something I never thought I would do but I believe with an amazing team behind you anything is possible.  My dreams for the next 10 years are for my clients to have a real genuine connection with me if they phone me, they are not waiting or put on hold they get us if not straight away within the same day, we have seen the devastation of separation, illness and death and want for our clients to know that we are there if they need us.
                   </p>
                   <p className="font-bold text-black text-xl">
-                    I welcome you to please join me on this exciting adventure
-                    towards financial security, where numbers meet laughter, and
-                    clients become lifelong friends. Let&apos;s make your financial
-                    journey not just easier but a joy to embark upon.
+                    My goal for the next 10 years is to give back to my community, I am very involved in Soccer and in animals and I want to develop my passion in fostering animals, besides my two boys my biggest passion is the welfare of animals, I recently rescued a lurcher called Archie and he has been one of the biggest changes in my life, his soul was meant to meet mine.  I will have also completed my master&apos;s in finance and most importantly see my boys grow into young men.  There is no currency more valuable than time, we can always make money but can never make up for lost time.
                   </p>
                 </div>
               )}
@@ -555,10 +536,45 @@ export default function About() {
         </section>
         <hr />
 
-        <div className="bgColor mb-10">
-          <div className="container">
-            <ImageSlider />
+        <div className="mb-10 mx-2">
+          <h2 className="font-sans pt-10 text-center text-3xl font-bold text-black mb-5 underline">
+            When we are not at work
+          </h2>
+          <div className="container bgColor">
+            <div className="flex justify-between flex-col md:flex-row">
+              <div className="m-2 flex flex-col items-center md:w-1/2">
+                <Image
+                  src={gemmaAtTraithlon.src}
+                  layout="responsive"
+                  width={150}
+                  height={150}
+                  alt="partner3"
+                  className="rounded-lg imgCss bg-white p-3 m-2"
+                />
+                {/* <h6 className="bg-white">Traithlon Discipline</h6> */}
+                <p className="cormorant-infant text-xl text-justify m-2">
+                  Gemma: “I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling, and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre, and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.”
+                </p>
+              </div>
+              <div className="m-2 flex flex-col items-center md:w-1/2">
+                <Image
+                  src={dogImage.src}
+                  layout="responsive"
+                  width={150}
+                  height={150}
+                  alt="partner3"
+                  className="rounded-lg imgCss bg-white p-3 m-2"
+                />
+                {/* <h6>Champion Canine</h6> */}
+                <p className="cormorant-infant text-xl text-justify m-2">
+                  Marie: “I am grateful to have been able to take a quivering abandoned dog to the ruler of our hearts. Archie now reigns supreme with a paw of iron and a heart of pure gold. When I&apos;m not busy pampering Archie, Bailey, and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.”
+                </p>
+              </div>
+            </div>
+
+            {/* <ImageSlider /> */}
           </div>
+
 
           {/* <div className="pb-5 cormorant-infant text-xl">
             <p className="underline text-center mt-10 mb-5 font-black text-black text-3xl">

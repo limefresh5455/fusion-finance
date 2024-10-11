@@ -1,5 +1,7 @@
 .bgColor {
   background-color: rgb(90 233 212 / 40%);
+  border-radius: 50px;
+  border: 1px outset rgb(80, 80, 80);
 }
 
 .marieImage,
@@ -28,6 +30,13 @@
 
 .underline {
   text-decoration: underline !important;
+}
+
+.imgCss {
+  width: 270px !important;
+  height: 270px !important;
+  object-fit: cover;
+  object-position: top;
 }
 
 @media (max-width: 767px) {
