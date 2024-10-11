@@ -555,7 +555,7 @@ export default function About() {
         </section>
         <hr />
 
-        <div className="bg-[#5ae9d4] mb-10">
+        <div className="bgColor mb-10">
           <div className="container">
             <ImageSlider />
           </div>
