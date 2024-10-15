@@ -67,7 +67,7 @@ export default function Services() {
           </div>
         </div> */}
 
-        <div className="font-sans flex flex-col lg:flex-row">
+        {/* <div className="font-sans flex flex-col lg:flex-row">
           <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
             <div id="textBox">
               <div className="flex flex-col font-sans mt-3 sm:mt-6">
@@ -185,7 +185,100 @@ export default function Services() {
               }}
             />
           </div>
+        </div> */}
+
+        <div className="flex flex-col md:flex-row justify-center">
+          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+            <div className="relative">
+              <Image
+                src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
+                alt="Card Image 1"
+                width={600}
+                height={600}
+                className="w-full object-cover"
+              />
+              <Link href="/services/financial-security" className="absolute inset-0 flex items-end justify-center">
+                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
+                  See More {">"} {">"}
+                </span>
+              </Link>
+            </div>
+            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+              <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
+              <h1 className="customFontSize">LIFE INSURANCE</h1>
+              <h1 className="customFontSize">FAMILY PROTECTION</h1>
+            </div>
+          </div>
+
+          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+            <div className="relative">
+              <Image
+                src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
+                alt="Card Image 2"
+                width={600}
+                height={600}
+                className="w-full object-cover"
+              />
+              <Link href="/services/income-protection" className="absolute inset-0 flex items-end justify-center">
+                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
+                  See More {">"} {">"}
+                </span>
+              </Link>
+            </div>
+            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+              <h1 className="customFontSize">INCOME PROTECTION </h1>
+              <h1 className="customFontSize">AND SERIOUS ILLNESS</h1>
+              <h1 className="customFontSize">PROTECTION</h1>
+            </div>
+          </div>
         </div>
+
+        <div className="flex flex-col md:flex-row justify-center">
+          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+            <div className="relative">
+              <Image
+                src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
+                alt="Card Image 1"
+                width={600}
+                height={600}
+                className="w-full object-cover"
+              />
+              <Link href="/services/Lump-Sum-Pension" className="absolute inset-0 flex items-end justify-center">
+                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
+                  See More {">"} {">"}
+                </span>
+              </Link>
+            </div>
+            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+              <h1 className="customFontSize">LUMP SUM PENSIONS</h1>
+              <h1 className="customFontSize">AND CHILDREN EDUCATION</h1>
+              <h1 className="customFontSize">PLANNING</h1>
+            </div>
+          </div>
+
+          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+            <div className="relative">
+              <Image
+                src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
+                alt="Card Image 2"
+                width={600}
+                height={600}
+                className="w-full object-cover"
+              />
+              <Link href="/services/retirement-pension" className="absolute inset-0 flex items-end justify-center">
+                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
+                  See More {">"} {">"}
+                </span>
+              </Link>
+            </div>
+            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+              <h1 className="customFontSize">RETIREMENT PLANNING</h1>
+              <h1 className="customFontSize">PENSIONS AND</h1>
+              <h1 className="customFontSize">LAST MINUTE PENSIONS</h1>
+            </div>
+          </div>
+        </div>
+
       </main>
     </>
   );

@@ -542,7 +542,7 @@ export default function About() {
           </h2>
           <div className="container bgColor">
             <div className="flex justify-between flex-col md:flex-row">
-              <div className="m-2 flex flex-col items-center md:w-1/2">
+              <div className="bg-white m-2 flex flex-col items-center md:w-1/2 rounded-md">
                 <div className="image-wrapper relative">
                   <Image
                     src={gemmaAtTraithlon.src}
@@ -558,7 +558,7 @@ export default function About() {
                   Gemma: “I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling, and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre, and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.”
                 </p>
               </div>
-              <div className="m-2 flex flex-col items-center md:w-1/2">
+              <div className="bg-white rounded-md m-2 flex flex-col items-center md:w-1/2">
                 <div className="image-wrapper relative">
                   <Image
                     src={dogImage.src}
@@ -568,7 +568,7 @@ export default function About() {
                     alt="partner3"
                     className="rounded-lg imgCss bg-white p-3"
                   />
-                  <h6 className="image-label">Champion Canine</h6>
+                  <h6 className="image-label">Marie&apos;s Champion Canine</h6>
                 </div>
                 <p className="cormorant-infant text-xl text-justify mx-2 my-4 pt-3">
                   Marie: “I am grateful to have been able to take a quivering abandoned dog to the ruler of our hearts. Archie now reigns supreme with a paw of iron and a heart of pure gold. When I&apos;m not busy pampering Archie, Bailey, and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.”
