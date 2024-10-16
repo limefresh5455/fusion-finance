@@ -196,13 +196,15 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center">
             <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
               <div className="relative">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
-                  alt="Card Image 1"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
+                <div className="image-container">
+                  <Image
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
+                    alt="Card Image 1"
+                    width={600}
+                    height={600}
+                    className="w-full object-cover"
+                  />
+                </div>
                 <Link href="/services/financial-security" className="absolute inset-0 flex items-end justify-center">
                   <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
                     See More {">"} {">"}
@@ -218,13 +220,15 @@ export default function Home() {
 
             <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
               <div className="relative">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
-                  alt="Card Image 2"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
+                <div className="image-container">
+                  <Image
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
+                    alt="Card Image 2"
+                    width={600}
+                    height={600}
+                    className="w-full object-cover"
+                  />
+                </div>
                 <Link href="/services/income-protection" className="absolute inset-0 flex items-end justify-center">
                   <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
                     See More {">"} {">"}
@@ -242,13 +246,14 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center">
             <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
               <div className="relative">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
-                  alt="Card Image 1"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
+                <div className="image-container">
+                  <Image
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
+                    alt="Card Image 1"
+                    layout="fill" // Use 'fill' layout to cover the entire container
+                    className="object-cover"
+                  />
+                </div>
                 <Link href="/services/Lump-Sum-Pension" className="absolute inset-0 flex items-end justify-center">
                   <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
                     See More {">"} {">"}
@@ -264,13 +269,15 @@ export default function Home() {
 
             <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
               <div className="relative">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
-                  alt="Card Image 2"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
+                <div className="image-container">
+                  <Image
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
+                    alt="Card Image 2"
+                    width={600}
+                    height={600}
+                    className="w-full object-cover"
+                  />
+                </div>
                 <Link href="/services/retirement-pension" className="absolute inset-0 flex items-end justify-center">
                   <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
                     See More {">"} {">"}

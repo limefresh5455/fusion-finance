@@ -350,7 +350,7 @@ export default function About() {
                 Partner Fusion Finance
               </p>
               <p className="mb-4 text-black text-xl">
-                My Journey within the Financial Services was very much accidental when I meet with New Ireland Assurance they convinced me that I would be a great fit as a tied agent with their company and from their my journey began, New Ireland Assurance was instrumental in guiding me through my exams  in my QFA and RPA as well as giving me the tools to navigate the world of finance which can be very scary and complex and at the time very male dominated, it was from there that I got to really understand the world of Finance and most importantly people.
+                My Journey within the Financial Services was very much accidental when I meet with New Ireland Assurance they convinced me that I would be a great fit as a tied agent with their company and from there my journey began, New Ireland Assurance was instrumental in guiding me through my exams  in my QFA and RPA as well as giving me the tools to navigate the world of finance which can be very scary and complex and at the time very male dominated, it was from there that I got to really understand the world of Finance and most importantly people.
               </p>
 
               {!showReadMore1 && (
