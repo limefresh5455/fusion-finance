@@ -16,7 +16,7 @@ cypress.config.ts
 /_mocks_
 
 # next.js
-# /.next/
+/.next/
 /out/
 /.swc
 
