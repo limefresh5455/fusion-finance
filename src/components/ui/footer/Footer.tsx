@@ -111,8 +111,8 @@ export default function Footer() {
               </p>
               <p className="font-sans uppercase mt-4">Email Us:</p>
               <p className="font-sans mt-2">
-                <a href="mailto:info@fusion-finance.com">
-                  info@fusion-finance.com
+                <a href="mailto:info@fusionfinance.com">
+                  info@fusionfinance.com
                 </a>
               </p>
             </div>
@@ -124,13 +124,22 @@ export default function Footer() {
               Useful Info
             </h1>
             <div className="flex flex-col items-center">
-              <Link href="/terms-of-business" className="font-sans mb-2">
+              {/* <Link href="/terms-of-business" className="font-sans mb-2">
                 Terms of Business
               </Link>
               <Link href="/privacy-policy" className="font-sans mb-2">
                 Privacy Policy
+              </Link> */}
+              {/* <Link href="/commission-terms" className="font-sans mb-2">
+                Commission Terms 2020
+              </Link> */}
+              <Link href="/pdf/TOB-Online-No-Signature.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
+                Terms of Business
               </Link>
-              <Link href="/commission-terms" className="font-sans mb-2">
+                <Link href="/pdf/Fusion-Finance-Data-Protection.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
+                  Privacy Policy
+                </Link>
+              <Link href="/pdf/commission-term.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
                 Commission Terms 2020
               </Link>
             </div>
