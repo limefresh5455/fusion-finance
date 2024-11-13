@@ -9,6 +9,9 @@ const QuoteResults = (props: {
   phone: string;
 }) => {
   const type = props.results.Outputs.Quotes.Type;
+  const { InputCheck, Life1, Life2, Plan } = props.results.Outputs.Summary;
+
+  console.log(InputCheck, Life1, Life2, Plan,"hghgbhchfhg")
 
   useEffect(() => {
     // Uncomment and implement the email sending logic if needed
@@ -23,6 +26,26 @@ const QuoteResults = (props: {
   return (
     <div className="">
       <h1 className="text-xl font-bold text-center m-4">Quote Results</h1>
+
+      {/* Display Summary Information */}
+<div className="flex justify-center items-center mb-4">
+  <div className="summary-section p-4 border border-gray-300 rounded-lg shadow-lg max-w-lg text-center">
+    <h2 className="font-bold text-lg mb-2">Summary</h2>
+    <div className="text-gray-700 mb-1 text-start">
+      <strong>Life 1:</strong> {Life1}
+    </div>
+    {Life2 && (
+      <div className="text-gray-700 mb-1 text-start mb-2">
+        <strong>Life 2:</strong> {Life2}
+      </div>
+    )}
+    <div className="text-gray-700 mb-1 text-start">
+      <strong>Plan:</strong> {Plan["#text"]}
+    </div>
+  </div>
+</div>
+
+
 
       {Array.isArray(type) ? (
         type.map((insuranceType: CoverType, index) => (
@@ -39,12 +62,12 @@ const QuoteResults = (props: {
                     style={{ minWidth: '240px' }}
                   >
                     <h2 className="text-lg font-semibold mb-2 text-left">Company: {company.Name}</h2>
-                    <div className="text-gray-700 mb-1 text-left">
+                    {/* <div className="text-gray-700 mb-1 text-left">
                       Price Pledge: <span className="font-bold">{company.PricePledge}</span>
-                    </div>
-                    <div className="text-gray-700 mb-1 text-left">
+                    </div> */}
+                    {/* <div className="text-gray-700 mb-1 text-left">
                       Conv Mortgage: <span className="font-bold">{company.SConvMortgage}</span>
-                    </div>
+                    </div> */}
                     <div className="text-gray-700 mb-1 text-left">
                       Convertible: <span className="font-bold">{company.SConvertible}</span>
                     </div>
@@ -54,9 +77,9 @@ const QuoteResults = (props: {
                     <div className="text-gray-700 mb-1 text-left">
                       Mortgage: <span className="font-bold">{company.SMortgage}</span>
                     </div>
-                    <div className="text-gray-700 mb-1 text-left">
+                    {/* <div className="text-gray-700 mb-1 text-left">
                       Underwriting: <span className="font-bold">{company.Underwriting1}</span>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
             </div>
@@ -75,12 +98,12 @@ const QuoteResults = (props: {
                   style={{ minWidth: '250px' }}
                 >
                   <h2 className="text-lg font-semibold mb-2 text-left">Company: {company.Name}</h2>
-                  <div className="text-gray-700 mb-1 text-left">
+                  {/* <div className="text-gray-700 mb-1 text-left">
                     Price Pledge: <span className="font-bold">{company.PricePledge}</span>
-                  </div>
-                  <div className="text-gray-700 mb-1 text-left">
+                  </div> */}
+                  {/* <div className="text-gray-700 mb-1 text-left">
                     Conv Mortgage: <span className="font-bold">{company.SConvMortgage}</span>
-                  </div>
+                  </div> */}
                   <div className="text-gray-700 mb-1 text-left">
                     Convertible: <span className="font-bold">{company.SConvertible}</span>
                   </div>
@@ -90,9 +113,9 @@ const QuoteResults = (props: {
                   <div className="text-gray-700 mb-1 text-left">
                     Mortgage: <span className="font-bold">{company.SMortgage}</span>
                   </div>
-                  <div className="text-gray-700 mb-1 text-left">
+                  {/* <div className="text-gray-700 mb-1 text-left">
                     Underwriting: <span className="font-bold">{company.Underwriting1}</span>
-                  </div>
+                  </div> */}
                 </div>
               ))}
           </div>

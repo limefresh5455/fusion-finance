@@ -31,15 +31,19 @@ const QuoteForm = () => {
   const smokerRef = useRef<HTMLInputElement>(null); // For smoker radio buttons
   const lifeCoverAmountRef = useRef<HTMLInputElement>(null);
   const sicAmountRef = useRef<HTMLInputElement>(null);
+  const sicAccelerated = useRef<HTMLInputElement>(null);
+  const term = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     handleValidation();
   };
 
+ 
+
   const handleValidation = async () => {
 
-    const { name, email, dob, phone, lifeCoverAmount, seriousIllness, sex, sicAmount, smoker } = formData;
+    const { name, email, dob, phone, lifeCoverAmount, seriousIllness, sex, sicAmount, smoker,sicAccelerated ,term } = formData;
     console.log("seriousIllness", seriousIllness);
     console.log("sicAmount", sicAmount);
 
@@ -127,13 +131,28 @@ const QuoteForm = () => {
       return;
     }
 
+      // Validation for Serious Illness Cover options if selected
+  if (seriousIllness === "Y") {
+    if (!sicAccelerated) {
+      alert("Please select either 'Accelerated' or 'Standalone' for Serious Illness Cover.");
+      return;
+    }
+
     if (seriousIllness === 'Y' && !seriousIllness) {
       alert("SIC Amount is required.");
       return;
     }
+  }
+
+  if (!term) {
+    alert("Term is required.");
+    return;
+  }
 
     console.log("Form data is valid. Sending request...");
     try {
+      console.log("name", name,"email", email,"dob" ,dob,"phone", phone,"lifeCoverAmount", lifeCoverAmount,"seriousIllness", seriousIllness,"gender", sex,"sicAmount", sicAmount,"smoker", smoker,"sicAccelerated",sicAccelerated,"term",term )
+      // return false
       const quotes = await fetchQuote(formData);
       console.log("API response:", quotes);
       setResult(quotes);

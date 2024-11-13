@@ -111,8 +111,8 @@ export default function Footer() {
               </p>
               <p className="font-sans uppercase mt-4">Email Us:</p>
               <p className="font-sans mt-2">
-                <a href="mailto:info@fusionfinance.com">
-                  info@fusionfinance.com
+                <a href="mailto:info@fusion-finance.com">
+                  info@fusion-finance.com
                 </a>
               </p>
             </div>
