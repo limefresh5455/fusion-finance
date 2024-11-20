@@ -13,7 +13,7 @@ export default function sendEmail(req, res) {
 
   const mailData = {
     from: "allison@branue.com",
-    to: "info@fusion-finance.com",
+    to: "gemma@fusion-finance.com", //for the testing purpose i am enter my email info@fusion-finance.com gemma@fusion-finance.com
     subject: "Email From Fusion Finance",
     html: `
       <div>
