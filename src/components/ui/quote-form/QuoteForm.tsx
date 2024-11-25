@@ -44,8 +44,7 @@ const QuoteForm = () => {
   const handleValidation = async () => {
 
     const { name, email, dob, phone, lifeCoverAmount, seriousIllness, sex, sicAmount, smoker,sicAccelerated ,term } = formData;
-    console.log("seriousIllness", seriousIllness);
-    console.log("sicAmount", sicAmount);
+   
 
     // Individual field validations
     if (!name) {
@@ -138,10 +137,11 @@ const QuoteForm = () => {
       return;
     }
 
-    if (seriousIllness === 'Y' && !seriousIllness) {
+    if (seriousIllness === 'Y' && sicAmount === null) {
       alert("SIC Amount is required.");
       return;
     }
+
   }
 
   if (!term) {
@@ -151,8 +151,6 @@ const QuoteForm = () => {
 
     console.log("Form data is valid. Sending request...");
     try {
-      console.log("name", name,"email", email,"dob" ,dob,"phone", phone,"smoker","gender", sex, smoker,"lifeCoverAmount", lifeCoverAmount,"seriousIllness", seriousIllness,"sicAccelerated",sicAccelerated,"sicAmount", sicAmount,"term",term )
-    
       const quotes = await fetchQuote(formData);
       console.log("API response:", quotes);
       setResult(quotes);
