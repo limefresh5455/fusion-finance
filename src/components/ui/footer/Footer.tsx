@@ -133,7 +133,7 @@ export default function Footer() {
               {/* <Link href="/commission-terms" className="font-sans mb-2">
                 Commission Terms 2020
               </Link> */}
-              <Link href="https://fusion-finance.com/pdf/TOB-Online-No-Signature.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
+              <Link href="https://fusion-finance.com/pdf/Terms-of-Business-For-Fusion-Finance.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
                 Terms of Business
               </Link>
                 <Link href="https://fusion-finance.com/pdf/Fusion-Finance-Data-Protection.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">

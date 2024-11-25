@@ -151,8 +151,8 @@ const QuoteForm = () => {
 
     console.log("Form data is valid. Sending request...");
     try {
-      console.log("name", name,"email", email,"dob" ,dob,"phone", phone,"lifeCoverAmount", lifeCoverAmount,"seriousIllness", seriousIllness,"gender", sex,"sicAmount", sicAmount,"smoker", smoker,"sicAccelerated",sicAccelerated,"term",term )
-      // return false
+      console.log("name", name,"email", email,"dob" ,dob,"phone", phone,"smoker","gender", sex, smoker,"lifeCoverAmount", lifeCoverAmount,"seriousIllness", seriousIllness,"sicAccelerated",sicAccelerated,"sicAmount", sicAmount,"term",term )
+    
       const quotes = await fetchQuote(formData);
       console.log("API response:", quotes);
       setResult(quotes);
