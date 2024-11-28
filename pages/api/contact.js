@@ -5,14 +5,16 @@ export default function sendEmail(req, res) {
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: "allison@branue.com",
-      pass: "cfwplqbzznrmruxc",
+      // user: "allison@branue.com",
+      // pass: "cfwplqbzznrmruxc",
+      user: "gemma@fusion-finance.com",
+      pass: "iIWJ-y2_E4oNOMH",
     },
     secure: true,
   });
 
   const mailData = {
-    from: "allison@branue.com",
+    from: "gemma@fusion-finance.com",
     to: "gemma@fusion-finance.com", // info@fusion-finance.com gemma@fusion-finance.com
     subject: "Email From Fusion Finance",
           html: `
