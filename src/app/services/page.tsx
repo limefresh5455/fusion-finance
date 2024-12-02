@@ -230,9 +230,9 @@ export default function Services() {
               </Link>
             </div>
             <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-              <h1 className="customFontSize">INCOME PROTECTION </h1>
-              <h1 className="customFontSize">AND SERIOUS ILLNESS</h1>
-              <h1 className="customFontSize">PROTECTION</h1>
+                <h1 className="customFontSize">INCOME PROTECTION </h1>
+                <h1 className="customFontSize">SERIOUS ILLNESS</h1>
+                <h1 className="customFontSize">COVER</h1>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ export default function Services() {
             <div className="relative">
               <div className="image-container">
                 <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
+                  src="/Fusion_pics/Fusion-Finance-Web-Ready-33.jpg"
                   alt="Card Image 1"
                   layout="fill" // Use 'fill' layout to cover the entire container
                   className="object-cover"
@@ -255,9 +255,9 @@ export default function Services() {
               </Link>
             </div>
             <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-              <h1 className="customFontSize">LUMP SUM PENSIONS</h1>
-              <h1 className="customFontSize">AND CHILDREN EDUCATION</h1>
-              <h1 className="customFontSize">PLANNING</h1>
+                <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
+                <h1 className="customFontSize">AND CHILDREN'S EDUCATION</h1>
+                <h1 className="customFontSize">PLANNING</h1>
             </div>
           </div>
 
@@ -265,7 +265,7 @@ export default function Services() {
             <div className="relative">
               <div className="image-container">
                 <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
+                  src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
                   alt="Card Image 2"
                   width={600}
                   height={600}
@@ -279,9 +279,9 @@ export default function Services() {
               </Link>
             </div>
             <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-              <h1 className="customFontSize">RETIREMENT PLANNING</h1>
-              <h1 className="customFontSize">PENSIONS AND</h1>
-              <h1 className="customFontSize">LAST MINUTE PENSIONS</h1>
+            <h1 className="customFontSize">PENSION AND</h1>
+            <h1 className="customFontSize">RETIREMENT PLANNING</h1>
+              {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
             </div>
           </div>
         </div>

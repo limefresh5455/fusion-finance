@@ -19,81 +19,10 @@ export default function Home() {
         <div className="video-container" >
           <Carousel />
         </div >
-
-        {/* <section
-          id="our-values"
-          className="relative font-sans section-padding bg-[#d6cccc] bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${missionImage.src})`,
-            // backgroundRepeat: 'no-repeat',
-            // backgroundSize: 'cover',
-            backgroundPosition: '50% 55%', // Custom position
-            height: '600px', // Set height as needed
-            // width: '100%' // Set width as needed
-          }}
-        >
-          <div className="inset-0 bg-[#8a8a8a]"></div>
-          <div className="text-center flex postionRelative md:mb-10 container mx-auto px-4 bg-black opacity-80">
-            <div className="mb-6 sm:mb-0 container grid grid-cols-1 sm:grid-cols-4">
-              <div className="flex flex-col justify-center items-left p-4">
-                <div className="text-white text-3xl font-bold font-sans mt-2">
-                  At a Glance
-                </div>
-              </div>
-
-              <div className="border rounded flex flex-col justify-center items-center mx-2 my-4">
-                <Image
-                  src="/Fusion_icon_services.png"
-                  width={70}
-                  height={50}
-                  alt="services"
-                  className="ml-0 mt-2"
-                />
-                <div className="text-white text-xl sm:text-2xl font-bold font-sans mt-2">
-                  Financial Services
-                </div>
-                <div className="text-base sm:text-xl text-white font-bold cormorant-infant">
-                  For Everyone
-                </div>
-              </div>
-
-              <div className="border rounded flex justify-center items-center flex-col mx-2 my-4">
-                <Image
-                  src="/Fusion_icon_knowledge.png"
-                  width={70}
-                  height={50}
-                  alt="knowledge"
-                  className="mt-2"
-                />
-                <div className="text-center text-white text-xl sm:text-2xl font-bold font-sans mt-2">
-                  With A Wealth Of Agnostic
-                </div>
-                <div className="text-base sm:text-xl text-white text-center font-bold cormorant-infant">
-                  Industry Knowledge advisor
-                </div>
-              </div>
-              <div className="border rounded flex flex-col justify-center items-center mx-2 my-4">
-                <Image
-                  src="/Fusion_icon_advisor.png"
-                  width={100}
-                  height={50}
-                  alt="advisor"
-                  className="mt-2"
-                />
-                <div className="text-white text-xl sm:text-2xl font-bold font-sans mt-2">
-                  Here To Be Your
-                </div>
-                <div className="text-base sm:text-xl text-white font-bold cormorant-infant">
-                  Trusted Advisor
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
       </main >
 
       <main>
-        <div className="pb-5 pt-5 md:pt-14 md:pb-10">
+        {/* <div className="pb-5 pt-5 md:pt-14 md:pb-10">
           <h1 className="container text-[#1a584f] text-center text-4xl font-bold font-sans underline">
             Why work with us?
           </h1>
@@ -149,7 +78,67 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+<div className="relative pb-16 pt-12 pl-5 pr-5 bg-gradient-to-br from-[#fff] to-[#fff]">
+  <div className="container mx-auto text-center">
+  <h1 className="container text-[#1a584f] mb-6  text-center text-3xl sm:text-5xl font-bold font-sans underline">
+            Why work with us?
+  </h1>
+    <p className="text-black-700 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
+      With over <span className="text-[#1a584f] font-bold font-sans">50+ years of combined experience</span>, we don’t just provide services—we build relationships. 
+    </p>
+  </div>
+
+  <div className="mt-24 flex flex-wrap justify-center items-center gap-20 sm:gap-20 md:gap-16 lg:gap-14 relative z-10"> 
+    {/* First Box */}
+    <div className="relative group max-w-xs sm:max-w-sm p-6 pb-10 bg-[#f1fffdc4] border border-[#1a584f3b] shadow-lg rounded-2xl transition-transform duration-700 scale-100 hover:shadow-2xl" style={{ boxShadow: '0px 4px 6px rgba(26, 88, 79, 0.5)' }}>
+      <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#1a584f] flex justify-center items-center rounded-full transition-transform group-hover:scale-125 group-hover:rotate-[360deg]">
+        <Image src="/customer-service.png" width={50} height={50} alt="services" />
+      </div>
+      <h2 className=" text-[#1a584f] text-3xl font-bold font-sans mt-12 mb-auto">
+        Exceptional Customer Service
+      </h2>
+      <p className="cormorant-infant text-2xl font-bold font-sans">
+        Financial services for everyone.
+      </p>
+    </div>
+
+  {/* Center Box with conic gradiant Circle */}
+  <div className="relative group max-w-xs sm:max-w-sm p-6 pb-10 bg-white border-4 border-solid shadow-lg rounded-2xl transition-transform duration-700 hover:scale-110 hover:shadow-2xl lg:scale-110 animate-gradient-border" style={{ boxShadow: '0px 4px 6px rgba(26, 88, 79, 0.5)' }}>
+    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-24 lg:h-24  bg-[#1a584f] flex justify-center items-center rounded-full transition-transform group-hover:scale-125 group-hover:rotate-[360deg]">
+      <Image src="/experiencee.png" width={50} height={50} alt="knowledge" />
+    </div>
+    <h2 className="text-[#082c27] text-4xl font-bold font-sans mt-12 mb-auto">
+      50+ <span className="text-3xl"> Years Experience</span>
+    </h2><br className="hidden sm:block" />
+    <p className="cormorant-infant text-2xl font-bold font-sans">
+    With a wealth of agnostic industry knowledge.
+    </p>
+  </div>
+
+    {/* Third Box */}
+    <div className="relative group max-w-xs sm:max-w-sm p-6 pb-10 bg-[#f1fffdc4] border border-[#1a584f3b] shadow-lg rounded-2xl transition-transform duration-700  scale-100   hover:shadow-2xl" style={{ boxShadow: '0px 4px 6px rgba(26, 88, 79, 0.5)' }}>
+      <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#1a584f] flex justify-center items-center rounded-full transition-transform group-hover:scale-125 group-hover:rotate-[360deg]">
+        <Image src="/customerr.png" width={50} height={50} alt="advisor" />
+      </div>
+      <h2 className="text-[#1a584f] text-3xl font-bold font-sans mt-12 mb-auto">
+        2000+ Happy Customers
+      </h2><br className="hidden sm:block" />
+      <p className="cormorant-infant text-2xl font-bold font-sans">
+        Here to be your trusted advisor.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+ 
+
+
 
         <div className="bg-[#1a584f] text-white">
           <div className="container py-10 pb-6 text-center md:text-left px-5">
@@ -237,8 +226,8 @@ export default function Home() {
               </div>
               <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
                 <h1 className="customFontSize">INCOME PROTECTION </h1>
-                <h1 className="customFontSize">AND SERIOUS ILLNESS</h1>
-                <h1 className="customFontSize">PROTECTION</h1>
+                <h1 className="customFontSize">SERIOUS ILLNESS</h1>
+                <h1 className="customFontSize">COVER</h1>
               </div>
             </div>
           </div>
@@ -248,7 +237,7 @@ export default function Home() {
               <div className="relative">
                 <div className="image-container">
                   <Image
-                    src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-33.jpg"
                     alt="Card Image 1"
                     layout="fill" // Use 'fill' layout to cover the entire container
                     className="object-cover"
@@ -261,8 +250,8 @@ export default function Home() {
                 </Link>
               </div>
               <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                <h1 className="customFontSize">LUMP SUM PENSIONS</h1>
-                <h1 className="customFontSize">AND CHILDREN EDUCATION</h1>
+                <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
+                <h1 className="customFontSize">AND CHILDREN'S EDUCATION</h1>
                 <h1 className="customFontSize">PLANNING</h1>
               </div>
             </div>
@@ -271,7 +260,7 @@ export default function Home() {
               <div className="relative">
                 <div className="image-container">
                   <Image
-                    src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
                     alt="Card Image 2"
                     width={600}
                     height={600}
@@ -285,138 +274,12 @@ export default function Home() {
                 </Link>
               </div>
               <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+                <h1 className="customFontSize">PENSION AND</h1>
                 <h1 className="customFontSize">RETIREMENT PLANNING</h1>
-                <h1 className="customFontSize">PENSIONS AND</h1>
-                <h1 className="customFontSize">LAST MINUTE PENSIONS</h1>
+                {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
               </div>
             </div>
           </div>
-
-
-
-
-          {/* <div className="font-sans flex flex-col lg:flex-row">
-            <div>
-              <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
-                <Link
-                  href="/services/financial-security"
-                  id="button"
-                  className="font-sans font-bold text-lg"
-                >
-                  See More {">"}
-                  {">"}
-                </Link>
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
-                  width={600}
-                  height={600}
-                  alt="service1"
-                  style={{
-                    borderRadius: "5rem",
-                    objectFit: "contain",
-                    margin: "3em",
-                  }}
-                />
-              </div>
-              <div className="text-center">
-                <div className="flex flex-col font-sans mt-3 sm:mt-6">
-                  <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
-                  <h1 className="customFontSize">LIFE INSURANCE</h1>
-                  <h1 className="customFontSize">FAMILY PROTECTION</h1>
-                </div>
-              </div>
-            </div>
-
-
-            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
-              <div id="textBox">
-                <div className="flex flex-col mt-6 font-sans">
-                  <h1 className="customFontSize">INCOME PROTECTION</h1>
-                  <h1 className="customFontSize">AND SERIOUS ILLNESS</h1>
-                  <h1 className="customFontSize">PROTECTION</h1>
-                </div>
-              </div>
-              <Link
-                href="/services/income-protection"
-                id="button"
-                className="font-sans font-bold text-lg"
-              >
-                See More {">"}
-                {">"}
-              </Link>
-              <Image
-                src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
-                width={600}
-                height={600}
-                alt="service1"
-                style={{
-                  borderRadius: "5rem",
-                  objectFit: "contain",
-                  margin: "3em",
-                }}
-              />
-            </div>
-          </div> */}
-
-          {/* <div className="flex flex-col lg:flex-row">
-            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
-              <div id="textBox">
-                <div className="flex flex-col mt-6 font-sans">
-                  <h1 className="customFontSize">LUMP SUM PENSIONS</h1>
-                  <h1 className="customFontSize">AND CHILDREN EDUCATION</h1>
-                  <h1 className="customFontSize">PLANNING</h1>
-                </div>
-              </div>
-              <Link
-                href="/services/Lump-Sum-Pension"
-                id="button"
-                className="font-sans font-bold text-lg"
-              >
-                See More {">"}
-                {">"}
-              </Link>
-              <Image
-                src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
-                width={600}
-                height={600}
-                alt="service1"
-                style={{
-                  borderRadius: "5rem",
-                  objectFit: "contain",
-                  margin: "3em",
-                }}
-              />
-            </div>
-
-            <div className="mx-5 flex flex-col relative items-center justify-center overflow-hidden lg:flex-row">
-              <div id="textBox">
-                <div className="flex flex-col mt-6 font-sans">
-                  <h1 className="customFontSize">RETIREMENT PLANNING</h1>
-                  <h1 className="customFontSize">PENSIONS AND</h1>
-                  <h1 className="customFontSize">LAST MINUTE PENSIONS</h1>
-                </div>
-              </div>
-              <Link
-                href="/services/retirement-pension"
-                id="button"
-                className="font-sans font-bold text-lg"
-              >
-                See More {">"}
-                {">"}
-              </Link>
-              <Image
-                src="/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg"
-                width={600}
-                height={600}
-                alt="service1"
-                style={{
-                  borderRadius: "5rem",
-                  objectFit: "contain",
-                  margin: "3em",
-                }}
-              />
-            </div>
-          </div> */}
         </div>
 
         <div className="bg-[#5ae9d4] pb-5 pt-5">
@@ -503,61 +366,6 @@ export default function Home() {
             <Testimonial />
           </div>
         </div>
-
-        {/* Footer Section */}
-        {/* <div className="bg-[#1a584f] pb-5 pt-5">
-          <div className="text-center flex flex-col lg:flex-row justify-center align-center">
-            <div className="container flex flex-col sm:flex-row justify-evenly items-center flex-wrap ">
-              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
-                <Image
-                  src="/Fusion_icon_services.png"
-                  width={70}
-                  height={50}
-                  alt="services"
-                  className="mx-auto"
-                />
-                <div className="text-white text-3xl font-bold font-sans mt-2">
-                  Financial Services
-                </div>
-                <div className="text-white cormorant-infant text-2xl font-bold">
-                  For Everyone
-                </div>
-              </div>
-
-              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
-                <Image
-                  src="/Fusion_icon_knowledge.png"
-                  width={70}
-                  height={50}
-                  alt="knowledge"
-                  className="mx-auto"
-                />
-                <div className="text-white text-3xl font-bold font-sans mt-2">
-                  With A Wealth Of Agnostic
-                </div>
-                <div className="text-white text-2xl font-bold cormorant-infant">
-                  Industry Knowledge
-                </div>
-              </div>
-
-              <div className="mt-3 mx-2 text-center min-w-[240px] max-w-[250px] min-h-[220px] flex flex-col justify-center items-left p-4">
-                <Image
-                  src="/Fusion_icon_advisor.png"
-                  width={100}
-                  height={50}
-                  alt="advisor"
-                  className="mx-auto"
-                />
-                <div className="text-white text-3xl font-bold font-sans mt-2">
-                  Here To Be Your
-                </div>
-                <div className="text-white text-2xl font-bold cormorant-infant">
-                  Trusted Advisor
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
       </main>
     </div >

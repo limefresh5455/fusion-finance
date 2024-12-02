@@ -180,6 +180,46 @@
 
 @media screen and (max-width: 767px) {
   .video-container {
-    min-height: 300px;
+    /* min-height: 180px; */
+    min-height: 90px;
   }
+}
+
+@keyframes gradient-border {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+.animate-gradient-border {
+  --border-angle: 0turn;
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #fff,
+    #FFF 5%,
+    #FFF 60%,
+    #FFF 95%
+  );
+  
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #21e6c8, #1a584f 99%, transparent);
+
+  border: solid 1px transparent;
+  border-radius: 2em;
+  background: 
+    var(--main-bg) padding-box,
+    var(--gradient-border) border-box, 
+    white; /* Ensure the background of the box is white */
+  
+  background-position: center center;
+  animation: gradient-border 3s linear infinite;
+}
+
+.animate-gradient-border:hover {
+  animation-play-state: paused;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }

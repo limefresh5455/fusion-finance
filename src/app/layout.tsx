@@ -6,6 +6,8 @@ import "./globals.css";
 import NavBar from "../components/ui/nav-bar/NavBar";
 import useResultsProvider from "@/components/context/cache";
 import Footer from "@/components/ui/footer/Footer";
+ 
+
 
 const inter = Inter({ subsets: ["latin"] });
 

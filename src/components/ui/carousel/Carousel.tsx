@@ -55,7 +55,7 @@ export default function Carousel() {
               leaveTo="opacity-0 scale-95"
             >
               {index !== 0 ? (
-                <div style={{ height: "64vh", objectPosition: "center" }} className="w-full h-full overflow-hidden">
+                <div style={{ height: "auto", objectPosition: "center" }} className="w-full h-full overflow-hidden">
                   <img
                     src={item.videoUrl} // Display image for the first two items
                     style={{
