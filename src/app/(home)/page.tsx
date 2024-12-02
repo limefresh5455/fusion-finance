@@ -251,7 +251,7 @@ export default function Home() {
               </div>
               <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
                 <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
-                <h1 className="customFontSize">AND CHILDREN'S EDUCATION</h1>
+                <h1 className="customFontSize">AND CHILDREN&apos;S EDUCATION</h1>
                 <h1 className="customFontSize">PLANNING</h1>
               </div>
             </div>

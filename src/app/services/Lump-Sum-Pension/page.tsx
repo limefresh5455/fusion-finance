@@ -79,7 +79,7 @@ export default function FutureFunds() {
             <div className="mt-20 p-6 border rounded-md border-black shadow-xl flex flex-col lg:flex-row items-center lg:items-start lg:justify-around">
               <div className="mb-4 lg:w-3/5 lg:ms-20 lg:order-2">
                 <h1 className="underline text-3xl font-bold mb-2 font-sans">
-                  Children's Education Planning
+                  Children&apos;s Education Planning
                 </h1>
                 <p className="text-gray-700 cormorant-infant text-xl text-justify">
                   We all want to give our children the best possible start in
@@ -95,7 +95,7 @@ export default function FutureFunds() {
               </div>
               <div className="lg:w-2/5 flex flex-col items-center lg:order-1">
                 <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
-                  Explore the Significance of Children's Education Planning.
+                  Explore the Significance of Children&apos;s Education Planning.
                   Learn more by watching our concise video.
                 </h1>
                 <div className="customClass">
