@@ -279,8 +279,8 @@ export default function Services() {
               </Link>
             </div>
             <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-            <h1 className="customFontSize">PENSION AND</h1>
-            <h1 className="customFontSize">RETIREMENT PLANNING</h1>
+            <h1 className="customFontSize">RETIREMENT PLANNING AND</h1>
+            <h1 className="customFontSize">PENSIONS</h1>
               {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
             </div>
           </div>

@@ -38,7 +38,7 @@ export default function RetirementPension() {
             <div className="p-6 border rounded-md border-black shadow-xl flex flex-col lg:flex-row items-center lg:items-start lg:justify-around mb-8">
               <div className="mb-8 lg:w-3/5 lg:me-20">
                 <h2 className="underline text-3xl font-bold mb-2 font-sans">
-                  Pension & Retirement Planning
+                  Retirement Planning & Pensions
                 </h2>
                 <p className="text-gray-700 cormorant-infant text-xl text-justify">
                   As a nation we are living longer so the need for a realistic
@@ -54,7 +54,7 @@ export default function RetirementPension() {
               </div>
               <div className="lg:w-2/5 flex flex-col items-center">
                 <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
-                  Explore the Benefits of Pension & Retirement Planning. Watch
+                  Explore the Benefits of Retirement Planning & Pensions. Watch
                   our informative video to gain insights.
                 </h1>
                 <div className="customClass">
