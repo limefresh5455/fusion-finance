@@ -646,7 +646,7 @@ const QuoteForm = () => {
               style={{ backgroundColor: "#075c50" }}
               onClick={handleSubmit}
             >
-              Get quote
+              Get Quote
             </button>
           </div>
         </form>

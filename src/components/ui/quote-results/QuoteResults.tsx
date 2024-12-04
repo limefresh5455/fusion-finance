@@ -1,126 +1,128 @@
 import { useEffect } from "react";
-import { CoverType } from "@/components/definitions/CoverType"; // Ensure this imports correctly
-import { Company } from "@/components/definitions/Company"; // Ensure this imports correctly
+import { CoverType } from "@/components/definitions/CoverType";
+import { Company } from "@/components/definitions/Company";
 
 const QuoteResults = (props: {
-  results: any; // You may want to define this type more specifically
+  results: any; // Define specific types if possible
   customerName: string;
   email: string;
   phone: string;
 }) => {
   const type = props.results.Outputs.Quotes.Type;
-  const { InputCheck, Life1, Life2, Plan } = props.results.Outputs.Summary;
+  const { Life1, Life2, Plan } = props.results.Outputs.Summary;
 
-  console.log(InputCheck, Life1, Life2, Plan,"hghgbhchfhg")
+  // Function to sort companies in ascending order by SConvertible
+  const sortCompaniesAsc = (companies: Company[]) => {
+    return companies.sort((a, b) => {
+      const valueA = parseFloat(a.SConvertible) || 0;
+      const valueB = parseFloat(b.SConvertible) || 0;
+      return valueA - valueB; // Ascending order
+    });
+  };
+ 
 
   useEffect(() => {
-    // Uncomment and implement the email sending logic if needed
-    // SendEmail({
-    //   results: props.results,
-    //   customerName: props.customerName,
-    //   email: props.email,
-    //   phone: props.phone,
-    // });
+    // Add email logic if needed
   }, [props.results, props.customerName, props.email, props.phone]);
 
   return (
-    <div className="">
-      <h1 className="text-xl font-bold text-center m-4">Quote Results</h1>
+    <div className="container p-4">
+      <h1 className="text-4xl font-bold text-center my-4 underline font-sans">Quote Results</h1>
 
-      {/* Display Summary Information */}
-<div className="flex justify-center items-center mb-4">
-  <div className="summary-section p-4 border border-gray-300 rounded-lg shadow-lg max-w-lg text-center">
-    <h2 className="font-bold text-lg mb-2">Summary</h2>
-    <div className="text-gray-700 mb-1 text-start">
-      <strong>Life 1:</strong> {Life1}
-    </div>
-    {Life2 && (
-      <div className="text-gray-700 mb-1 text-start mb-2">
-        <strong>Life 2:</strong> {Life2}
+      {/* Summary Table */}
+      <div className="mb-6">
+        <h2 className="text-3xl font-bold mb-2 underline font-sans">Summary</h2>
+        <table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg text-left">
+          <thead>
+            <tr className="bg-green-900 font-sans text-xl">
+              <th className="px-4 py-2 border text-white">Field</th>
+              <th className="px-4 py-2 border text-white">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="odd:bg-white even:bg-gray-50 font-sans">
+              <td className="px-4 py-2 border">Life 1</td>
+              <td className="px-4 py-2 border">{Life1}</td>
+            </tr>
+            {Life2 && (
+              <tr className="odd:bg-white even:bg-gray-50 font-sans">
+                <td className="px-4 py-2 border">Life 2</td>
+                <td className="px-4 py-2 border">{Life2}</td>
+              </tr>
+            )}
+            <tr className="odd:bg-white even:bg-gray-50 font-sans">
+              <td className="px-4 py-2 border">Plan</td>
+              <td className="px-4 py-2 border">{Plan["#text"]}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    )}
-    <div className="text-gray-700 mb-1 text-start">
-      <strong>Plan:</strong> {Plan["#text"]}
-    </div>
-  </div>
-</div>
 
-
-
+      {/* Quotes Table */}
       {Array.isArray(type) ? (
         type.map((insuranceType: CoverType, index) => (
-          <div key={index}>
-            <h3 className="font-bold text-center m-4">{insuranceType?.Desc}</h3>
-
-            <div className="flex flex-wrap justify-center">
-              {insuranceType.Company
-                .filter((company: Company) => company.Name !== "Friends First") // Specify type here
-                .map((company: Company, companyIndex: number) => (
-                  <div
+          <div key={index} className="mb-6 mt-8">
+            <h2 className="text-3xl font-bold mb-2 font-sans underline">{insuranceType?.Desc}</h2>
+            <table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg text-left">
+              <thead>
+                <tr className="bg-green-900 font-sans text-xl">
+                  <th className="px-4 py-2 border text-white">Company</th>
+                  <th className="px-4 py-2 border text-white">Convertible</th>
+                  <th className="px-4 py-2 border text-white">Level</th>
+                     {/* <th className="px-4 py-2 border">Mortgage</th> */}
+                </tr>
+              </thead>
+              <tbody>
+                {sortCompaniesAsc(
+                  insuranceType.Company.filter(
+                    (company: Company) => company.Name !== "Friends First"
+                  )
+                ).map((company: Company, companyIndex: number) => (
+                  <tr
                     key={companyIndex}
-                    className="m-4 p-4 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    style={{ minWidth: '240px' }}
+                    className="odd:bg-white even:bg-gray-50 font-sans"
                   >
-                    <h2 className="text-lg font-semibold mb-2 text-left">Company: {company.Name}</h2>
-                    {/* <div className="text-gray-700 mb-1 text-left">
-                      Price Pledge: <span className="font-bold">{company.PricePledge}</span>
-                    </div> */}
-                    {/* <div className="text-gray-700 mb-1 text-left">
-                      Conv Mortgage: <span className="font-bold">{company.SConvMortgage}</span>
-                    </div> */}
-                    <div className="text-gray-700 mb-1 text-left">
-                      Convertible: <span className="font-bold">{company.SConvertible}</span>
-                    </div>
-                    <div className="text-gray-700 mb-1 text-left">
-                      Level: <span className="font-bold">{company.SLevel}</span>
-                    </div>
-                    <div className="text-gray-700 mb-1 text-left">
-                      Mortgage: <span className="font-bold">{company.SMortgage}</span>
-                    </div>
-                    {/* <div className="text-gray-700 mb-1 text-left">
-                      Underwriting: <span className="font-bold">{company.Underwriting1}</span>
-                    </div> */}
-                  </div>
+                    <td className="px-4 py-2 border">{company.Name}</td>
+                    <td className="px-4 py-2 border">{company.SConvertible}</td>
+                    <td className="px-4 py-2 border">{company.SLevel}</td>
+                     {/* <td className="px-4 py-2 border">{company.SMortgage}</td> */}
+                  </tr>
                 ))}
-            </div>
+              </tbody>
+            </table>
           </div>
         ))
       ) : (
-        <>
-          <h3 className="font-bold text-center m-4">{type?.Desc}</h3>
-          <div className="flex flex-wrap justify-center">
-            {type.Company
-              .filter((company: Company) => company.Name !== "Friends First") // Specify type here
-              .map((company: Company, index: number) => (
-                <div
+        <div className="mb-6">
+          <h2 className="text-3xl font-bold mb-2 font-sans underline">{type?.Desc}</h2>
+          <table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg text-left">
+            <thead>
+              <tr className="bg-green-900 font-sans text-xl">
+                <th className="px-4 py-2 border text-white">Company</th>
+                <th className="px-4 py-2 border text-white">Convertible</th>
+                <th className="px-4 py-2 border text-white">Level</th>
+                 {/* <th className="px-4 py-2 border">Mortgage</th> */}
+              </tr>
+            </thead>
+            <tbody>
+              {sortCompaniesAsc(
+                type.Company.filter(
+                  (company: Company) => company.Name !== "Friends First"
+                )
+              ).map((company: Company, index: number) => (
+                <tr
                   key={index}
-                  className="m-4 p-4 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  style={{ minWidth: '250px' }}
+                  className="odd:bg-white even:bg-gray-50 font-sans"
                 >
-                  <h2 className="text-lg font-semibold mb-2 text-left">Company: {company.Name}</h2>
-                  {/* <div className="text-gray-700 mb-1 text-left">
-                    Price Pledge: <span className="font-bold">{company.PricePledge}</span>
-                  </div> */}
-                  {/* <div className="text-gray-700 mb-1 text-left">
-                    Conv Mortgage: <span className="font-bold">{company.SConvMortgage}</span>
-                  </div> */}
-                  <div className="text-gray-700 mb-1 text-left">
-                    Convertible: <span className="font-bold">{company.SConvertible}</span>
-                  </div>
-                  <div className="text-gray-700 mb-1 text-left">
-                    Level: <span className="font-bold">{company.SLevel}</span>
-                  </div>
-                  <div className="text-gray-700 mb-1 text-left">
-                    Mortgage: <span className="font-bold">{company.SMortgage}</span>
-                  </div>
-                  {/* <div className="text-gray-700 mb-1 text-left">
-                    Underwriting: <span className="font-bold">{company.Underwriting1}</span>
-                  </div> */}
-                </div>
+                  <td className="px-4 py-2 border">{company.Name}</td>
+                  <td className="px-4 py-2 border">{company.SConvertible}</td>
+                  <td className="px-4 py-2 border">{company.SLevel}</td>
+                   {/* <td className="px-4 py-2 border">{company.SMortgage}</td> */}
+                </tr>
               ))}
-          </div>
-          <br />
-        </>
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
