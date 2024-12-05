@@ -237,7 +237,7 @@ export default function Home() {
               <div className="relative">
                 <div className="image-container">
                   <Image
-                    src="/Fusion_pics/Fusion-Finance-Web-Ready-33.jpg"
+                    src="/Fusion_pics/Fusion-Finance-Web-Ready-45.jpg"
                     alt="Card Image 1"
                     layout="fill" // Use 'fill' layout to cover the entire container
                     className="object-cover"
