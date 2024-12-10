@@ -11,4 +11,5 @@ export interface FormData {
   sicAccelerated: 'Y' | 'N';
   sicAmount: number | null;
   term: number | null;
+  typeOfCover:string;
 }

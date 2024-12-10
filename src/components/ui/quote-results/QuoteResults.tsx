@@ -59,7 +59,7 @@ const QuoteResults = (props: {
       </div>
 
       {/* Quotes Table */}
-      {Array.isArray(type) ? (
+      {/* {Array.isArray(type) ? (
         type.map((insuranceType: CoverType, index) => (
           <div key={index} className="mb-6 mt-8">
             <h2 className="text-3xl font-bold mb-2 font-sans underline">{insuranceType?.Desc}</h2>
@@ -69,7 +69,6 @@ const QuoteResults = (props: {
                   <th className="px-4 py-2 border text-white">Company</th>
                   <th className="px-4 py-2 border text-white">Convertible</th>
                   <th className="px-4 py-2 border text-white">Level</th>
-                     {/* <th className="px-4 py-2 border">Mortgage</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -85,7 +84,6 @@ const QuoteResults = (props: {
                     <td className="px-4 py-2 border">{company.Name}</td>
                     <td className="px-4 py-2 border">{company.SConvertible}</td>
                     <td className="px-4 py-2 border">{company.SLevel}</td>
-                     {/* <td className="px-4 py-2 border">{company.SMortgage}</td> */}
                   </tr>
                 ))}
               </tbody>
@@ -101,7 +99,6 @@ const QuoteResults = (props: {
                 <th className="px-4 py-2 border text-white">Company</th>
                 <th className="px-4 py-2 border text-white">Convertible</th>
                 <th className="px-4 py-2 border text-white">Level</th>
-                 {/* <th className="px-4 py-2 border">Mortgage</th> */}
               </tr>
             </thead>
             <tbody>
@@ -117,13 +114,73 @@ const QuoteResults = (props: {
                   <td className="px-4 py-2 border">{company.Name}</td>
                   <td className="px-4 py-2 border">{company.SConvertible}</td>
                   <td className="px-4 py-2 border">{company.SLevel}</td>
-                   {/* <td className="px-4 py-2 border">{company.SMortgage}</td> */}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      )}
+      )} */}
+
+{Array.isArray(type) && type.length > 0 ? (
+  <div className="mb-6 mt-8">
+    <h2 className="text-3xl font-bold mb-2 font-sans underline">{type[0]?.Desc}</h2>
+    <table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg text-left">
+      <thead>
+        <tr className="bg-green-900 font-sans text-xl">
+          <th className="px-4 py-2 border text-white">Company</th>
+          <th className="px-4 py-2 border text-white">Convertible</th>
+          <th className="px-4 py-2 border text-white">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sortCompaniesAsc(
+          type[0].Company.filter(
+            (company: Company) => company.Name !== "Friends First"
+          )
+        ).map((company: Company, companyIndex: number) => (
+          <tr
+            key={companyIndex}
+            className="odd:bg-white even:bg-gray-50 font-sans"
+          >
+            <td className="px-4 py-2 border">{company.Name}</td>
+            <td className="px-4 py-2 border">{company.SConvertible}</td>
+            <td className="px-4 py-2 border">{company.SLevel}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+) : (
+  <div className="mb-6">
+    <h2 className="text-3xl font-bold mb-2 font-sans underline">{type?.Desc}</h2>
+    <table className="w-full border-collapse border border-gray-300 shadow-md rounded-lg text-left">
+      <thead>
+        <tr className="bg-green-900 font-sans text-xl">
+          <th className="px-4 py-2 border text-white">Company</th>
+          <th className="px-4 py-2 border text-white">Convertible</th>
+          <th className="px-4 py-2 border text-white">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sortCompaniesAsc(
+          type.Company.filter(
+            (company: Company) => company.Name !== "Friends First"
+          )
+        ).map((company: Company, index: number) => (
+          <tr
+            key={index}
+            className="odd:bg-white even:bg-gray-50 font-sans"
+          >
+            <td className="px-4 py-2 border">{company.Name}</td>
+            <td className="px-4 py-2 border">{company.SConvertible}</td>
+            <td className="px-4 py-2 border">{company.SLevel}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
+
     </div>
   );
 };
