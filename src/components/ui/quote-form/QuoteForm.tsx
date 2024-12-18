@@ -14,12 +14,23 @@ const QuoteForm = () => {
     sex: "",
     smoker: "Smoking-Status",
     lifeCoverAmount: null,
+    mortgageCoverAmount: null,
     lifeOnly: "Y",
     seriousIllness: "N",
     sicAccelerated: "N",
     sicAmount: null,
     term: null,
     typeOfCover: "",
+    person1: {
+      name: "",
+      dob: "",
+      smoker: "Smoking-Status",
+    },
+    person2: {
+      name: "",
+      dob: "",
+      smoker: "Smoking-Status",
+    },
   });
   const { result, setResult } = useContext(ResultsContext);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -28,9 +39,12 @@ const QuoteForm = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
   const dobRef = useRef<HTMLInputElement>(null);
+  const dobRef1 = useRef<HTMLInputElement>(null);
+  const dobRef2 = useRef<HTMLInputElement>(null);
   const sexRef = useRef<HTMLInputElement>(null); // For gender radio buttons
   const smokerRef = useRef<HTMLInputElement>(null); // For smoker radio buttons
   const lifeCoverAmountRef = useRef<HTMLInputElement>(null);
+  const mortgageCoverAmountRef = useRef<HTMLInputElement>(null);
   const sicAmountRef = useRef<HTMLInputElement>(null);
   const sicAccelerated = useRef<HTMLInputElement>(null);
   const term = useRef<HTMLInputElement>(null);
@@ -39,21 +53,25 @@ const QuoteForm = () => {
     event.preventDefault();
     handleValidation();
   };
+  console.log(formData);
 
   const handleValidation = async () => {
     const {
       name,
       email,
-      dob,
       phone,
-      lifeCoverAmount,
-      seriousIllness,
+      dob,
       sex,
-      sicAmount,
       smoker,
-      sicAccelerated,
+      lifeCoverAmount,
       term,
+      mortgageCoverAmount,
       typeOfCover,
+      person1,
+      person2,
+      seriousIllness,
+      sicAmount,
+      sicAccelerated,
     } = formData;
 
     // Individual field validations
@@ -87,6 +105,14 @@ const QuoteForm = () => {
       return;
     }
 
+    if (!phone) {
+      alert("Phone number is required.");
+      phoneRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      phoneRef.current?.focus();
+      phoneRef.current?.classList.add("highlight");
+      return;
+    }
+
     if (!dob) {
       alert("Date of Birth is required.");
       dobRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -103,40 +129,8 @@ const QuoteForm = () => {
       return;
     }
 
-    if (!phone) {
-      alert("Phone number is required.");
-      phoneRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      phoneRef.current?.focus();
-      phoneRef.current?.classList.add("highlight");
-      return;
-    }
-
-    if (lifeCoverAmount === null) {
-      alert("Life Cover Amount is required.");
-      lifeCoverAmountRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-      lifeCoverAmountRef.current?.focus();
-      lifeCoverAmountRef.current?.classList.add("highlight");
-      return;
-    }
-
-    if (seriousIllness === "Y" && !seriousIllness) {
-      alert("Serious Illness selection is required.");
-      return;
-    }
-
     if (!sex) {
       alert("Gender is required.");
-      sexRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      sexRef.current?.focus();
-      sexRef.current?.classList.add("highlight");
-      return;
-    }
-
-    if (!typeOfCover) {
-      alert("Type Of Cover is required.");
       sexRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       sexRef.current?.focus();
       sexRef.current?.classList.add("highlight");
@@ -155,6 +149,160 @@ const QuoteForm = () => {
       return;
     }
 
+    if (lifeCoverAmount === null) {
+      alert("Life Cover Amount is required.");
+      lifeCoverAmountRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      lifeCoverAmountRef.current?.focus();
+      lifeCoverAmountRef.current?.classList.add("highlight");
+      return;
+    }
+
+    if (!term) {
+      alert("Term is required.");
+      return;
+    }
+
+    if (mortgageCoverAmount === null) {
+      alert("Mortgage Cover Amount is required.");
+      mortgageCoverAmountRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      mortgageCoverAmountRef.current?.focus();
+      mortgageCoverAmountRef.current?.classList.add("highlight");
+      return;
+    }
+
+    if (!typeOfCover) {
+      alert("Type Of Cover is required.");
+      sexRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      sexRef.current?.focus();
+      sexRef.current?.classList.add("highlight");
+      return;
+    }
+
+    if (typeOfCover === "Joint" || typeOfCover === "Dual") {
+      if (!person1.name) {
+        alert("Person first name is required.");
+        nameRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        nameRef.current?.focus();
+        nameRef.current?.classList.add("highlight");
+        return;
+      }
+
+      if (/\d/.test(person1.name)) {
+        alert(
+          "Person first name should not contain any numbers or special characters."
+        );
+        nameRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        nameRef.current?.focus();
+        return;
+      }
+
+      if (!person1.dob) {
+        alert("Person 1's Date of Birth is required.");
+        dobRef1.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        dobRef1.current?.focus();
+        dobRef1.current?.classList.add("highlight");
+        return;
+      }
+
+      const selectedDate1 = new Date(person1.dob);
+      const today1 = new Date();
+      const minDate1 = new Date(1900, 0, 1);
+      if (selectedDate1 < minDate1 || selectedDate1 > today1) {
+        alert(
+          "Please select a date of birth  between 1900 and today in person 1."
+        );
+        return;
+      }
+
+      if (person1.smoker === "Smoking-Status" || !person1.smoker) {
+        //!smoker
+        alert("Person first smoker status is required.");
+        smokerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        smokerRef.current?.focus();
+        smokerRef.current?.classList.add("highlight");
+        return;
+      }
+
+      if (!person2.name) {
+        alert("Person second name is required.");
+        nameRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        nameRef.current?.focus();
+        nameRef.current?.classList.add("highlight");
+        return;
+      }
+
+      if (/\d/.test(person2.name)) {
+        alert(
+          "Person second name should not contain any numbers or special characters."
+        );
+        nameRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        nameRef.current?.focus();
+        return;
+      }
+
+      if (!person2.dob) {
+        alert("Person 2's Date of Birth is required.");
+        dobRef2.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        dobRef2.current?.focus();
+        dobRef2.current?.classList.add("highlight");
+        return;
+      }
+
+      const selectedDate = new Date(person2.dob);
+      const today = new Date();
+      const minDate = new Date(1900, 0, 1);
+      if (selectedDate < minDate || selectedDate > today) {
+        alert(
+          "Please select a date of birth between 1900 and today in person 2."
+        );
+        return;
+      }
+
+      if (person2.smoker === "Smoking-Status" || !person2.smoker) {
+        //!smoker
+        alert("Person second smoker status is required.");
+        smokerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        smokerRef.current?.focus();
+        smokerRef.current?.classList.add("highlight");
+        return;
+      }
+    }
+
+    if (seriousIllness === "Y" && !seriousIllness) {
+      alert("Serious Illness selection is required.");
+      return;
+    }
+
     // Validation for Serious Illness Cover options if selected
     if (seriousIllness === "Y") {
       if (!sicAccelerated) {
@@ -170,12 +318,6 @@ const QuoteForm = () => {
       }
     }
 
-    if (!term) {
-      alert("Term is required.");
-      return;
-    }
-
-    console.log("Form data is valid. Sending request...");
     try {
       const quotes = await fetchQuote(formData);
       console.log("API response:", quotes);
@@ -515,132 +657,388 @@ const QuoteForm = () => {
               </select>
             </div>
 
+            {/* Mortgage  Cover Amount */}
+            <div>
+              <label
+                htmlFor="Mortgage-cover-amount"
+                className="block text-sm font-medium text-gray-700 font-sans "
+              >
+                Mortgage Cover Amount
+              </label>
+              <input
+                id="Mortgage-cover-amount"
+                name="MortgageCoverAmount"
+                ref={mortgageCoverAmountRef} // Attach ref
+                type="text"
+                value={formData.mortgageCoverAmount ?? ""}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === "" || !isNaN(parseInt(value))) {
+                    setFormData({
+                      ...formData,
+                      mortgageCoverAmount:
+                        value === "" ? null : parseInt(value),
+                    });
+                  } else {
+                    alert("Please enter a valid Mortgage cover amount.");
+                    e.target.value = "";
+                  }
+                }}
+                onInput={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity("")
+                }
+                onInvalid={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity(
+                    "Please enter a valid number"
+                  )
+                }
+                required
+                placeholder="Enter Mortgage Cover Amount"
+                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+              />
+            </div>
+
             {/* Number of typeOfCover */}
             <div>
-              <div>
-                {/* Label */}
-                <label className="block text-sm font-medium text-gray-700 font-sans">
-                  Type Of Cover
-                  <span
-                    className="cursor-pointer  bg-green-900 ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-white"
-                    title="Click for more information"
-                    onClick={() => setShowTooltip(!showTooltip)}
+              {/* Label */}
+              <label className="block text-sm font-medium text-gray-700 font-sans">
+                Type Of Cover
+                <span
+                  className="cursor-pointer  bg-green-900 ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-white"
+                  title="Click for more information"
+                  onClick={() => setShowTooltip(!showTooltip)}
+                >
+                  &#63;
+                </span>
+              </label>
+
+              {/* Tooltip */}
+              {showTooltip && (
+                <div
+                  className="absolute z-10 mt-2 w-64 sm:w-72 md:w-72 lg:w-72 text-white p-4 rounded shadow-lg"
+                  style={{ backgroundColor: "#075c50" }}
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <strong className="text-base uppercase font-sans">
+                      Type of Cover
+                    </strong>
+                    <button
+                      className="text-white text-3xl hover:text-gray-300 focus:outline-none text font-sans"
+                      onClick={() => setShowTooltip(false)} // Replace with your state function
+                    >
+                      &times;
+                    </button>
+                  </div>
+                  <div
+                    className="bg-white mb-1   p-2 rounded font-sans"
+                    style={{ color: "#075c50" }}
                   >
-                    &#63;
-                  </span>
-                </label>
-
-                {/* Tooltip */}
-                {showTooltip && (
-                  <div className="absolute z-10 mt-2 w-64 sm:w-72 md:w-72 lg:w-72 text-white p-4 rounded shadow-lg" style={{ backgroundColor: "#075c50" }}>
-                    <div className="flex justify-between items-center mb-2">
-                      <strong className="text-base uppercase font-sans">Type of Cover</strong>
-                      <button
-                        className="text-white text-3xl hover:text-gray-300 focus:outline-none text font-sans"
-                        onClick={() => setShowTooltip(false)} // Replace with your state function
-                      >
-                        &times;
-                      </button>
-                    </div>
-                    <div className="bg-white mb-1   p-2 rounded font-sans" style={{ color: "#075c50" }}>
-                      <p className="text-sm mb-1">
-                        A <strong className=" text-lg font-sans">Joint Life</strong> insurance policy covers
-                        two people; however, benefits will only be paid on the
-                        first death.
-                      </p>
-                      <p className="text-sm">
-                        A <strong className="text-lg font-sans">Dual Life</strong> insurance policy covers two
-                        people independently on one policy, and benefits will be
-                        paid on the death of both lives insured.
-                      </p>
-                    </div>
+                    <p className="text-sm mb-1">
+                      A{" "}
+                      <strong className=" text-lg font-sans">Joint Life</strong>{" "}
+                      insurance policy covers two people; however, benefits will
+                      only be paid on the first death.
+                    </p>
+                    <p className="text-sm">
+                      A <strong className="text-lg font-sans">Dual Life</strong>{" "}
+                      insurance policy covers two people independently on one
+                      policy, and benefits will be paid on the death of both
+                      lives insured.
+                    </p>
                   </div>
-                )}
+                </div>
+              )}
 
-                {/* Checkboxes in Column */}
-                <div className="mt-2 flex flex-row text-center gap-6  space-y-2">
-                  <div className="flex items-center mt-2 gap-2">
-                    <div className="flex h-6 items-center">
-                      <input
-                        type="checkbox"
-                        value="Single"
-                        id="single"
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            typeOfCover: e.target.value,
-                          })
-                        }
-                        checked={formData.typeOfCover === "Single"}
-                        required
-                        className="form-checkbox text-green-900"
-                      />
-                    </div>
-                    <div className="text-base leading-6">
-                      <label
-                        htmlFor="single"
-                        className="font-medium text-gray-900 font-sans"
-                      >
-                        Single
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-6 items-center">
-                      <input
-                        type="checkbox"
-                        value="Joint"
-                        id="joint"
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            typeOfCover: e.target.value,
-                          })
-                        }
-                        checked={formData.typeOfCover === "Joint"}
-                        required
-                        className="form-checkbox text-green-900"
-                      />
-                    </div>
-                    <div className="text-base leading-6">
-                      <label
-                        htmlFor="joint"
-                        className="font-medium text-gray-900 font-sans"
-                      >
-                        Joint
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2">
+              {/* Checkboxes in Column */}
+              <div className="mt-2 flex flex-row text-center gap-6  space-y-2">
+                <div className="flex items-center mt-2 gap-2">
+                  <div className="flex h-6 items-center">
                     <input
                       type="checkbox"
-                      value="Dual"
-                      id="dual"
+                      value="Single"
+                      id="single"
                       onChange={(e) =>
                         setFormData({
                           ...formData,
                           typeOfCover: e.target.value,
                         })
                       }
-                      checked={formData.typeOfCover === "Dual"}
+                      checked={formData.typeOfCover === "Single"}
                       required
                       className="form-checkbox text-green-900"
                     />
-                    <div className="text-base leading-6">
-                      <label
-                        htmlFor="dual"
-                        className="font-medium text-gray-900 font-sans"
-                      >
-                        Dual
-                      </label>
-                    </div>
+                  </div>
+                  <div className="text-base leading-6">
+                    <label
+                      htmlFor="single"
+                      className="font-medium text-gray-900 font-sans"
+                    >
+                      Single
+                    </label>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="flex h-6 items-center">
+                    <input
+                      type="checkbox"
+                      value="Joint"
+                      id="joint"
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          typeOfCover: e.target.value,
+                        })
+                      }
+                      checked={formData.typeOfCover === "Joint"}
+                      required
+                      className="form-checkbox text-green-900"
+                    />
+                  </div>
+                  <div className="text-base leading-6">
+                    <label
+                      htmlFor="joint"
+                      className="font-medium text-gray-900 font-sans"
+                    >
+                      Joint
+                    </label>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    value="Dual"
+                    id="dual"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        typeOfCover: e.target.value,
+                      })
+                    }
+                    checked={formData.typeOfCover === "Dual"}
+                    required
+                    className="form-checkbox text-green-900"
+                  />
+                  <div className="text-base leading-6">
+                    <label
+                      htmlFor="dual"
+                      className="font-medium text-gray-900 font-sans"
+                    >
+                      Dual
+                    </label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          {(formData.typeOfCover === "Joint" ||
+            formData.typeOfCover === "Dual") && (
+            <div className="mt-4">
+              <div className="flex justify-center flex-col gap-2">
+                <h1 className="text-xl font-medium text-black font-sans  mb-2 underline">
+                  First Person :-
+                </h1>
+                <div className="flex flex-wrap   gap-4 md:flex-nowrap md:space-x-2">
+                  {/* Full Name */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="name1"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name1"
+                      ref={nameRef} // Attach ref
+                      value={formData.person1.name}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person1: {
+                            ...formData.person1,
+                            name: e.target.value,
+                          },
+                        })
+                      }
+                      required
+                      placeholder="Enter Name"
+                      autoComplete="name"
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                    />
+                  </div>
+
+                  {/* Date of Birth */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="dob1"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Date of Birth
+                    </label>
+                    <input
+                      type="date"
+                      id="dob1" // Unique ID for first person's date of birth
+                      name="dob"
+                      ref={dobRef1} // Attach ref
+                      value={formData.person1.dob}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person1: { ...formData.person1, dob: e.target.value },
+                        })
+                      }
+                      required
+                      onInvalid={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity(
+                          "Please enter a valid date of birth."
+                        )
+                      }
+                      onInput={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity("")
+                      }
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                    />
+                  </div>
+
+                  {/* Smoking Status */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="smoking-status1"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      What is your smoking status?
+                    </label>
+                    <select
+                      id="smoking-status1"
+                      name="smoking-status"
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                      value={formData.person1.smoker}
+                      onChange={(e) => {
+                        console.log(
+                          "Person 1 Smoking Status Changed:",
+                          e.target.value
+                        );
+                        setFormData({
+                          ...formData,
+                          person1: {
+                            ...formData.person1,
+                            smoker: e.target.value,
+                          },
+                        });
+                      }}
+                    >
+                      <option value="Smoking-Status">
+                        Select Smoking Status
+                      </option>
+                      <option value="Non-Smoker">Non-Smoker</option>
+                      <option value="Smoker">Smoker</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h1 className="text-xl font-medium text-black font-sans mt-3 mb-3 underline">
+                  Second Person :-
+                </h1>
+                <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
+                  {/* Full Name */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="name2"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name2"
+                      ref={nameRef} // Attach ref
+                      value={formData.person2.name}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person2: {
+                            ...formData.person2,
+                            name: e.target.value,
+                          },
+                        })
+                      }
+                      required
+                      placeholder="Enter Name"
+                      autoComplete="name"
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                    />
+                  </div>
+
+                  {/* Date of Birth */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="dob2"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Date of Birth
+                    </label>
+                    <input
+                      type="date"
+                      id="dob2" // Unique ID for second person's date of birth
+                      name="dob"
+                      ref={dobRef2} // Attach ref
+                      value={formData.person2.dob}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person2: { ...formData.person2, dob: e.target.value },
+                        })
+                      }
+                      required
+                      onInvalid={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity(
+                          "Please enter a valid date of birth."
+                        )
+                      }
+                      onInput={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity("")
+                      }
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                    />
+                  </div>
+
+                  {/* Smoking Status */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="smoking-status2"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      What is your smoking status?
+                    </label>
+                    <select
+                      id="smoking-status2"
+                      name="smoking-status"
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                      value={formData.person2.smoker} // Bind value to person2.smoker
+                      onChange={(e) =>
+                        setFormData((prevData) => ({
+                          ...prevData,
+                          person2: {
+                            ...prevData.person2,
+                            smoker: e.target.value,
+                          },
+                        }))
+                      }
+                    >
+                      <option value="Smoking-Status">
+                        Select Smoking Status
+                      </option>
+                      <option value="Non-Smoker">Non-Smoker</option>
+                      <option value="Smoker">Smoker</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Serious Illness Cover */}
           <div className="col-span-2 mt-4">

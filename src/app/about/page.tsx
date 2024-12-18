@@ -47,7 +47,7 @@ export default function About() {
               backgroundRepeat: "no-repeat",
               height: "63vh",
               backgroundPosition: "top",
-              padding: "16% 0"
+              padding: "16% 0",
             }}
           >
             <div className="container mx-auto px-4">
@@ -78,28 +78,27 @@ export default function About() {
 
             <div className="container flex flex-wrap -mx-4">
               <div className="w-full md:w-1/2 px-4">
-                <div className="ml-24 mb-8 flex justify-center items-start flex-col">
+                <div className="mb-8 flex flex-col items-start md:ml-24">
                   <div>
                     <div className="flex items-start mb-4">
                       <span className="feature-icon">
                         <Image
                           src="/Experience.png"
-                          layout="responsive"
+                          layout="intrinsic"
                           width={64}
                           height={64}
-                          alt="partner3"
+                          alt="Over 50 Years Experience"
                           className="rounded-lg"
                         />
                       </span>
                       <div className="feature-content pl-3">
                         <h3 className="text-xl font-semibold text-white">
-                          Over 25 Years Experience
+                          Over 50 Years Experience
                         </h3>
                         <p className="text-white cormorant-infant text-lg">
                           Delivering expert financial advice
                         </p>
                       </div>
-
                     </div>
                     <div className="h-8"></div>
                   </div>
@@ -109,10 +108,10 @@ export default function About() {
                       <span className="feature-icon">
                         <Image
                           src="/Insured.png"
-                          layout="responsive"
+                          layout="intrinsic"
                           width={64}
                           height={64}
-                          alt="partner3"
+                          alt="Fully Regulated and Insured"
                           className="rounded-lg"
                         />
                       </span>
@@ -121,7 +120,8 @@ export default function About() {
                           Fully Regulated and Insured
                         </h3>
                         <p className="text-white  cormorant-infant text-lg">
-                          Central Bank regulated, Consumer Protection Code, <br />
+                          Central Bank regulated, Consumer Protection Code,{" "}
+                          <br />
                           and Professional Insurers Brokers Association
                         </p>
                       </div>
@@ -134,10 +134,10 @@ export default function About() {
                       <span className="feature-icon">
                         <Image
                           src="/Customer.png"
-                          layout="responsive"
+                          layout="intrinsic"
                           width={64}
                           height={64}
-                          alt="partner3"
+                          alt="Over 2000 Customers"
                           className="rounded-lg"
                         />
                       </span>
@@ -151,20 +151,19 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
               <div className="w-full md:w-1/2 px-4">
-                <div className="ml-20 mb-8 flex justify-center align-start flex-col">
+                <div className="mb-8 flex flex-col items-start md:ml-24">
                   <div>
                     <div className="flex items-start mb-4">
                       <span className="feature-icon">
                         <Image
                           src="/Team.png"
-                          layout="responsive"
+                          layout="intrinsic"
                           width={64}
                           height={64}
-                          alt="partner3"
+                          alt="Nationwide Team"
                           className="rounded-lg"
                         />
                       </span>
@@ -185,10 +184,10 @@ export default function About() {
                       <span className="feature-icon">
                         <Image
                           src="/Experties.png"
-                          layout="responsive"
+                          layout="intrinsic"
                           width={64}
                           height={64}
-                          alt="partner3"
+                          alt="CFP Expertise"
                           className="rounded-lg"
                         />
                       </span>
@@ -210,10 +209,10 @@ export default function About() {
                       <span className="feature-icon">
                         <Image
                           src="/customer-service.png"
-                          layout="responsive"
+                          layout="intrinsic"
                           width={64}
                           height={64}
-                          alt="partner3"
+                          alt="Exceptional Customer Service"
                           className="rounded-lg"
                         />
                       </span>
@@ -227,12 +226,28 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        <div className="w-full mt-6 text-center font-sans items-center justify-center">
+          <div className="w-full h-full overflow-hidden">
+            <video
+              style={{
+                height: "100%",
+                width: "60%",
+                display: "inline-block",
+              }}
+              src="/Fusion_pics/About-Fusion-Finance.mp4" // Display video for the last item
+              className="responsiveVideo"
+              autoPlay
+              muted
+              controls
+            />
+          </div>
+        </div>
 
         <section
           id="our-values"
@@ -255,13 +270,12 @@ export default function About() {
                 </h4>
                 <p className="cormorant-infant text-xl">
                   {/* <strong>About Fusion Finance:</strong>  */}
-                  Fusion Finance is
-                  dedicated to providing exceptional customer service and
-                  financial solutions tailored to individual needs. With over 25
-                  years of experience and a commitment to integrity, we have
-                  served over 2000 satisfied customers. Our goal is to develop
-                  lasting relationships that positively impact our clients&apos;
-                  lives.
+                  Fusion Finance is dedicated to providing exceptional customer
+                  service and financial solutions tailored to individual needs.
+                  With over 25 years of experience and a commitment to
+                  integrity, we have served over 2000 satisfied customers. Our
+                  goal is to develop lasting relationships that positively
+                  impact our clients&apos; lives.
                 </p>
                 <hr className="border-gray-500" />
 
@@ -277,11 +291,12 @@ export default function About() {
                         />
                       </span>
                       <br />
-                      <strong>Informed:</strong><br />
-                      Certified Financial Planner
-                      designation is currently the highest overall educational
-                      qualification that can be obtained in the sector and this
-                      has been achieved by our consultants.
+                      <strong>Informed:</strong>
+                      <br />
+                      Certified Financial Planner designation is currently the
+                      highest overall educational qualification that can be
+                      obtained in the sector and this has been achieved by our
+                      consultants.
                     </p>
                   </div>
 
@@ -297,10 +312,10 @@ export default function About() {
                         />
                       </span>
                       <br />
-                      <strong>Focussed:</strong> <br />We believe we are successful in
-                      running our business due to determination, hard work,
-                      resilience and willingness to adapt in an ever changing
-                      environment.
+                      <strong>Focussed:</strong> <br />
+                      We believe we are successful in running our business due
+                      to determination, hard work, resilience and willingness to
+                      adapt in an ever changing environment.
                     </p>
                   </div>
 
@@ -350,7 +365,15 @@ export default function About() {
                 Partner Fusion Finance
               </p>
               <p className="mb-4 text-black text-xl">
-                My Journey within the Financial Services was very much accidental when I meet with New Ireland Assurance they convinced me that I would be a great fit as a tied agent with their company and from there my journey began, New Ireland Assurance was instrumental in guiding me through my exams  in my QFA and RPA as well as giving me the tools to navigate the world of finance which can be very scary and complex and at the time very male dominated, it was from there that I got to really understand the world of Finance and most importantly people.
+                My Journey within the Financial Services was very much
+                accidental when I meet with New Ireland Assurance they convinced
+                me that I would be a great fit as a tied agent with their
+                company and from there my journey began, New Ireland Assurance
+                was instrumental in guiding me through my exams in my QFA and
+                RPA as well as giving me the tools to navigate the world of
+                finance which can be very scary and complex and at the time very
+                male dominated, it was from there that I got to really
+                understand the world of Finance and most importantly people.
               </p>
 
               {!showReadMore1 && (
@@ -365,20 +388,58 @@ export default function About() {
               {showReadMore1 && (
                 <div>
                   <p className="mb-4 text-black text-xl">
-                    I understand the most important relationship I can have is with me and my client and I have had the most amazing journey getting to help and guide my Fusion Family through the harsh bumpy and complex financial road.
-                    <br /><br />
-                    The complex relationship between health and happiness really does have a lot to do with our general health and wellbeing and sometimes it is that relationship with money that makes the difference to our mental wellbeing.
+                    I understand the most important relationship I can have is
+                    with me and my client and I have had the most amazing
+                    journey getting to help and guide my Fusion Family through
+                    the harsh bumpy and complex financial road.
+                    <br />
+                    <br />
+                    The complex relationship between health and happiness really
+                    does have a lot to do with our general health and wellbeing
+                    and sometimes it is that relationship with money that makes
+                    the difference to our mental wellbeing.
                   </p>
                   <p className="mb-4 text-black text-xl">
-                    I decided to leave New Ireland in 2010 and joined a firm in Dublin that worked for the public sector, and it was there that I got introduced to the Public sector and built up a great relationship within that sector, in May 2012 I decided to take a huge leap of faith with my colleague Gemma Mcguire and Fusion Finance became a reality.
-                    <br /><br />
-                    We have a combined customer baes of over 2000 clients and this is growing year on year we are blessed to have Samatha and Catherine working tirelessly to ensure our clients are always priority, we have worked very hard to keep on top of all the complex changes that continue to be part of the financial landscape.  We were nominated last year by Brookers Ireland as one of the Top 3 brokers in Ireland when it comes to prioritising protection around our clients.
+                    I decided to leave New Ireland in 2010 and joined a firm in
+                    Dublin that worked for the public sector, and it was there
+                    that I got introduced to the Public sector and built up a
+                    great relationship within that sector, in May 2012 I decided
+                    to take a huge leap of faith with my colleague Gemma Mcguire
+                    and Fusion Finance became a reality.
+                    <br />
+                    <br />
+                    We have a combined customer baes of over 2000 clients and
+                    this is growing year on year we are blessed to have Samatha
+                    and Catherine working tirelessly to ensure our clients are
+                    always priority, we have worked very hard to keep on top of
+                    all the complex changes that continue to be part of the
+                    financial landscape. We were nominated last year by Brookers
+                    Ireland as one of the Top 3 brokers in Ireland when it comes
+                    to prioritising protection around our clients.
                   </p>
                   <p className="mb-4 text-black text-xl">
-                    I am on the Journey to completing my CFP which is the highest designation in the financial service and recognised around the world, it&apos;s something I never thought I would do but I believe with an amazing team behind you anything is possible.  My dreams for the next 10 years are for my clients to have a real genuine connection with me if they phone me, they are not waiting or put on hold they get us if not straight away within the same day, we have seen the devastation of separation, illness and death and want for our clients to know that we are there if they need us.
+                    I am on the Journey to completing my CFP which is the
+                    highest designation in the financial service and recognised
+                    around the world, it&apos;s something I never thought I
+                    would do but I believe with an amazing team behind you
+                    anything is possible. My dreams for the next 10 years are
+                    for my clients to have a real genuine connection with me if
+                    they phone me, they are not waiting or put on hold they get
+                    us if not straight away within the same day, we have seen
+                    the devastation of separation, illness and death and want
+                    for our clients to know that we are there if they need us.
                   </p>
                   <p className="font-bold text-black text-xl">
-                    My goal for the next 10 years is to give back to my community, I am very involved in Soccer and in animals and I want to develop my passion in fostering animals, besides my two boys my biggest passion is the welfare of animals, I recently rescued a lurcher called Archie and he has been one of the biggest changes in my life, his soul was meant to meet mine.  I will have also completed my master&apos;s in finance and most importantly see my boys grow into young men.  There is no currency more valuable than time, we can always make money but can never make up for lost time.
+                    My goal for the next 10 years is to give back to my
+                    community, I am very involved in Soccer and in animals and I
+                    want to develop my passion in fostering animals, besides my
+                    two boys my biggest passion is the welfare of animals, I
+                    recently rescued a lurcher called Archie and he has been one
+                    of the biggest changes in my life, his soul was meant to
+                    meet mine. I will have also completed my master&apos;s in
+                    finance and most importantly see my boys grow into young
+                    men. There is no currency more valuable than time, we can
+                    always make money but can never make up for lost time.
                   </p>
                 </div>
               )}
@@ -430,9 +491,9 @@ export default function About() {
                   During a consultation meeting we will discuss and identify
                   your goals, establish your priorities and aspirations. We can
                   then assess the options available and put steps in place to
-                  make these a reality. This is to provide a foundation for a more secure financial
-                  future for you and give you the peace of mind that your
-                  priorities will be achieved.
+                  make these a reality. This is to provide a foundation for a
+                  more secure financial future for you and give you the peace of
+                  mind that your priorities will be achieved.
                 </p>
                 <p className="mb-4 text-black text-xl">
                   Most of us will face concerns such as a need to provide for
@@ -508,7 +569,13 @@ export default function About() {
             </p>
 
             <p className="mb-4 text-black text-xl">
-              Catherine Mulcahy has a diverse background in travel and tourism, as well as experience as a personal assistant in a medical practice.  She brings a unique skill set to her Sales Manager Fusion Finance role. Catherines&apos; experience in the travel industry has honed her organisational and customer service skills, allowing her to manage complex itineraries and provide exceptional support to clients.
+              Catherine Mulcahy has a diverse background in travel and tourism,
+              as well as experience as a personal assistant in a medical
+              practice. She brings a unique skill set to her Sales Manager
+              Fusion Finance role. Catherines&apos; experience in the travel
+              industry has honed her organisational and customer service skills,
+              allowing her to manage complex itineraries and provide exceptional
+              support to clients.
             </p>
 
             {!showReadMore3 && (
@@ -522,13 +589,27 @@ export default function About() {
             {showReadMore3 && (
               <div className="readMore">
                 <p className="mb-4 text-black text-xl">
-                  In the medical field, she developed a keen attention to detail and the ability to handle sensitive information with discretion. She is excited to join the Fusion Finance team, where she aims to leverage her expertise to contribute to a seamless and efficient workflow, ensuring that our clients receive the highest level of service.
+                  In the medical field, she developed a keen attention to detail
+                  and the ability to handle sensitive information with
+                  discretion. She is excited to join the Fusion Finance team,
+                  where she aims to leverage her expertise to contribute to a
+                  seamless and efficient workflow, ensuring that our clients
+                  receive the highest level of service.
                 </p>
                 <p className="mb-4 text-black text-xl">
-                  Catherine is a wife to Peter and a mother to two young children, an adventurous boy and a teddy-obsessed girl.  Working with Fusion Finance has taught her that there is nothing more important than financial security for her family, particularly with her children&apos;s future in mind.  If only the world was flawless as seen through the eyes of children but unfortunately in today&apos;s world the future is very much uncertain.  We need to be proactive in securing a safe future for those we love.
+                  Catherine is a wife to Peter and a mother to two young
+                  children, an adventurous boy and a teddy-obsessed girl.
+                  Working with Fusion Finance has taught her that there is
+                  nothing more important than financial security for her family,
+                  particularly with her children&apos;s future in mind. If only
+                  the world was flawless as seen through the eyes of children
+                  but unfortunately in today&apos;s world the future is very
+                  much uncertain. We need to be proactive in securing a safe
+                  future for those we love.
                 </p>
                 <p className="mb-4 text-black text-xl">
-                  “Your Smile is your Logo; your Personality is your business Card”
+                  “Your Smile is your Logo; your Personality is your business
+                  Card”
                 </p>
               </div>
             )}
@@ -555,7 +636,16 @@ export default function About() {
                   <h6 className="image-label">Gemma Triathlon</h6>
                 </div>
                 <p className="cormorant-infant text-xl text-justify mx-2 my-4 pt-3">
-                  Gemma: “I am actively involved with Sligo Triathlon Club for over 10 years and have volunteered on the committee as Treasurer for 3 years. I thoroughly enjoy the social aspect of the training with other club members and the mix of disciplines that swimming, cycling, and running brings. Over the last number of years, I have participated in numerous triathlons, swimming and running events and also in aid of charities, North West Hospice, Multiple Sclerosis Centre, and Sligo Hospital Oncology Unit. I greatly appreciate the benefit which the club affords me in my mindset and wellness.”
+                  Gemma: “I am actively involved with Sligo Triathlon Club for
+                  over 10 years and have volunteered on the committee as
+                  Treasurer for 3 years. I thoroughly enjoy the social aspect of
+                  the training with other club members and the mix of
+                  disciplines that swimming, cycling, and running brings. Over
+                  the last number of years, I have participated in numerous
+                  triathlons, swimming and running events and also in aid of
+                  charities, North West Hospice, Multiple Sclerosis Centre, and
+                  Sligo Hospital Oncology Unit. I greatly appreciate the benefit
+                  which the club affords me in my mindset and wellness.”
                 </p>
               </div>
               <div className="bg-white rounded-md m-2 flex flex-col items-center md:w-1/2">
@@ -571,7 +661,13 @@ export default function About() {
                   <h6 className="image-label">Marie&apos;s Champion Canine</h6>
                 </div>
                 <p className="cormorant-infant text-xl text-justify mx-2 my-4 pt-3">
-                  Marie: “I am grateful to have been able to take a quivering abandoned dog to the ruler of our hearts. Archie now reigns supreme with a paw of iron and a heart of pure gold. When I&apos;m not busy pampering Archie, Bailey, and Coco or exploring new lands with family by my side, you can find me on the sidelines, proudly sponsoring the under 15 and 16 Cahir team every year.”
+                  Marie: “I am grateful to have been able to take a quivering
+                  abandoned dog to the ruler of our hearts. Archie now reigns
+                  supreme with a paw of iron and a heart of pure gold. When
+                  I&apos;m not busy pampering Archie, Bailey, and Coco or
+                  exploring new lands with family by my side, you can find me on
+                  the sidelines, proudly sponsoring the under 15 and 16 Cahir
+                  team every year.”
                 </p>
               </div>
             </div>

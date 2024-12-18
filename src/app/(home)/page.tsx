@@ -114,7 +114,7 @@ export default function Home() {
       50+ <span className="text-3xl"> Years Experience</span>
     </h2><br className="hidden sm:block" />
     <p className="cormorant-infant text-2xl font-bold font-sans">
-    With a wealth of agnostic industry knowledge.
+    With a wealth of industry knowledge.
     </p>
   </div>
 
@@ -317,7 +317,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-white text-2xl font-bold font-sans mt-2">
-                    With A Wealth Of Agnostic
+                    With A Wealth Of 
                   </div>
                   <div className="text-white text-3xl font-bold cormorant-infant">
                     Industry Knowledge
