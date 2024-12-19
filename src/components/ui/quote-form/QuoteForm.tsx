@@ -4,6 +4,7 @@ import QuoteResults from "../quote-results/QuoteResults";
 import { ResultsContext } from "@/components/context/cache";
 import { FormData } from "@/components/definitions/FormData";
 import Image from "next/image";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -34,6 +35,7 @@ const QuoteForm = () => {
   });
   const { result, setResult } = useContext(ResultsContext);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [loading, setLoading] = useState(false);
   // Create refs for each input
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -53,7 +55,6 @@ const QuoteForm = () => {
     event.preventDefault();
     handleValidation();
   };
-  console.log(formData);
 
   const handleValidation = async () => {
     const {
@@ -319,14 +320,27 @@ const QuoteForm = () => {
     }
 
     try {
-      const quotes = await fetchQuote(formData);
+      const updatedFormData = {
+        ...formData,
+        sicAmount: seriousIllness === "N" ? null : formData.sicAmount,
+        sicAccelerated: seriousIllness === "N" ? "N" : formData.sicAccelerated,
+        lifeOnly: seriousIllness === "N" ? "Y" : formData.lifeOnly
+      };
+      setLoading(true)
+      const quotes = await fetchQuote(updatedFormData);
       console.log("API response:", quotes);
+      setLoading(false)
       setResult(quotes);
     } catch (error) {
       console.error("Error fetching quote:", error);
+      setLoading(false)
       alert("An error occurred while fetching the quote. Please try again.");
     }
   };
+
+  const handleNavigate=()=>{
+    setResult(null)
+  }
 
   return result ? (
     result.Errors ? (
@@ -339,9 +353,11 @@ const QuoteForm = () => {
         customerName={formData.name}
         email={formData.email}
         phone={formData.phone}
+        handleNavigate={handleNavigate}
       />
     )
-  ) : (
+  ) : (<>
+    {loading ? <LoadingSpinner/> :
     <div
       className="max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-md mt-12 mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8"
       style={{ boxShadow: "0px 0px 6px #1a584f69" }}
@@ -356,9 +372,6 @@ const QuoteForm = () => {
       </div>
       {/* Left Side: Form */}
       <div>
-        {/* <h2 className="text-3xl font-semibold text-gray-800 mb-6 font-sans">
-          Fill in your Details Below to Get a Quote
-        </h2> */}
         <form action="#" method="POST">
           {/* User Details Section */}
           <h3 className="text-2xl font-semibold  text-gray-800 mb-4 font-sans underline">
@@ -575,6 +588,7 @@ const QuoteForm = () => {
               <select
                 id="smoking-status"
                 name="smoking-status"
+                value={formData.smoker}
                 className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
                 onChange={(e) =>
                   setFormData({
@@ -640,6 +654,7 @@ const QuoteForm = () => {
               <select
                 id="policy-term"
                 name="policy-term"
+                value={formData.term || 0}
                 className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
                 onChange={(e) =>
                   setFormData({
@@ -647,6 +662,7 @@ const QuoteForm = () => {
                     term: parseInt(e.target.value),
                   })
                 }
+               
               >
                 <option value={0}>Select Term</option>
                 {Array.from({ length: 36 }, (_, i) => i + 5).map((year) => (
@@ -1170,6 +1186,8 @@ const QuoteForm = () => {
         </form>
       </div>
     </div>
+    }
+    </>
   );
 };
 
