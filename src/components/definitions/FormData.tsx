@@ -1,14 +1,10 @@
 export interface Person1 {
-  name: string;
+  gender: string;
   dob: string;
   smoker: string;
 }
 
-export interface Person2 {
-  name: string;
-  dob: string;
-  smoker: string;
-}
+ 
 export interface FormData {
   name: string;
   email: string;
@@ -25,5 +21,4 @@ export interface FormData {
   term: number | null;
   typeOfCover:string;
   person1: Person1;
-  person2: Person2;
 }
