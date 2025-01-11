@@ -8,13 +8,14 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState<FormData>({
-    typeOfCover: "",
+    typeOfCover: "Single",
     person1: {
       gender: "",
       dob: "",
       smoker: "Smoking-Status",
     },
     name: "",
+    lastName:"",
     email: "",
     phone: "",
     dob: "",
@@ -57,6 +58,7 @@ const QuoteForm = () => {
   const handleValidation = async () => {
     const {
       name,
+      lastName,
       email,
       phone,
       dob,
@@ -130,7 +132,7 @@ const QuoteForm = () => {
 
     // Individual field validations
     if (!name) {
-      alert("Name is required.");
+      alert("First Name is required.");
       nameRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       nameRef.current?.focus();
       nameRef.current?.classList.add("highlight");
@@ -138,7 +140,22 @@ const QuoteForm = () => {
     }
 
     if (/\d/.test(name)) {
-      alert("Name should not contain any numbers or special characters.");
+      alert("First Name should not contain any numbers or special characters.");
+      nameRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      nameRef.current?.focus();
+      return;
+    }
+
+    if (!lastName) {
+      alert("lastName is required.");
+      nameRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      nameRef.current?.focus();
+      nameRef.current?.classList.add("highlight");
+      return;
+    }
+
+    if (/\d/.test(lastName)) {
+      alert("lastName should not contain any numbers or special characters.");
       nameRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       nameRef.current?.focus();
       return;
@@ -308,7 +325,7 @@ const QuoteForm = () => {
         <form action="#" method="POST">
           {/* User Details Section */}
           <h3 className="text-2xl font-semibold  text-gray-800 mb-4 font-sans underline">
-            Personal Information
+            Policy & Personal Information
           </h3>
            
  
@@ -446,215 +463,13 @@ const QuoteForm = () => {
                 </div>
               </div>
             </div>
-           
-            {(formData.typeOfCover === "Joint" || formData.typeOfCover === "Dual") && (
-  <div className="mt-4">
-    <div className="flex justify-center flex-col gap-2">
-      <h1 className="text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
-      Policyholder Details :-
-      </h1>
-      <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
-        {/* Gender Selection */}
-        <div className="flex-1 min-w-[185px]">
-          <label
-            htmlFor="gender1"
-            className="block text-sm font-medium text-gray-700 font-sans"
-          >
-            Gender
-          </label>
-          <select
-            id="gender1"
-            name="gender1"
-            className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-            value={formData.person1.gender}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                person1: {
-                  ...formData.person1,
-                  gender: e.target.value,
-                },
-              })
-            }
-          >
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
-
-        {/* Date of Birth */}
-        <div className="flex-1 min-w-[185px]">
-          <label
-            htmlFor="dob1"
-            className="block text-sm font-medium text-gray-700 font-sans"
-          >
-            Date of Birth
-          </label>
-          <input
-            type="date"
-            id="dob1"
-            name="dob"
-            ref={dobRef1}
-            value={formData.person1.dob}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                person1: { ...formData.person1, dob: e.target.value },
-              })
-            }
-            required
-            onInvalid={(e) =>
-              (e.target as HTMLInputElement).setCustomValidity(
-                "Please enter a valid date of birth."
-              )
-            }
-            onInput={(e) =>
-              (e.target as HTMLInputElement).setCustomValidity("")
-            }
-            className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-          />
-        </div>
-
-        {/* Smoking Status */}
-        <div className="flex-1 min-w-[185px]">
-          <label
-            htmlFor="smoking-status1"
-            className="block text-sm font-medium text-gray-700 font-sans"
-          >
-            Smoking Status
-          </label>
-          <select
-            id="smoking-status1"
-            name="smoking-status"
-            className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-            value={formData.person1.smoker}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                person1: {
-                  ...formData.person1,
-                  smoker: e.target.value,
-                },
-              })
-            }
-          >
-            <option value="">Select Smoking Status</option>
-            <option value="Non-Smoker">Non-Smoker</option>
-            <option value="Smoker">Smoker</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
-
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Full Name */}
-            <div>
-              <label
-                htmlFor="full-name"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                Full Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                ref={nameRef} // Attach ref
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                required
-                placeholder="Enter Name"
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Enter full name here."
-                  )
-                }
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                autoComplete="name"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>
-
-            {/* Email Address */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                Email Address
-              </label>
-              <input
-                name="email"
-                type="email"
-                ref={emailRef} // Attach ref
-                value={formData.email}
-                onChange={(e) => {
-                  setFormData({ ...formData, email: e.target.value });
-                }}
-                required
-                placeholder="Enter Email"
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Enter email here."
-                  )
-                }
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                autoComplete="email"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>
-
-            {/* Phone Number */}
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                Phone No.
-              </label>
-              <input
-                name="phone"
-                ref={phoneRef} // Attach ref
-                autoComplete="tel-national"
-                type="text"
-                placeholder="Enter Phone No."
-                value={formData.phone ?? ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (/^\d*$/.test(value)) {
-                    setFormData({
-                      ...formData,
-                      phone: value,
-                    });
-                  } else {
-                    alert("Please enter a valid phone number.");
-                    (e.target as HTMLInputElement).value = "";
-                  }
-                }}
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Please enter a valid phone number"
-                  )
-                }
-                required
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>
-
-            {/* Date of Birth */}
-            <div>
+             {/* Life1 Section */}
+            <h1 className="mt-2 text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
+                 Life1 -
+            </h1>
+            <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
+             {/* Date of Birth */}
+             <div className="flex-1 min-w-[185px]">
               <label
                 htmlFor="dob"
                 className="block text-sm font-medium text-gray-700 font-sans"
@@ -687,71 +502,35 @@ const QuoteForm = () => {
               />
             </div>
 
-            {/* Gender */}
-
-            <div>
-              <label
-                htmlFor="gender"
-                className="block text-sm font-bold text-gray-900 font-sans"
-              >
-                Gender
-              </label>
-              <div className="mt-1 flex">
-                <div className="relative flex items-center gap-x-3 pe-5">
-                  <div className="flex h-6 items-center">
-                    <input
-                      type="checkbox"
-                      value="Male"
-                      onChange={(e) =>
-                        setFormData({ ...formData, sex: e.target.value })
-                      }
-                      checked={formData.sex === "Male"}
-                      required
-                      className="form-checkbox text-green-900"
-                    />
-                  </div>
-                  <div className="text-base leading-6">
-                    <label
-                      htmlFor="Male"
-                      className="font-medium text-gray-900 font-sans"
-                    >
-                      Male
-                    </label>
-                  </div>
-                </div>
-
-                <div className="relative flex items-center gap-x-3">
-                  <div className="flex h-6 items-center">
-                    <input
-                      type="checkbox"
-                      value="Female"
-                      onChange={(e) =>
-                        setFormData({ ...formData, sex: e.target.value })
-                      }
-                      checked={formData.sex === "Female"}
-                      required
-                      className="form-checkbox text-green-900 "
-                    />
-                  </div>
-                  <div className="text-base leading-6">
-                    <label
-                      htmlFor="Female"
-                      className="font-medium text-gray-900 font-sans"
-                    >
-                      Female
-                    </label>
-                  </div>
-                </div>
+              {/* Gender */}
+              <div className="flex-1 min-w-[185px]">
+                      <label
+                        htmlFor="gender1"
+                        className="block text-sm font-medium text-gray-700 font-sans"
+                      >
+                        Gender
+                      </label>
+                      <select
+                        id="gender1"
+                        name="gender1"
+                        className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                        value={formData.sex}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            sex: e.target.value,
+                          })
+                        }
+                      >
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
               </div>
-            </div>
-      </div>
-          {/* Policy Details */}
-          <h3 className="text-2xl font-sans font-semibold text-gray-800 mb-4 mt-6 underline">
-            Policy Details
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Smoking Status */}
-            <div>
+
+
+              {/* Smoking Status */}
+              <div className="flex-1 min-w-[185px]">
               <label
                 htmlFor="smoking-status"
                 className="block text-sm font-medium text-gray-700 font-sans"
@@ -774,13 +553,120 @@ const QuoteForm = () => {
                 <option value="Non-Smoker">Non-Smoker</option>
                 <option value="Smoker">Smoker</option>
               </select>
+              </div>
             </div>
+            {/* Life2 Section */}
+            <div
+            className={`mt-4 ${
+              formData.typeOfCover === "Single" ? "opacity-50 pointer-events-none" : ""
+            }`}
+          >
+              <div className="flex justify-center flex-col gap-2">
+                <h1 className="text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
+                 Life2 -
+                </h1>
+                <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
 
+                     {/* Date of Birth */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="dob1"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Date of Birth
+                    </label>
+                    <input
+                      type="date"
+                      id="dob1"
+                      name="dob"
+                      ref={dobRef1}
+                      value={formData.person1.dob}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person1: { ...formData.person1, dob: e.target.value },
+                        })
+                      }
+                      required
+                      onInvalid={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity(
+                          "Please enter a valid date of birth."
+                        )
+                      }
+                      onInput={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity("")
+                      }
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                    />
+                  </div>
+
+                  {/* Gender Selection */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="gender1"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Gender
+                    </label>
+                    <select
+                      id="gender1"
+                      name="gender1"
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                      value={formData.person1.gender}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person1: {
+                            ...formData.person1,
+                            gender: e.target.value,
+                          },
+                        })
+                      }
+                    >
+                      <option value="">Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+
+                  {/* Smoking Status */}
+                  <div className="flex-1 min-w-[185px]">
+                    <label
+                      htmlFor="smoking-status1"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Smoking Status
+                    </label>
+                    <select
+                      id="smoking-status1"
+                      name="smoking-status"
+                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                      value={formData.person1.smoker}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          person1: {
+                            ...formData.person1,
+                            smoker: e.target.value,
+                          },
+                        })
+                      }
+                    >
+                      <option value="">Select Smoking Status</option>
+                      <option value="Non-Smoker">Non-Smoker</option>
+                      <option value="Smoker">Smoker</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          <div className="mt-4 flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
             {/* Life Cover Amount */}
-            <div>
+            <div className="flex-1 min-w-[185px]">
               <label
                 htmlFor="life-cover-amount"
-                className="block text-sm font-medium text-gray-700 font-sans "
+                className="block text-sm font-medium text-gray-800 font-sans"
               >
                 Life Cover Amount
               </label>
@@ -817,10 +703,10 @@ const QuoteForm = () => {
             </div>
 
             {/* Term */}
-            <div>
+            <div className="flex-1 min-w-[185px]">
               <label
                 htmlFor="policy-term"
-                className="block text-sm font-medium text-gray-700 font-sans"
+                className="block text-sm font-medium text-gray-800 font-sans"
               >
                 Term
               </label>
@@ -847,10 +733,10 @@ const QuoteForm = () => {
             </div>
 
             {/* Mortgage  Cover Amount */}
-            <div>
+            <div className="flex-1 min-w-[185px]">
               <label
                 htmlFor="Mortgage-cover-amount"
-                className="block text-sm font-medium text-gray-700 font-sans "
+                className="block text-sm font-medium text-gray-800 font-sans "
               >
                 Mortgage Cover Amount
               </label>
@@ -886,7 +772,7 @@ const QuoteForm = () => {
                 className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
               />
             </div>        
-    </div>
+          </div>
           {/* Serious Illness Cover */}
           <div className="col-span-2 mt-4">
             <label
@@ -1002,7 +888,143 @@ const QuoteForm = () => {
               </div>
             </>
           )}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Full Name */}
+            <div>
+              <label
+                htmlFor="full-name"
+                className="block text-sm font-medium text-gray-700 font-sans"
+              >
+                First Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                ref={nameRef} // Attach ref
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                required
+                placeholder="Enter First Name"
+                onInvalid={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity(
+                    "Enter first name here."
+                  )
+                }
+                onInput={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity("")
+                }
+                autoComplete="name"
+                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+              />
+            </div>
 
+             {/* lastName   */}
+            <div>
+              <label
+                htmlFor="lastName"
+                className="block text-sm font-medium text-gray-700 font-sans"
+              >
+                Last Name
+              </label>
+              <input
+                type="text"
+                name="lastName"
+                ref={nameRef} // Attach ref
+                value={formData.lastName}
+                onChange={(e) =>
+                  setFormData({ ...formData, lastName: e.target.value })
+                }
+                required
+                placeholder="Enter Last Name"
+                onInvalid={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity(
+                    "Enter lastName here."
+                  )
+                }
+                onInput={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity("")
+                }
+                autoComplete="lastName"
+                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+              />
+            </div>
+
+            {/* Email Address */}
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 font-sans"
+              >
+                Email Address
+              </label>
+              <input
+                name="email"
+                type="email"
+                ref={emailRef} // Attach ref
+                value={formData.email}
+                onChange={(e) => {
+                  setFormData({ ...formData, email: e.target.value });
+                }}
+                required
+                placeholder="Enter Email"
+                onInvalid={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity(
+                    "Enter email here."
+                  )
+                }
+                onInput={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity("")
+                }
+                autoComplete="email"
+                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+              />
+            </div>
+
+            {/* Phone Number */}
+            <div>
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700 font-sans"
+              >
+                Phone No.
+              </label>
+              <input
+                name="phone"
+                ref={phoneRef} // Attach ref
+                autoComplete="tel-national"
+                type="text"
+                placeholder="Enter Phone No."
+                value={formData.phone ?? ""}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (/^\d*$/.test(value)) {
+                    setFormData({
+                      ...formData,
+                      phone: value,
+                    });
+                  } else {
+                    alert("Please enter a valid phone number.");
+                    (e.target as HTMLInputElement).value = "";
+                  }
+                }}
+                onInput={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity("")
+                }
+                onInvalid={(e) =>
+                  (e.target as HTMLInputElement).setCustomValidity(
+                    "Please enter a valid phone number"
+                  )
+                }
+                required
+                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+              />
+            </div>
+    
+      </div>
+       
           {/* Submit Button */}
           <div className="mt-6">
             <button

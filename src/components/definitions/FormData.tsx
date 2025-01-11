@@ -7,6 +7,7 @@ export interface Person1 {
  
 export interface FormData {
   name: string;
+  lastName:string;
   email: string;
   phone: string;
   dob: string;

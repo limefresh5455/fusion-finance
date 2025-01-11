@@ -7,8 +7,8 @@ export default function sendEmail(req, res) {
     auth: {
       user: "allison@branue.com",
       pass: "cfwplqbzznrmruxc",
-      // user: "gemma@fusion-finance.com",
-      // pass: "XZGNC@_8ww!lwYm",
+      // user: "marie@fusion-finance.com",
+      // pass: "SK@6vaZxH4kLBYI",
     },
     secure: true,
   });
