@@ -4,18 +4,20 @@ export default function sendEmail(req, res) {
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
+    // host: 'smtp.office365.com',  
+    // port: 587,
+    secure: true, 
     auth: {
       user: "allison@branue.com",
       pass: "cfwplqbzznrmruxc",
       // user: "marie@fusion-finance.com",
-      // pass: "SK@6vaZxH4kLBYI",
+      // pass: "O$op3sqo5XUr-uM",
     },
-    secure: true,
   });
 
   const mailData = {
     from: "allison@branue.com",
-    to: "gemma@fusion-finance.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
+    to: "allison@branue.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
     subject: "Email From Fusion Finance",
           html: `
        <div style="font-family: 'Arial', sans-serif; background-color: #f4f4f9; padding: 30px;">
