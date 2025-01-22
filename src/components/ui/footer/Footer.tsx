@@ -10,7 +10,7 @@ export default function Footer() {
   const imageSize = 50;
   const handleClick = () => {
     // console.log("result", result);
-    setResult(null);
+    setResult(null); 
   };
 
   return (
