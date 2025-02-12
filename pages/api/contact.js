@@ -60,13 +60,16 @@ export default async function sendEmail(req, res) {
       </div>
     `,
   };
-
+  console.log('cgeck');
   try {
     const info = await transporter.sendMail(mailData);
-    console.log('Email sent:', info.response);
-    res.status(200).send("Email sent successfully");
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ message: 'Email sent!' }))
   } catch (error) {
     console.error('Error sending email:', error);
-    res.status(500).send("Error sending email");
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ message: 'Email not send!' }))
   }
 }
